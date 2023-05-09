@@ -1,12 +1,19 @@
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Header() {
+export default function Header({ logo, menu }) {
   return (
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-      <Link href="/" className="hover:underline">
-        Blog
+    <header className="bg-white py-5 flex justify-between items-center gap-10">
+      <Link href="/">
+        <Image src={logo} alt={"logo"} width={70} height={57} />
       </Link>
-      .
-    </h2>
-  )
+      <nav>
+        <ul className="flex gap-10">
+          {menu && menu.map((item) => (
+            <li key={item.id}>{item.title}</li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+  );
 }
