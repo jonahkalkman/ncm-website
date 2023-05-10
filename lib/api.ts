@@ -268,6 +268,28 @@ export async function getHomeContent() {
               }
             }
           }
+          introTitle
+          introText
+          introImage {
+            mediaItemUrl
+          }
+          bannerTitle
+          bannerButton {
+            bannerButtonTitle
+            bannerButtonLink {
+              ... on Page {
+                link
+              }
+            }
+          }
+          bannerImages {
+            bannerFirstImage {
+              mediaItemUrl
+            }
+            bannerSecondImage {
+              mediaItemUrl
+            }
+          }
         }
       } 
     }

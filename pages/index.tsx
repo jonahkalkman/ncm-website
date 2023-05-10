@@ -6,6 +6,8 @@ import { getHomeContent, getLogo, getPrimaryMenu } from "../lib/api";
 import Header from "../components/header";
 import { WEBSITE_TITLE } from "../lib/constants";
 import HeroHome from "../components/hero-home";
+import IntroHome from "../components/intro-home";
+import Banner from "../components/banner";
 
 export default function Index({ preview, logo, menu, homeContent }) {
   return (
@@ -20,7 +22,31 @@ export default function Index({ preview, logo, menu, homeContent }) {
         title={homeContent.heroTitle}
         subTitle={homeContent.heroSubtitle}
         imageUrl={homeContent.heroImage.mediaItemUrl}
+        buttonPrimary={homeContent.heroButtonPrimary}
+        buttonSecondary={homeContent.heroButtonSecondary}
       />
+      <Container>
+        <IntroHome
+          title={homeContent.introTitle}
+          text={homeContent.introText}
+          image={homeContent.introImage.mediaItemUrl}
+        />
+        {homeContent.bannerTitle &&
+        homeContent.bannerButton.bannerButtonTitle &&
+        homeContent.bannerButton.bannerButtonLink.link &&
+        homeContent.bannerImages.bannerFirstImage.mediaItemUrl &&
+        homeContent.bannerImages.bannerSecondImage.mediaItemUrl ? (
+          <Banner
+            title={homeContent.bannerTitle}
+            buttonTitle={homeContent.bannerButton.bannerButtonTitle}
+            buttonLink={homeContent.bannerButton.bannerButtonLink.link}
+            firstImage={homeContent.bannerImages.bannerFirstImage.mediaItemUrl}
+            secondImage={
+              homeContent.bannerImages.bannerSecondImage.mediaItemUrl
+            }
+          />
+        ) : null}
+      </Container>
     </Layout>
   );
 }
