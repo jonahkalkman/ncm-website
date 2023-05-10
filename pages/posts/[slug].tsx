@@ -15,10 +15,11 @@ import {
   getAllPostsWithSlug,
   getLogo,
   getPostAndMorePosts,
+  getPrimaryMenu,
 } from "../../lib/api";
 import { CMS_NAME } from "../../lib/constants";
 
-export default function Post({ post, posts, preview, logo }) {
+export default function Post({ post, posts, preview, logo, menu }) {
   const router = useRouter();
   const morePosts = posts?.edges;
 
@@ -29,7 +30,7 @@ export default function Post({ post, posts, preview, logo }) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header logo={logo} />
+        <Header logo={logo} menu={menu} />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -71,6 +72,7 @@ export const getStaticProps: GetStaticProps = async ({
   preview = false,
   previewData,
 }) => {
+  const menu = await getPrimaryMenu();
   const logo = await getLogo();
   const data = await getPostAndMorePosts(params?.slug, preview, previewData);
 
@@ -80,6 +82,7 @@ export const getStaticProps: GetStaticProps = async ({
       post: data.post,
       posts: data.posts,
       logo: logo,
+      menu: menu,
     },
     revalidate: 10,
   };
