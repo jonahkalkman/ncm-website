@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import { getHomeContent, getLogo, getPrimaryMenu } from "../lib/api";
 import Header from "../components/header";
 import { WEBSITE_TITLE } from "../lib/constants";
+import HeroHome from "../components/hero-home";
 
 export default function Index({ preview, logo, menu, homeContent }) {
   return (
@@ -15,6 +16,11 @@ export default function Index({ preview, logo, menu, homeContent }) {
       <Container>
         <Header logo={logo} menu={menu} />
       </Container>
+      <HeroHome
+        title={homeContent.heroTitle}
+        subTitle={homeContent.heroSubtitle}
+        imageUrl={homeContent.heroImage.mediaItemUrl}
+      />
     </Layout>
   );
 }

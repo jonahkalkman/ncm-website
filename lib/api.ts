@@ -245,10 +245,29 @@ export async function getHomeContent() {
     `
     query HomeContent {
       page(id: "11", idType: DATABASE_ID) {
-        home {
+       home {
           fieldGroupName
           heroSubtitle
           heroTitle
+          heroImage {
+            mediaItemUrl
+          }
+          heroButtonPrimary {
+            buttonPrimaryTitle
+            buttonPrimaryLink {
+              ... on Page {
+                link
+              }
+            }
+          }
+          heroButtonSecondary {
+            buttonSecondaryTitle
+            buttonSecondaryLink {
+              ... on Page {
+                link
+              }
+            }
+          }
         }
       } 
     }
