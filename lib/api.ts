@@ -290,6 +290,28 @@ export async function getHomeContent() {
               mediaItemUrl
             }
           }
+          contentTitle
+          contentFirstBlock {
+            contentFirstTitle
+            contentFirstText
+            contentFirstImage {
+              mediaItemUrl
+            }
+          }
+          contentSecondBlock {
+            contentSecondTitle
+            contentSecondText
+            contentSecondImage {
+              mediaItemUrl
+            }
+          }
+          contentThirdBlock {
+            contentThirdTitle
+            contentThirdText
+            contentThirdImage {
+              mediaItemUrl
+            }
+          }
         }
       } 
     }

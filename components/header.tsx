@@ -15,7 +15,10 @@ export default function Header({ logo, menu }) {
       </Link>
       <nav className="hidden md:block">
         <ul className="flex gap-10">
-          {menu && menu.map((item) => <li key={item.id}>{item.title}</li>)}
+          {menu &&
+            menu.map((item) => (
+              <li key={item.id + item.title}>{item.title}</li>
+            ))}
         </ul>
       </nav>
     </header>

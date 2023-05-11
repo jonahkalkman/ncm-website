@@ -12,23 +12,23 @@ export default function IntroHome({ title, text, image }: Props) {
       <h2 className="text-black text-6xl text-center my-10">{title}</h2>
       <div className="flex justify-between items-center gap-20">
         <p className="w-1/2 text-black text-md">{text}</p>
-        <div className="relative w-1/2">
+        <div className="relative w-[900px]">
           <Image
-            className="w-full relative z-10"
+            className="w-full h-[600px] relative z-10"
+            src={image}
+            alt={title}
+            width={800}
+            height={800}
+          />
+          <Image
+            className="w-full h-[600px] absolute top-4 right-5"
             src={image}
             alt={title}
             width={200}
             height={200}
           />
           <Image
-            className="w-full absolute top-4 right-5"
-            src={image}
-            alt={title}
-            width={200}
-            height={200}
-          />
-          <Image
-            className="w-full absolute top-3 right-3"
+            className="w-full h-[600px] absolute top-3 right-3"
             src={image}
             alt={title}
             width={200}
