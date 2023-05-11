@@ -29,7 +29,7 @@ export default function HeroHome({
   return (
     <section className="hero-home relative">
       <Image
-        className="w-full h-[calc(100vh-77px)]"
+        className="w-full h-[calc(100vh-77px)] min-h-[600px]"
         src={imageUrl}
         alt="hero image"
         width={1200}
@@ -39,7 +39,7 @@ export default function HeroHome({
         <h1 className="mb-1 text-xl md:text-7xl text-white md:mb-10">
           {title}
         </h1>
-        <h2 className="text-sm md:text-3xl text-white mb-4">{subTitle}</h2>
+        <h2 className="text-sm md:text-3xl text-white mb-10">{subTitle}</h2>
         <div className="flex gap-5 justify-center">
           <Button
             isPrimary

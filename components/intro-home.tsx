@@ -21,18 +21,18 @@ export default function IntroHome({ title, text, image }: Props) {
             height={800}
           />
           <Image
-            className="w-full h-[600px] absolute top-4 right-5"
+            className="w-full h-[600px] absolute top-5 right-5"
             src={image}
             alt={title}
-            width={200}
-            height={200}
+            width={800}
+            height={800}
           />
           <Image
             className="w-full h-[600px] absolute top-3 right-3"
             src={image}
             alt={title}
-            width={200}
-            height={200}
+            width={800}
+            height={800}
           />
         </div>
       </div>

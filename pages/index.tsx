@@ -12,7 +12,7 @@ import ContentHome from "../components/content-home";
 
 export default function Index({ preview, logo, menu, homeContent }) {
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} logo={logo}>
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
