@@ -254,19 +254,12 @@ export async function getHomeContent() {
           }
           heroButtonPrimary {
             buttonPrimaryTitle
-            buttonPrimaryLink {
-              ... on Page {
-                link
-              }
-            }
+            buttonPrimaryLink
+            
           }
           heroButtonSecondary {
             buttonSecondaryTitle
-            buttonSecondaryLink {
-              ... on Page {
-                link
-              }
-            }
+            buttonSecondaryLink
           }
           introTitle
           introText
@@ -312,10 +305,53 @@ export async function getHomeContent() {
               mediaItemUrl
             }
           }
+          vacancyBanner {
+            vacancyTitle
+            vacancyText
+            vacancyImage {
+              mediaItemUrl
+            }
+            vacancyButton {
+              vacancyButtonLink {
+                url
+              }
+              vacancyButtonTitle
+            }
+          }
         }
       } 
     }
   `
   );
   return data.page.home;
+}
+
+export async function getPageContent(page: string) {
+  const data = await fetchAPI(
+    `
+      query PageContent {
+        page(id: "bezoek-ons", idType: URI) {
+          id
+          databaseId
+          title
+          uri
+          detail {
+            firstBlock {
+              firstBlockText
+              firstBlockImage {
+                mediaItemUrl
+              }
+            }
+            secondBlock {
+              secondBlockText
+              secondBlockImage {
+                mediaItemUrl
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  return data.page;
 }

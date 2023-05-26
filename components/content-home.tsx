@@ -26,50 +26,58 @@ export default function ContentHome({
   thirdBlock,
 }: Props) {
   return (
-    <section className="content-home py-20">
-      <h2 className="text-center text-4xl mb-20">{title}</h2>
-      <div className="flex justify-between items-center gap-20 mb-40">
-        <div className="w-1/2">
-          <h3 className="text-3xl mb-2">{firstBlock.title}</h3>
+    <section className="content-home py-10 md:py-20">
+      <h2 className="font-bold text-center text-3xl mb-10 md:text-4xl md:mb-20">
+        {title}
+      </h2>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
+        <div className="w-full md:w-1/2 order-2 md:order-1">
+          <h3 className="text-center font-bold text-3xl mb-2 md:text-left">
+            {firstBlock.title}
+          </h3>
           <div
-            className="w-[80%]"
+            className="text-center w-full md:w-[80%] md:text-left"
             dangerouslySetInnerHTML={{ __html: firstBlock.text }}
           />
         </div>
         <Image
-          className="w-1/2 rounded-sm"
+          className="w-full md:w-1/2 rounded-sm order-1 md:order-2"
           src={firstBlock.image}
           alt={firstBlock.title}
           width={400}
           height={400}
         />
       </div>
-      <div className="flex justify-between items-center gap-20 mb-40">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
         <Image
-          className="w-1/2 rounded-sm"
+          className="w-full md:w-1/2 rounded-sm"
           src={secondBlock.image}
           alt={secondBlock.title}
           width={400}
           height={400}
         />
-        <div className="w-1/2">
-          <h3 className="text-3xl mb-2">{secondBlock.title}</h3>
+        <div className="w-full md:w-1/2">
+          <h3 className="text-center md:text-left font-bold text-3xl mb-2">
+            {secondBlock.title}
+          </h3>
           <div
-            className="w-[80%]"
+            className="text-center w-full md:w-[80%] md:text-left"
             dangerouslySetInnerHTML={{ __html: secondBlock.text }}
           />
         </div>
       </div>
-      <div className="flex justify-between items-center gap-20">
-        <div className="w-1/2">
-          <h3 className="text-3xl mb-2">{thirdBlock.title}</h3>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40">
+        <div className="w-full md:w-1/2 order-2 md:order-1">
+          <h3 className="text-center md:text-left font-bold text-3xl mb-2">
+            {thirdBlock.title}
+          </h3>
           <div
-            className="w-[80%]"
+            className="text-center w-full md:w-[80%] md:text-left"
             dangerouslySetInnerHTML={{ __html: thirdBlock.text }}
           />
         </div>
         <Image
-          className="w-1/2 rounded-sm"
+          className="w-full md:w-1/2 rounded-sm md:order-2"
           src={thirdBlock.image}
           alt={thirdBlock.title}
           width={400}

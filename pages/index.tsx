@@ -9,6 +9,7 @@ import HeroHome from "../components/hero-home";
 import IntroHome from "../components/intro-home";
 import Banner from "../components/banner";
 import ContentHome from "../components/content-home";
+import VacancyBanner from "../components/vacancy-banner";
 
 export default function Index({ preview, logo, menu, homeContent }) {
   return (
@@ -67,6 +68,15 @@ export default function Index({ preview, logo, menu, homeContent }) {
           }}
         />
       </Container>
+      <VacancyBanner
+        title={homeContent.vacancyBanner.vacancyTitle}
+        text={homeContent.vacancyBanner.vacancyText}
+        image={homeContent.vacancyBanner.vacancyImage.mediaItemUrl}
+        buttonLink={
+          homeContent.vacancyBanner.vacancyButton.vacancyButtonLink.url
+        }
+        buttonTitle={homeContent.vacancyBanner.vacancyButton.vacancyButtonTitle}
+      />
     </Layout>
   );
 }
