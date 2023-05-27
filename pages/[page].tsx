@@ -21,9 +21,9 @@ export default function Index({ preview, logo, menu, pageContent }) {
       <Container>
         <Header logo={logo} menu={menu} />
         <h1 className="font-primary font-bold text-center text-4xl pt-[35px]">
-          {pageContent.title}
+          {/* {pageContent.title} */}
         </h1>
-        {pageContent.firstBlockImage &&
+        {pageContent && pageContent.firstBlockImage &&
         pageContent.firstBlockText &&
         pageContent.secondBlockText &&
         pageContent.secondBlockImage ? (
