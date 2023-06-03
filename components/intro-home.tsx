@@ -16,21 +16,21 @@ export default function IntroHome({ title, text, image }: Props) {
         <p className="w-full text-center md:text-left md:w-1/2 text-black text-md">{text}</p>
         <div className="relative w-full md:w-[900px]">
           <Image
-            className="w-full h-auto md:h-[500px] relative z-10"
+            className="w-full h-auto md:h-[600px] relative z-10"
             src={image}
             alt={title}
             width={800}
             height={800}
           />
           <Image
-            className="w-full  h-auto md:h-[500px] absolute top-5 right-5"
+            className="w-full  h-auto md:h-[600px] absolute top-5 right-5"
             src={image}
             alt={title}
             width={800}
             height={800}
           />
           <Image
-            className="w-full  h-auto md:h-[500px] absolute top-3 right-3"
+            className="w-full  h-auto md:h-[600px] absolute top-3 right-3"
             src={image}
             alt={title}
             width={800}

@@ -27,7 +27,7 @@ export default function ContentHome({
 }: Props) {
   return (
     <section className="content-home py-10 md:py-20">
-      <h2 className="font-bold text-center text-3xl mb-10 md:text-4xl md:mb-20">
+      <h2 className="font-bold text-center text-3xl mb-10 md:text-6xl md:mb-20">
         {title}
       </h2>
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
