@@ -21,7 +21,7 @@ export default function Banner({
     <section className="banner bg-[#EDB300] py-[40px] md:py-[60px]">
       <Container>
         <div className="flex flex-col md:flex-row md:justify-between align-center mb-[25px]">
-          <h2 className="font-bold text-3xl text-center md:text-left md:text-6xl text-black">
+          <h2 className="font-bold text-3xl text-center md:text-left md:text-6xl text-black mb-0">
             {title}
           </h2>
           <div className="hidden md:block">

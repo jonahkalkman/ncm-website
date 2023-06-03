@@ -27,7 +27,10 @@ export default function ContentHome({
 }: Props) {
   return (
     <section className="content-home py-10 md:py-20">
-      <h2 className="font-bold text-center text-3xl mb-10 md:text-6xl md:mb-20">
+      <span className="block text-center mb-2 w-[50%] mx-auto">
+        In een nostalgisch pand aan de Lange Haven in Schiedam
+      </span>
+      <h2 className="font-bold text-center text-3xl mb-10 md:text-6xl md:mb-20 w-[50%] mx-auto leading-tight">
         {title}
       </h2>
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">

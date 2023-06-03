@@ -17,9 +17,11 @@ export default function Index({ preview, logo, menu, homeContent }) {
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
-      <Container>
-        <Header logo={logo} menu={menu} />
-      </Container>
+      <div className="block sticky top-0 z-50 bg-white">
+        <Container>
+          <Header logo={logo} menu={menu} />
+        </Container>
+      </div>
       <HeroHome
         title={homeContent.heroTitle}
         subTitle={homeContent.heroSubtitle}

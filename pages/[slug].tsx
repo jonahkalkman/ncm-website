@@ -21,7 +21,7 @@ export default function Index({ preview, logo, menu, pageContent }) {
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
-      <div className="block border-b-2">
+      <div className="block sticky top-0 z-50 bg-white border-b-2">
         <Container>
           <Header logo={logo} menu={menu} />
         </Container>
@@ -35,7 +35,7 @@ export default function Index({ preview, logo, menu, pageContent }) {
             {pageContent.detail.firstBlock.firstBlockImage &&
             pageContent.detail.firstBlock.firstBlockText ? (
               <DetailBlock
-                type="right"
+                type="left"
                 image={
                   pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl
                 }

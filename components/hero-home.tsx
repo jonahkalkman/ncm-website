@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Button from "./button";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import AnimatedText from "./animated-text";
 
 interface Props {
@@ -35,6 +40,7 @@ export default function HeroHome({
       },
     },
   };
+  const { scrollYProgress } = useScroll();
 
   const item = {
     hidden: {
@@ -49,21 +55,32 @@ export default function HeroHome({
     },
   };
 
+  const scale = useTransform(
+    scrollYProgress,
+    // Map x from these values:
+    [0, 1],
+    // Into these values:
+    [1, 1.8]
+  );
+
   return (
-    <section className="hero-home relative">
-      <Image
-        className="w-full h-[400px] md:min-h-[600px] md:h-[calc(100vh-77px)] object-cover"
-        src={imageUrl}
-        alt="hero image"
-        width={1200}
-        height={1200}
-      />
+    <section className="hero-home relative overflow-hidden">
+      <motion.div style={{ scale: scale }} animate={{}}>
+        <Image
+          className="w-full h-[400px] md:min-h-[600px] md:h-[calc(100vh-77px)] object-cover blur-[3px] scale-105"
+          src={imageUrl}
+          alt="hero image"
+          width={1200}
+          height={1200}
+        />
+      </motion.div>
+
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-full mx-auto px-5">
         <motion.div variants={container} initial="hidden" animate="visible">
-          <h1 className="font-primary font-bold mb-1 text-3xl leading-tight md:text-7xl text-white md:mb-2">
+          <h1 className="font-primary font-bold mb-1 text-3xl leading-tight md:text-7xl text-white md:mb-0">
             <AnimatedText text="Nationaal Coöperatie Museum" />
           </h1>
-          <h2 className="font-primary text-md md:text-3xl text-white mb-10 font-normal">
+          <h2 className="font-primary text-md md:text-2xl text-white mb-10 font-normal">
             <AnimatedText text={subTitle} />
           </h2>
           <div className="flex gap-5 justify-center">
@@ -82,6 +99,11 @@ export default function HeroHome({
               />
             </motion.div>
           </div>
+          <motion.div variants={item}>
+            <p className="mt-4 text-white">
+              Gratis toegang & persoonlijke rondleiding!
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

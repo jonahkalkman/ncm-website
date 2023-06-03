@@ -1,8 +1,8 @@
-import { DM_Sans } from "next/font/google";
+import { PT_Sans } from "next/font/google";
 import Footer from "./footer";
 import Meta from "./meta";
 
-const dmSans = DM_Sans({
+const dmSans = PT_Sans({
   weight: ["400", "700"],
   subsets: ["latin", "latin-ext"],
 });
