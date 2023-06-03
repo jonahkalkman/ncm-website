@@ -102,3 +102,18 @@
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
 }
+
+p {
+  margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 25px;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}

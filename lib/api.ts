@@ -44,10 +44,10 @@ export async function getPreviewPost(id, idType = "DATABASE_ID") {
   return data.post;
 }
 
-export async function getAllPostsWithSlug() {
+export async function getAllPagesWithSlug() {
   const data = await fetchAPI(`
     {
-      posts(first: 10000) {
+      pages(first: 10000) {
         edges {
           node {
             slug
@@ -56,7 +56,7 @@ export async function getAllPostsWithSlug() {
       }
     }
   `);
-  return data?.posts;
+  return data?.pages;
 }
 
 export async function getAllPostsForHome(preview) {
@@ -330,11 +330,8 @@ export async function getPageContent(page: string) {
   const data = await fetchAPI(
     `
       query PageContent {
-        page(id: "bezoek-ons", idType: URI) {
-          id
-          databaseId
+        page(id: "${page}", idType: URI) {
           title
-          uri
           detail {
             firstBlock {
               firstBlockText

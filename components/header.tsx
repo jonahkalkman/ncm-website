@@ -17,9 +17,11 @@ export default function Header({ logo, menu }) {
         <ul className="flex gap-10">
           {menu &&
             menu.map((item) => (
-              <li className="hover:opacity-50 hover:cursor-pointer" key={item.id + item.title}>
-                {item.title}
-              </li>
+              <a href={item.url} key={item.id + item.title}>
+                <li className="hover:opacity-50 hover:cursor-pointer">
+                  {item.title}
+                </li>
+              </a>
             ))}
         </ul>
       </nav>
