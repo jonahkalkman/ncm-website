@@ -29,12 +29,16 @@ export default function VacancyBanner({
             height={1200}
           />
           <div className="w-full text-center md:w-1/2 md:text-left">
-            <h2 className="font-bold text-center md:text-left mb-[13px] text-3xl text-black">{title}</h2>
+            <h2 className="text-2xl font-bold text-center md:text-left md:mb-6 md:text-6xl text-black leading-tight">
+              {title}
+            </h2>
             <div
-              className="block pb-[20px] md:pb-[40px] w-[80%] m-auto text-center md:m-0 md:text-left"
+              className="block w-[80%] m-auto text-center md:m-0 md:text-left mb-0"
               dangerouslySetInnerHTML={{ __html: text }}
             />
-            <Button link={buttonLink} title={buttonTitle} isPrimary={false} />
+            <div className="mt-6">
+              <Button link={buttonLink} title={buttonTitle} isPrimary={false} />
+            </div>
           </div>
         </div>
       </Container>

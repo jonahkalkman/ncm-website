@@ -332,6 +332,7 @@ export async function getPageContent(page: string) {
       query PageContent {
         page(id: "${page}", idType: URI) {
           title
+          slug
           detail {
             firstBlock {
               firstBlockText
@@ -340,8 +341,23 @@ export async function getPageContent(page: string) {
               }
             }
             secondBlock {
+              secondBlockTitle
               secondBlockText
               secondBlockImage {
+                mediaItemUrl
+              }
+            }
+          }
+          collection {
+            collectionTitle
+            collectionImages {
+              collectionFirstImage {
+                mediaItemUrl
+              }
+              collectionSecondImage {
+                mediaItemUrl
+              }
+              collectionThirdImage {
                 mediaItemUrl
               }
             }

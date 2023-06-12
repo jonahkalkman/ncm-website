@@ -12,6 +12,7 @@ import Header from "../components/header";
 import { WEBSITE_TITLE } from "../lib/constants";
 import DetailBlock from "../components/detail-block";
 import { useRouter } from "next/router";
+import CollectionBlock from "../components/collection-block";
 
 export default function Index({ preview, logo, menu, pageContent }) {
   const router = useRouter();
@@ -29,7 +30,7 @@ export default function Index({ preview, logo, menu, pageContent }) {
       <Container>
         {pageContent ? (
           <div className="pb-[60px]">
-            <h1 className="font-primary font-bold text-left text-5xl pt-[35px] mb-[60px]">
+            <h1 className="leading-tight font-primary font-bold text-center text-[30px] mb-8 md:text-6xl pt-[35px] md:mb-[60px]">
               {pageContent.title}
             </h1>
             {pageContent.detail.firstBlock.firstBlockImage &&
@@ -45,21 +46,41 @@ export default function Index({ preview, logo, menu, pageContent }) {
           </div>
         ) : null}
       </Container>
-      <div className="bg-[#EDB300] py-[60px]">
-        <Container>
-          {pageContent &&
-          pageContent.detail.secondBlock.secondBlockText &&
-          pageContent.detail.secondBlock.secondBlockImage ? (
-            <DetailBlock
-              type="left"
-              image={
-                pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
-              }
-              text={pageContent.detail.secondBlock.secondBlockText}
-            />
-          ) : null}
-        </Container>
-      </div>
+      {pageContent && pageContent.slug !== "collectie" ? (
+        <div className="bg-[#EDB300] py-[60px]">
+          <Container>
+            {pageContent &&
+            pageContent.detail.secondBlock.secondBlockText &&
+            pageContent.detail.secondBlock.secondBlockImage ? (
+              <>
+                <h2 className="text-center text-3xl mb-8 md:text-6xl md:mb-10">
+                  {pageContent.detail.secondBlock.secondBlockTitle}
+                </h2>
+                <DetailBlock
+                  type="right"
+                  image={
+                    pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
+                  }
+                  text={pageContent.detail.secondBlock.secondBlockText}
+                />
+              </>
+            ) : null}
+          </Container>
+        </div>
+      ) : (
+        // TODO add check if images exist
+        <CollectionBlock
+          title={pageContent.collection.collectionTitle}
+          images={[
+            pageContent.collection.collectionImages.collectionFirstImage
+              .mediaItemUrl,
+            pageContent.collection.collectionImages.collectionSecondImage
+              .mediaItemUrl,
+            pageContent.collection.collectionImages.collectionThirdImage
+              .mediaItemUrl,
+          ]}
+        />
+      )}
     </Layout>
   );
 }

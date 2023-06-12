@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 // Word wrapper
 const Wrapper = (props) => {
   // We'll do this to prevent wrapping of words using CSS
-  return <span className="word-wrapper">{props.children}</span>;
+  return <span className="word-wrapper inline-block">{props.children}</span>;
 };
 
 // AnimatedCharacters

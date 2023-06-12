@@ -77,13 +77,13 @@ export default function HeroHome({
 
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-full mx-auto px-5">
         <motion.div variants={container} initial="hidden" animate="visible">
-          <h1 className="font-primary font-bold mb-1 text-3xl leading-tight md:text-7xl text-white md:mb-0">
+          <h1 className="font-primary font-bold mb-1 text-[30px] leading-tight md:text-7xl text-white md:mb-0">
             <AnimatedText text="Nationaal Coöperatie Museum" />
           </h1>
-          <h2 className="font-primary text-md md:text-2xl text-white mb-10 font-normal">
+          <h2 className="font-primary text-md leading-tight text-xl md:text-2xl text-white mb-10 font-normal">
             <AnimatedText text={subTitle} />
           </h2>
-          <div className="flex gap-5 justify-center">
+          <div className="flex gap-5 flex-col justify-center md:flex-row">
             <motion.div variants={item}>
               <Button
                 isPrimary
