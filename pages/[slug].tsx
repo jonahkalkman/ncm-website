@@ -75,18 +75,22 @@ export default function Index({
           </Container>
         </div>
       ) : (
-        // TODO add check if images exist
-        <CollectionBlock
-          title={collectionContent.collection.collectionTitle}
-          images={[
-            collectionContent.collection.collectionImages.collectionFirstImage
-              .mediaItemUrl,
-            collectionContent.collection.collectionImages.collectionSecondImage
-              .mediaItemUrl,
-            collectionContent.collection.collectionImages.collectionThirdImage
-              .mediaItemUrl,
-          ]}
-        />
+        <>
+          {collectionContent && collectionContent.collection ? (
+            // TODO add check if images exist
+            <CollectionBlock
+              title={collectionContent.collection.collectionTitle}
+              images={[
+                collectionContent.collection.collectionImages
+                  .collectionFirstImage.mediaItemUrl,
+                collectionContent.collection.collectionImages
+                  .collectionSecondImage.mediaItemUrl,
+                collectionContent.collection.collectionImages
+                  .collectionThirdImage.mediaItemUrl,
+              ]}
+            />
+          ) : null}
+        </>
       )}
     </Layout>
   );
