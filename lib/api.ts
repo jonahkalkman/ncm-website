@@ -348,6 +348,18 @@ export async function getPageContent(page: string) {
               }
             }
           }
+        }
+      }
+    `
+  );
+  return data.page;
+}
+
+export async function getCollectionContent(page: string) {
+  const data = await fetchAPI(
+    `
+      query CollectionContent {
+        page(id: "${page}", idType: URI) {
           collection {
             collectionTitle
             collectionImages {

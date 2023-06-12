@@ -4,6 +4,7 @@ import Container from "../components/container";
 import Layout from "../components/layout";
 import {
   getAllPagesWithSlug,
+  getCollectionContent,
   getLogo,
   getPageContent,
   getPrimaryMenu,
@@ -14,7 +15,13 @@ import DetailBlock from "../components/detail-block";
 import { useRouter } from "next/router";
 import CollectionBlock from "../components/collection-block";
 
-export default function Index({ preview, logo, menu, pageContent }) {
+export default function Index({
+  preview,
+  logo,
+  menu,
+  pageContent,
+  collectionContent,
+}) {
   const router = useRouter();
 
   return (
@@ -70,13 +77,13 @@ export default function Index({ preview, logo, menu, pageContent }) {
       ) : (
         // TODO add check if images exist
         <CollectionBlock
-          title={pageContent.collection.collectionTitle}
+          title={collectionContent.collection.collectionTitle}
           images={[
-            pageContent.collection.collectionImages.collectionFirstImage
+            collectionContent.collection.collectionImages.collectionFirstImage
               .mediaItemUrl,
-            pageContent.collection.collectionImages.collectionSecondImage
+            collectionContent.collection.collectionImages.collectionSecondImage
               .mediaItemUrl,
-            pageContent.collection.collectionImages.collectionThirdImage
+            collectionContent.collection.collectionImages.collectionThirdImage
               .mediaItemUrl,
           ]}
         />
@@ -93,8 +100,13 @@ export const getStaticProps: GetStaticProps = async ({
   const menu = await getPrimaryMenu();
   const pageContent = await getPageContent(params?.slug as string);
 
+  const collectionContent =
+    params?.slug === "collectie"
+      ? await getCollectionContent("collectie")
+      : null;
+
   return {
-    props: { preview, logo, menu, pageContent },
+    props: { preview, logo, menu, pageContent, collectionContent },
     revalidate: 10,
   };
 };

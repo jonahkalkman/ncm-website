@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Container from "./container";
 
 interface Props {
   title: string;
@@ -7,17 +8,21 @@ interface Props {
 
 export default function CollectionBlock({ title, images }: Props) {
   return (
-    <section className="collection-block flex justify-center items-center gap-20">
-      <h2 className="font-3xl mb-4 md:font-4xl">{title}</h2>
-      {images.map((image) => (
-        <Image
-          className="w-full h-[200px] md:w-1/2 md:h-[600px] object-cover"
-          src={image}
-          alt=""
-          width={500}
-          height={500}
-        />
-      ))}
+    <section className="collection-block bg-[#EDB300] py-20">
+      <Container>
+        <h2 className="font-3xl mb-8 md:font-4xl text-center">{title}</h2>
+        <div className="flex justify-between items-center gap-10">
+          {images.map((image) => (
+            <Image
+              className="object-cover"
+              src={image}
+              alt=""
+              width={500}
+              height={500}
+            />
+          ))}
+        </div>
+      </Container>
     </section>
   );
 }
