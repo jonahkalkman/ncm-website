@@ -32,7 +32,7 @@ export default function Index({ preview, logo, menu, homeContent }) {
         buttonSecondary={homeContent.heroButtonSecondary}
       />
       <div>
-        <div className="sticky top-0">
+        <div className="sticky top-[-70px]">
           <Container>
             <IntroHome
               title={homeContent.introTitle}
