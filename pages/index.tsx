@@ -14,7 +14,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function Index({ preview, logo, menu, homeContent }) {
-  const [isBannerVisible, setIsBannerVisible] = useState(false);
   return (
     <Layout preview={preview} logo={logo}>
       <Head>
@@ -32,29 +31,33 @@ export default function Index({ preview, logo, menu, homeContent }) {
         buttonPrimary={homeContent.heroButtonPrimary}
         buttonSecondary={homeContent.heroButtonSecondary}
       />
-        <Container>
-          <IntroHome
-            title={homeContent.introTitle}
-            text={homeContent.introText}
-            image={homeContent.introImage.mediaItemUrl}
-          />
-        </Container>
-      {homeContent.bannerTitle &&
-      homeContent.bannerButton.bannerButtonTitle &&
-      homeContent.bannerButton.bannerButtonLink.link &&
-      homeContent.bannerImages.bannerFirstImage.mediaItemUrl &&
-      homeContent.bannerImages.bannerSecondImage.mediaItemUrl ? (
+      <div>
+        <div className="sticky top-0">
+          <Container>
+            <IntroHome
+              title={homeContent.introTitle}
+              text={homeContent.introText}
+              image={homeContent.introImage.mediaItemUrl}
+            />
+          </Container>
+        </div>
+        {homeContent.bannerTitle &&
+        homeContent.bannerButton.bannerButtonTitle &&
+        homeContent.bannerButton.bannerButtonLink.link &&
+        homeContent.bannerImages.bannerFirstImage.mediaItemUrl &&
+        homeContent.bannerImages.bannerSecondImage.mediaItemUrl ? (
 
-          <Banner
-            title={homeContent.bannerTitle}
-            buttonTitle={homeContent.bannerButton.bannerButtonTitle}
-            buttonLink={homeContent.bannerButton.bannerButtonLink.link}
-            firstImage={homeContent.bannerImages.bannerFirstImage.mediaItemUrl}
-            secondImage={
-              homeContent.bannerImages.bannerSecondImage.mediaItemUrl
-            }
-          />
-      ) : null}
+            <Banner
+              title={homeContent.bannerTitle}
+              buttonTitle={homeContent.bannerButton.bannerButtonTitle}
+              buttonLink={homeContent.bannerButton.bannerButtonLink.link}
+              firstImage={homeContent.bannerImages.bannerFirstImage.mediaItemUrl}
+              secondImage={
+                homeContent.bannerImages.bannerSecondImage.mediaItemUrl
+              }
+            />
+        ) : null}
+      </div>
       <Container>
         <ContentHome
           title={homeContent.contentTitle}

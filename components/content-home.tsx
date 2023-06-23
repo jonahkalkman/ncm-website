@@ -74,7 +74,7 @@ export default function ContentHome({
           </svg>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
+      <div className="relative flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
         <div className="w-1/2 z-10">
           <Image
             className="w-full md:h-[500px] object-cover"
@@ -93,6 +93,23 @@ export default function ContentHome({
             dangerouslySetInnerHTML={{ __html: secondBlock.text }}
           />
         </div>
+        <div className="absolute bottom-[-200px] left-[40%]">
+          <svg
+            width="404"
+            height="354"
+            viewBox="0 0 404 354"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M403.005 351.272C81.0046 310.272 244 57 1.00012 2.49992"
+              stroke="#EDB300"
+              stroke-opacity="0.5"
+              stroke-width="5"
+              stroke-dasharray="10 10"
+            />
+          </svg>
+        </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-0">
         <div className="w-full md:w-1/2 order-2 md:order-1">
@@ -109,7 +126,7 @@ export default function ContentHome({
         </div>
         <div className="w-1/2 md:order-2">
           <Image
-            className="w-full md:h-[500px] object-cover"
+            className="w-full md:h-[500px] object-cover z-10 relative"
             src={thirdBlock.image}
             alt={thirdBlock.title}
             width={1200}
