@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Button from "./button";
+import { use, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 interface Props {
   title: string;
@@ -9,7 +11,7 @@ interface Props {
 
 export default function IntroHome({ title, text, image }: Props) {
   return (
-    <section className="intro-home my-10 md:my-40">
+    <section className="py-40">
       <div className="flex justify-between items-center gap-5 md:gap-20 flex-col md:flex-row">
         <div className="w-full md:w-1/2">
           <span className="block mb-0 md:mb-2 text-center md:text-left">

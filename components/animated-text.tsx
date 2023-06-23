@@ -45,24 +45,21 @@ const AnimatedCharacters = (props) => {
         return (
           // Wrap each word in the Wrapper component
           <Wrapper key={index}>
-            {words[index].flat().map((element, index) => {
-              return (
-                <span
-                  style={{
-                    overflow: "hidden",
-                    display: "inline-block",
-                  }}
-                  key={index}
-                >
-                  <motion.span
-                    style={{ display: "inline-block" }}
-                    variants={item}
-                  >
-                    {element}
-                  </motion.span>
-                </span>
-              );
-            })}
+            {/* {words[index].flat().map((element, index) => { */}
+            {/* return ( */}
+            <span
+              style={{
+                overflow: "hidden",
+                display: "inline-block",
+              }}
+              key={index}
+            >
+              <motion.span style={{ display: "inline-block" }} variants={item}>
+                {word}
+              </motion.span>
+            </span>
+            {/* ); */}
+            {/* })} */}
           </Wrapper>
         );
       })}

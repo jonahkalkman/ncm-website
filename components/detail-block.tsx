@@ -13,13 +13,17 @@ export default function DetailBlock({ image, text, type }: Props) {
         className={
           type === "left"
             ? "w-full text-left md:text-left md:w-1/2 order-2"
-            : "w-full text-left md:text-left md:w-1/2 order-2 md:order-1"
+            : "w-full text-left md:text-left md:w-1/2 order-1"
         }
       >
         <div dangerouslySetInnerHTML={{ __html: text }} />
       </div>
       <Image
-        className="w-full h-[200px] md:w-1/2 md:h-[600px] object-cover"
+        className={
+          type === "left"
+            ? "w-full h-[200px] md:w-1/2 md:h-[600px] object-cover"
+            : "w-full h-[200px] md:w-1/2 md:h-[600px] object-cover order-2"
+        }
         src={image}
         alt=""
         width={500}

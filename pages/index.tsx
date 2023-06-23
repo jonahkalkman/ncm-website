@@ -10,8 +10,11 @@ import IntroHome from "../components/intro-home";
 import Banner from "../components/banner";
 import ContentHome from "../components/content-home";
 import VacancyBanner from "../components/vacancy-banner";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Index({ preview, logo, menu, homeContent }) {
+  const [isBannerVisible, setIsBannerVisible] = useState(false);
   return (
     <Layout preview={preview} logo={logo}>
       <Head>
@@ -29,25 +32,28 @@ export default function Index({ preview, logo, menu, homeContent }) {
         buttonPrimary={homeContent.heroButtonPrimary}
         buttonSecondary={homeContent.heroButtonSecondary}
       />
-      <Container>
-        <IntroHome
-          title={homeContent.introTitle}
-          text={homeContent.introText}
-          image={homeContent.introImage.mediaItemUrl}
-        />
-      </Container>
+        <Container>
+          <IntroHome
+            title={homeContent.introTitle}
+            text={homeContent.introText}
+            image={homeContent.introImage.mediaItemUrl}
+          />
+        </Container>
       {homeContent.bannerTitle &&
       homeContent.bannerButton.bannerButtonTitle &&
       homeContent.bannerButton.bannerButtonLink.link &&
       homeContent.bannerImages.bannerFirstImage.mediaItemUrl &&
       homeContent.bannerImages.bannerSecondImage.mediaItemUrl ? (
-        <Banner
-          title={homeContent.bannerTitle}
-          buttonTitle={homeContent.bannerButton.bannerButtonTitle}
-          buttonLink={homeContent.bannerButton.bannerButtonLink.link}
-          firstImage={homeContent.bannerImages.bannerFirstImage.mediaItemUrl}
-          secondImage={homeContent.bannerImages.bannerSecondImage.mediaItemUrl}
-        />
+
+          <Banner
+            title={homeContent.bannerTitle}
+            buttonTitle={homeContent.bannerButton.bannerButtonTitle}
+            buttonLink={homeContent.bannerButton.bannerButtonLink.link}
+            firstImage={homeContent.bannerImages.bannerFirstImage.mediaItemUrl}
+            secondImage={
+              homeContent.bannerImages.bannerSecondImage.mediaItemUrl
+            }
+          />
       ) : null}
       <Container>
         <ContentHome
