@@ -17,11 +17,11 @@ export default function Header({ logo, menu }) {
         <ul className="flex gap-10">
           {menu &&
             menu.map((item) => (
-              <a href={item.url} key={item.id + item.title}>
+              <Link href={item.url} key={item.id + item.title}>
                 <li className="transition-all ease-in-out duration-300 hover:text-[#EDB300] hover:cursor-pointer">
                   {item.title}
                 </li>
-              </a>
+              </Link>
             ))}
         </ul>
       </nav>

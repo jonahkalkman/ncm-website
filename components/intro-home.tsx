@@ -18,7 +18,7 @@ export default function IntroHome({ title, text, image }: Props) {
   const imageYTransform = useTransform(
     scrollYProgress,
     [0, 1],
-    ["-15%", "15%"],
+    ["10%", "-10%"],
     { ease: circInOut }
   );
 

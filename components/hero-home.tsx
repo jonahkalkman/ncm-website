@@ -67,7 +67,7 @@ export default function HeroHome({
     <section className="hero-home relative overflow-hidden">
       <motion.div style={{ scale: scale }} animate={{}}>
         <Image
-          className="w-full h-[400px] md:min-h-[600px] md:h-[calc(100vh-77px)] object-cover blur-[3px] scale-105"
+          className="w-full h-[400px] md:min-h-[600px] md:h-[calc(100svh-77px)] object-cover blur-[3px] scale-105"
           src={imageUrl}
           alt="hero image"
           width={1200}
