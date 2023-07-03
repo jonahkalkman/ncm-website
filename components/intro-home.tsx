@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "./button";
 import { use, useEffect, useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform, circInOut } from "framer-motion";
+import { motion, useInView, useScroll } from "framer-motion";
 import { FadeInWhenVisible } from "./fade-in";
 
 interface Props {
@@ -14,13 +14,6 @@ export default function IntroHome({ title, text, image }: Props) {
   const { scrollYProgress } = useScroll();
   const ref = useRef(null);
   const isInView = useInView(ref);
-
-  const imageYTransform = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["10%", "-10%"],
-    { ease: circInOut }
-  );
 
   return (
     <section className="py-40">
@@ -52,19 +45,13 @@ export default function IntroHome({ title, text, image }: Props) {
         </div>
         <div className="hidden relative w-full md:block md:w-1/2">
           <FadeInWhenVisible>
-            <motion.div
-              ref={ref}
-              transition={{ type: "spring" }}
-              style={{ translateY: isInView ? imageYTransform : 0 }}
-            >
-              <Image
-                className="w-full h-auto md:h-[600px] relative z-10 object-cover object-right"
-                src={image}
-                alt={title}
-                width={800}
-                height={800}
-              />
-            </motion.div>
+            <Image
+              className="w-full h-auto md:h-[600px] relative z-10 object-cover object-right"
+              src={image}
+              alt={title}
+              width={800}
+              height={800}
+            />
           </FadeInWhenVisible>
         </div>
       </div>

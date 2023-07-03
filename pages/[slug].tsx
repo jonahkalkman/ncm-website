@@ -14,6 +14,7 @@ import { WEBSITE_TITLE } from "../lib/constants";
 import DetailBlock from "../components/detail-block";
 import { useRouter } from "next/router";
 import CollectionBlock from "../components/collection-block";
+import Form from "../components/form";
 
 export default function Index({
   preview,
@@ -53,7 +54,9 @@ export default function Index({
           </div>
         ) : null}
       </Container>
-      {pageContent && pageContent.slug !== "collectie" ? (
+      {pageContent &&
+      pageContent.slug !== "collectie" &&
+      pageContent.slug !== "word-vriend" ? (
         <div className="bg-[#EDB300] py-[60px]">
           <Container>
             {pageContent &&
@@ -92,6 +95,11 @@ export default function Index({
           ) : null}
         </>
       )}
+      {pageContent && pageContent.slug === "word-vriend" ? (
+        <Form
+          image={pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl}
+        />
+      ) : null}
     </Layout>
   );
 }
