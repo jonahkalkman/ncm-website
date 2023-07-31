@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Container from "./container";
 import { useState } from "react";
-import { log } from "console";
 
 interface Props {
   image: string;
+  secondImage: string;
 }
 
-export default function Footer({ image }: Props) {
+export default function FriendForm({ image, secondImage }: Props) {
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   const handleSubmit = async (event) => {
@@ -16,18 +16,18 @@ export default function Footer({ image }: Props) {
 
     // Get data from the form.
     const data = {
-      first: event.target.first.value,
-      last: event.target.last.value,
+      name: event.target.name.value,
       email: event.target.email.value,
-      phone: event.target.phone.value,
-      message: event.target.message.value,
+      address: event.target.address.value,
+      zipcode: event.target.zipcode.value,
+      city: event.target.city.value,
     };
 
     // Send the data to the server in JSON format.
     const JSONdata = JSON.stringify(data);
 
     // API endpoint where we send form data.
-    const endpoint = "/api/form";
+    const endpoint = "/api/form-friend";
 
     // Form the request for sending data to the server.
     const options = {
@@ -61,10 +61,11 @@ export default function Footer({ image }: Props) {
         <div className="flex justify-between items-center gap-20">
           <div>
             <div className="mb-10">
-              <h2 className="mb-2">Meld je aan als vrijwilliger</h2>
+              <h2 className="mb-2">Word lid van de Vereniging van Vrienden</h2>
               <p className="">
-                Via het onderstaande formulier kan je je aanmelden als
-                vrijwilligers bij het Cooperatie Museum.
+                Als lid van de Vereniging van Vrienden ondersteun ik het
+                Nationaal Coöperatie Museum met een jaarlijkse bijdrage van €15.
+                Meld je aan via het onderstaande formulier:
               </p>
             </div>
             <form
@@ -72,34 +73,19 @@ export default function Footer({ image }: Props) {
               className="flex justify-center flex-col align-middle"
             >
               <div className="flex w-full align-middle justify-start gap-10">
-                <div className="w-full">
-                  <label htmlFor="first" className={labelStyling}>
-                    Voornaam
+                <div className="w-1/2">
+                  <label htmlFor="name" className={labelStyling}>
+                    Naam
                   </label>
                   <input
                     className={inputStyling}
                     type="text"
-                    id="first"
-                    name="first"
+                    id="name"
+                    name="name"
                     required
-                    placeholder="Voornaam"
+                    placeholder="Naam"
                   />
                 </div>
-                <div className="w-full">
-                  <label htmlFor="last" className={labelStyling}>
-                    Achternaam
-                  </label>
-                  <input
-                    className={inputStyling}
-                    type="text"
-                    id="last"
-                    name="last"
-                    required
-                    placeholder="Achternaam"
-                  />
-                </div>
-              </div>
-              <div className="flex w-full align-middle justify-start gap-10">
                 <div className="w-1/2">
                   <label htmlFor="email" className={labelStyling}>
                     E-mailadres
@@ -113,31 +99,49 @@ export default function Footer({ image }: Props) {
                     placeholder="E-mailadres"
                   />
                 </div>
+              </div>
+              <div className="flex w-full align-middle justify-start gap-10">
                 <div className="w-1/2">
-                  <label htmlFor="phone" className={labelStyling}>
-                    Telefoonnummer
+                  <label htmlFor="address" className={labelStyling}>
+                    Adres
+                  </label>
+                  <input
+                    className={inputStyling}
+                    type="text"
+                    id="address"
+                    name="address"
+                    required
+                    placeholder="Adres"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <label htmlFor="zipcode" className={labelStyling}>
+                    Postcode
                   </label>
                   <input
                     className={inputStyling}
                     type="tel"
-                    id="phone"
-                    name="phone"
+                    id="zipcode"
+                    name="zipcode"
                     required
-                    placeholder="Telefoonnummer"
+                    placeholder="Postcode"
                   />
                 </div>
               </div>
-              <div className="w-full">
-                <label htmlFor="message" className={labelStyling}>
-                  Bericht
-                </label>
-                <textarea
-                  className="w-full h-[150px] py-3 px-5 rounded-sm mb-10 min-h-[150px]"
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Laat een bericht achter..."
-                />
+              <div className="flex w-full align-middle justify-start gap-10">
+                <div className="w-1/2 pr-5">
+                  <label htmlFor="city" className={labelStyling}>
+                    Stad
+                  </label>
+                  <input
+                    className={inputStyling}
+                    type="text"
+                    id="city"
+                    name="city"
+                    required
+                    placeholder="Stad"
+                  />
+                </div>
               </div>
               <button
                 disabled={submitted}
@@ -157,8 +161,8 @@ export default function Footer({ image }: Props) {
           </div>
           <Image
             className="w-full h-[200px] md:w-1/2 md:h-[600px] object-cover"
-            src={image}
-            alt="word vrijwilliger"
+            src={secondImage}
+            alt="Word Vriend van het Nationaal Coöperatie Museum"
             width={1200}
             height={1200}
           />

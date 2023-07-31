@@ -14,7 +14,7 @@ import Header from "../components/header";
 import { WEBSITE_TITLE } from "../lib/constants";
 import DetailBlock from "../components/detail-block";
 import CollectionBlock from "../components/collection-block";
-import Form from "../components/form";
+import FriendForm from "../components/friend-form";
 import FormContact from "../components/form-contact";
 import PostsOverview from "../components/posts-overview";
 
@@ -100,8 +100,11 @@ export default function Index({
         </>
       )}
       {pageContent && pageContent.slug === "word-vriend" ? (
-        <Form
+        <FriendForm
           image={pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl}
+          secondImage={
+            pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
+          }
         />
       ) : null}
       {pageContent && pageContent.slug === "contact" ? <FormContact /> : null}
