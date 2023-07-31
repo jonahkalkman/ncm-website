@@ -10,8 +10,6 @@ import IntroHome from "../components/intro-home";
 import Banner from "../components/banner";
 import ContentHome from "../components/content-home";
 import VacancyBanner from "../components/vacancy-banner";
-import { motion } from "framer-motion";
-import { useState } from "react";
 
 export default function Index({ preview, logo, menu, homeContent }) {
   return (

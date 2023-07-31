@@ -7,7 +7,7 @@ interface Props {
 
 export default function Footer({ logo }: Props) {
   return (
-    <footer className="py-20">
+    <footer className="pt-20 pb-5">
       <Container>
         <div className="flex justify-between mb-20 flex-col md:flex-row">
           <div className="flex items-center gap-3 mb-10 justify-center md:mb-0 md:justify-start">

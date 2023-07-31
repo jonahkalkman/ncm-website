@@ -7,14 +7,16 @@ import {
   getCollectionContent,
   getLogo,
   getPageContent,
+  getPosts,
   getPrimaryMenu,
 } from "../lib/api";
 import Header from "../components/header";
 import { WEBSITE_TITLE } from "../lib/constants";
 import DetailBlock from "../components/detail-block";
-import { useRouter } from "next/router";
 import CollectionBlock from "../components/collection-block";
 import Form from "../components/form";
+import FormContact from "../components/form-contact";
+import PostsOverview from "../components/posts-overview";
 
 export default function Index({
   preview,
@@ -22,9 +24,8 @@ export default function Index({
   menu,
   pageContent,
   collectionContent,
+  posts,
 }) {
-  const router = useRouter();
-
   return (
     <Layout preview={preview} logo={logo}>
       <Head>
@@ -41,7 +42,8 @@ export default function Index({
             <h1 className="leading-tight font-primary font-bold text-center text-[30px] mb-8 md:text-6xl pt-[35px] md:mb-[60px]">
               {pageContent.title}
             </h1>
-            {pageContent.detail.firstBlock.firstBlockImage &&
+            {pageContent.detail &&
+            pageContent.detail.firstBlock.firstBlockImage &&
             pageContent.detail.firstBlock.firstBlockText ? (
               <DetailBlock
                 type="left"
@@ -56,10 +58,12 @@ export default function Index({
       </Container>
       {pageContent &&
       pageContent.slug !== "collectie" &&
-      pageContent.slug !== "word-vriend" ? (
+      pageContent.slug !== "word-vriend" &&
+      pageContent.slug !== "contact" ? (
         <div className="bg-[#EDB300] py-[60px]">
           <Container>
             {pageContent &&
+            pageContent.detail &&
             pageContent.detail.secondBlock.secondBlockText &&
             pageContent.detail.secondBlock.secondBlockImage ? (
               <>
@@ -100,6 +104,10 @@ export default function Index({
           image={pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl}
         />
       ) : null}
+      {pageContent && pageContent.slug === "contact" ? <FormContact /> : null}
+      {posts && posts.edges.length > 0 ? (
+        <PostsOverview posts={posts.edges} />
+      ) : null}
     </Layout>
   );
 }
@@ -110,15 +118,21 @@ export const getStaticProps: GetStaticProps = async ({
 }) => {
   const logo = await getLogo();
   const menu = await getPrimaryMenu();
-  const pageContent = await getPageContent(params?.slug as string);
+  const pageContent =
+    params?.slug !== "nieuws"
+      ? await getPageContent(params?.slug as string)
+      : null;
+  const posts = params?.slug === "nieuws" ? await getPosts() : null;
 
   const collectionContent =
     params?.slug === "collectie"
       ? await getCollectionContent("collectie")
       : null;
 
+  console.log(pageContent);
+
   return {
-    props: { preview, logo, menu, pageContent, collectionContent },
+    props: { preview, logo, menu, pageContent, collectionContent, posts },
     revalidate: 10,
   };
 };

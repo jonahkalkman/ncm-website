@@ -380,3 +380,50 @@ export async function getCollectionContent(page: string) {
   );
   return data.page;
 }
+
+export async function getPosts() {
+  const data = await fetchAPI(
+    `
+  query AllPosts {
+      posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+        edges {
+          node {
+            slug
+            title
+            excerpt
+            slug
+            date
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            categories {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }`
+  );
+  return data.posts;
+}
+
+export async function getAllPostsWithSlug() {
+  const data = await fetchAPI(`
+    {
+      posts(first: 10000) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+  return data?.posts;
+}

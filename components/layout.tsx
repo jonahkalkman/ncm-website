@@ -18,7 +18,7 @@ export default function Layout({ preview, children, logo }) {
         `}
       </style>
       <Meta />
-      <div className="min-h-screen font-primary">
+      <div className="font-primary">
         <main>{children}</main>
       </div>
       <Footer logo={logo} />
