@@ -13,6 +13,7 @@ module.exports = {
         serif: ["var(--dm-sans-font)", ...fontFamily.serif],
       },
       colors: {
+        "primary": "#EDB300",
         "accent-1": "#FAFAFA",
         "accent-2": "#EAEAEA",
         "accent-7": "#333",

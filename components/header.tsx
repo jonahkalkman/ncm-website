@@ -14,10 +14,14 @@ export default function Header({ logo, menu }) {
         />
       </Link>
       <nav className="hidden md:block">
-        <ul className="flex gap-10">
+        <ul className="flex gap-10 list-none">
           {menu &&
             menu.map((item) => (
-              <Link href={item.url} key={item.id + item.title}>
+              <Link
+                href={item.url}
+                key={item.id + item.title}
+                className="no-underline"
+              >
                 <li className="transition-all ease-in-out duration-300 hover:text-[#EDB300] hover:cursor-pointer">
                   {item.title}
                 </li>
