@@ -18,14 +18,14 @@ export default function Banner({
   secondImage,
 }: Props) {
   return (
-    <section className="banner bg-[#EDB300] py-[40px] md:py-20 z-10 relative">
+    <section className="banner bg-primary py-[40px] md:py-20 z-10 relative">
       <Container>
         <div className="flex flex-col md:flex-row md:justify-between align-start mb-[25px]">
           <div>
             <h2 className="font-bold text-2xl text-center md:text-left md:text-6xl text-black mb-0">
               {title}
             </h2>
-            <p className="mt-2 md:mt-5 text-center md:text-left">
+            <p className="w-2/3 mt-2 text-center text-sm mx-auto md:mt-5 md:text-left md:w-full">
               Een diverse collectie van oude voorwerpen van de Coöperatie.
             </p>
           </div>
@@ -33,16 +33,16 @@ export default function Banner({
             <Button link={buttonLink} title={buttonTitle} isPrimary={false} />
           </div>
         </div>
-        <div className="flex flex-col mb-5 md:mb-0 md:flex-row">
+        <div className="flex flex-col mb-6 md:mb-0 md:flex-row">
           <Image
-            className="w-1/2 md:pr-10 md:h-[500px] block object-cover box-border"
+            className="mb-4 w-full md-mb-0 md:w-1/2 md:pr-10 md:h-[500px] block object-cover box-border"
             src={firstImage}
             alt="banner image"
             width={1200}
             height={1200}
           />
           <Image
-            className="w-1/2 md:pl-10 md:h-[500px] block object-cover box-border"
+            className="w-full md:w-1/2 md:pl-10 md:h-[500px] block object-cover box-border"
             src={secondImage}
             alt="second banner image"
             width={1200}

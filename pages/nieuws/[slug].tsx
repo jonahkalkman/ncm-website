@@ -77,7 +77,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
               <PostBody content={post.content} />
               <div className="mt-20 flex justify-start items-center gap-5">
                 <p className="font-bold text-xl">Delen op:</p>
-                <div className="bg-[#EDB300] p-2 rounded-md w-10 h-10 flex items-center justify-center">
+                <div className="bg-primary p-2 rounded-md w-10 h-10 flex items-center justify-center">
                   <svg
                     width="20"
                     height="20"
@@ -91,7 +91,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
                     />
                   </svg>
                 </div>
-                <div className="bg-[#EDB300] p-2 rounded-md w-10 h-10 flex items-center justify-center">
+                <div className="bg-primary p-2 rounded-md w-10 h-10 flex items-center justify-center">
                   <svg
                     width="21"
                     height="17"
@@ -105,7 +105,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
                     />
                   </svg>
                 </div>
-                <div className="bg-[#EDB300] p-2 rounded-md w-10 h-10 flex items-center justify-center">
+                <div className="bg-primary p-2 rounded-md w-10 h-10 flex items-center justify-center">
                   <svg
                     width="20"
                     height="16"

@@ -28,7 +28,7 @@ export default function ContentHome({
 }: Props) {
   return (
     <section className="content-home py-10 md:my-20">
-      <span className="block text-center text-sm md:text-xl mb-2 md:w-[90%] mx-auto">
+      <span className="block text-center text-sm w-2/3 md:text-xl mb-2 md:w-[90%] mx-auto">
         In een nostalgisch pand aan de Lange Haven in Schiedam
       </span>
       <h2 className="font-bold text-center text-2xl mb-10 md:text-6xl md:mb-[100px] md:w-[90%] mx-auto leading-tight">
@@ -36,11 +36,11 @@ export default function ContentHome({
       </h2>
       <div className="relative flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
         <div className="w-full md:w-1/2 order-2 md:order-1">
-          <h3 className="text-center text-2xl font-bold md:text-5xl mb-2 md:text-left md:mb-6">
+          <h3 className="text-left text-2xl font-bold md:text-5xl mb-2 md:text-left md:mb-6">
             {firstBlock.title}
           </h3>
           <div
-            className="text-center w-full md:w-[90%] md:text-left"
+            className="text-left w-full md:w-[90%] md:text-left"
             dangerouslySetInnerHTML={{ __html: firstBlock.text }}
           />
           <div className="mt-6 text-center md:text-left">
@@ -56,7 +56,7 @@ export default function ContentHome({
             height={1200}
           />
         </div>
-        <div className="absolute bottom-[-200px] right-[45%]">
+        <div className="absolute bottom-[-200px] right-[45%] hidden md:block">
           <svg
             width="296"
             height="398"
@@ -75,7 +75,7 @@ export default function ContentHome({
         </div>
       </div>
       <div className="relative flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
-        <div className="w-1/2 z-10">
+        <div className="w-full md:w-1/2 z-10">
           <Image
             className="w-full md:h-[500px] object-cover"
             src={secondBlock.image}
@@ -85,15 +85,15 @@ export default function ContentHome({
           />
         </div>
         <div className="w-full md:w-1/2">
-          <h3 className="text-center text-2xl md:text-left font-bold md:text-5xl mb-2 md:mb-6">
+          <h3 className="text-left text-2xl md:text-left font-bold md:text-5xl mb-2 md:mb-6">
             {secondBlock.title}
           </h3>
           <div
-            className="text-center w-full md:w-[90%] md:text-left"
+            className="text-left w-full md:w-[90%] md:text-left"
             dangerouslySetInnerHTML={{ __html: secondBlock.text }}
           />
         </div>
-        <div className="absolute bottom-[-200px] left-[40%]">
+        <div className="absolute bottom-[-200px] left-[40%] hidden md:block">
           <svg
             width="404"
             height="354"
@@ -113,18 +113,18 @@ export default function ContentHome({
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-0">
         <div className="w-full md:w-1/2 order-2 md:order-1">
-          <h3 className="text-center text-2xl md:text-left font-bold md:text-5xl mb-2 md:mb-6">
+          <h3 className="text-left text-2xl md:text-left font-bold md:text-5xl mb-2 md:mb-6">
             {thirdBlock.title}
           </h3>
           <div
-            className="text-center w-full md:w-[90%] md:text-left"
+            className="text-left w-full md:w-[90%] md:text-left"
             dangerouslySetInnerHTML={{ __html: thirdBlock.text }}
           />
           <div className="mt-6 text-center md:text-left">
             <Button title="Lees meer" link="/museumwinkel" />
           </div>
         </div>
-        <div className="w-1/2 md:order-2">
+        <div className="w-full md:w-1/2 md:order-2">
           <Image
             className="w-full md:h-[500px] object-cover z-10 relative"
             src={thirdBlock.image}

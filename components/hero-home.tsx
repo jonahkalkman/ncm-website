@@ -77,13 +77,13 @@ export default function HeroHome({
 
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-full mx-auto px-5">
         <motion.div variants={container} initial="hidden" animate="visible">
-          <h1 className="font-primary font-bold mb-1 text-[30px] leading-tight md:font-normal md:text-4xl text-white md:mb-2">
+          <h1 className="font-primary font-bold mb-3 text-[1.2rem] leading-tight md:font-normal md:text-4xl text-white md:mb-2">
             <AnimatedText text="Nationaal Coöperatie Museum" />
           </h1>
-          <h2 className="font-primary text-md leading-tight text-xl md:text-7xl md:w-[80%] lg:w-[70%] md:mx-auto md:font-bold text-white mb-5 font-normal">
+          <h2 className="font-primary text-md text-2xl leading-tight md:text-7xl md:w-[80%] lg:w-[70%] md:mx-auto md:font-bold text-white mb-5 font-normal">
             <AnimatedText text={subTitle} />
           </h2>
-          <div className="flex gap-10 flex-col justify-center md:flex-row">
+          <div className="flex gap-2 flex-col justify-center md:flex-row md:gap-10">
             <motion.div variants={item}>
               <Button
                 isPrimary
@@ -91,7 +91,7 @@ export default function HeroHome({
                 title={buttonPrimary.buttonPrimaryTitle}
               />
             </motion.div>
-            <motion.div variants={item}>
+            <motion.div variants={item} className="hidden md:block">
               <Button
                 isPrimary={false}
                 link={buttonSecondary.buttonSecondaryLink.link}
@@ -100,7 +100,7 @@ export default function HeroHome({
             </motion.div>
           </div>
           <motion.div variants={item}>
-            <p className="mt-4 text-white">
+            <p className="mt-4 text-white text-xs md:text-xl">
               Gratis toegang & persoonlijke rondleiding!
             </p>
           </motion.div>
