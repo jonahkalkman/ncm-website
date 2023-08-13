@@ -8,7 +8,7 @@ interface Props {
 
 export default function DetailBlock({ image, text, type }: Props) {
   return (
-    <section className="detail-block relative flex gap-4 md:gap-20 justify-center items-center flex-col md:flex-row">
+    <section className="detail-block relative flex gap-4 md:gap-20 justify-center items-start flex-col md:flex-row">
       <div
         className={
           type === "left"
@@ -16,7 +16,7 @@ export default function DetailBlock({ image, text, type }: Props) {
             : "w-full text-left md:text-left md:w-1/2 order-1"
         }
       >
-        <div dangerouslySetInnerHTML={{ __html: text }} />
+        <div dangerouslySetInnerHTML={{ __html: text }} className="detail-block__text-wrapper"/>
       </div>
       <Image
         className={

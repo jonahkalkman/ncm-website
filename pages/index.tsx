@@ -44,16 +44,15 @@ export default function Index({ preview, logo, menu, homeContent }) {
         homeContent.bannerButton.bannerButtonLink.link &&
         homeContent.bannerImages.bannerFirstImage.mediaItemUrl &&
         homeContent.bannerImages.bannerSecondImage.mediaItemUrl ? (
-
-            <Banner
-              title={homeContent.bannerTitle}
-              buttonTitle={homeContent.bannerButton.bannerButtonTitle}
-              buttonLink={homeContent.bannerButton.bannerButtonLink.link}
-              firstImage={homeContent.bannerImages.bannerFirstImage.mediaItemUrl}
-              secondImage={
-                homeContent.bannerImages.bannerSecondImage.mediaItemUrl
-              }
-            />
+          <Banner
+            title={homeContent.bannerTitle}
+            buttonTitle={homeContent.bannerButton.bannerButtonTitle}
+            buttonLink={homeContent.bannerButton.bannerButtonLink.link}
+            firstImage={homeContent.bannerImages.bannerFirstImage.mediaItemUrl}
+            secondImage={
+              homeContent.bannerImages.bannerSecondImage.mediaItemUrl
+            }
+          />
         ) : null}
       </div>
       <Container>

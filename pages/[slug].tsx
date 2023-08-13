@@ -60,7 +60,7 @@ export default function Index({
       pageContent.slug !== "collectie" &&
       pageContent.slug !== "word-vriend" &&
       pageContent.slug !== "contact" ? (
-        <div className="bg-[#EDB300] py-[60px]">
+        <div className="bg-primary py-[60px]">
           <Container>
             {pageContent &&
             pageContent.detail &&

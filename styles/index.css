@@ -145,8 +145,11 @@ h4 {
   font-size: 20px;
 }
 
-ul {
-  margin: initial;
-  padding: initial;
-  list-style: initial;
+
+main {
+  overflow-x: clip;
+}
+
+.detail-block__text-wrapper p {
+  font-size: 1.2rem;
 }
