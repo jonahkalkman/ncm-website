@@ -1,5 +1,3 @@
-import Avatar from "./avatar";
-import Date from "./date";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 
@@ -8,25 +6,26 @@ export default function PostPreview({
   coverImage,
   date,
   excerpt,
-  author,
   slug,
 }) {
+  const formattedDate = new Date(date);
+
   return (
-    <div>
+    <div className="group">
       <div className="mb-5">
         {coverImage && (
           <CoverImage title={title} coverImage={coverImage} slug={slug} />
         )}
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
+      <h3 className="text-3xl mb-2 leading-snug transition-all duration-[300ms] ease-in-out group-hover:text-primary group-hover:translate-x-2">
         <Link
           href={`/posts/${slug}`}
-          className="hover:underline"
+          className="no-underline"
           dangerouslySetInnerHTML={{ __html: title }}
         ></Link>
       </h3>
-      <div className="text-lg mb-4">
-        <Date dateString={date} />
+      <div className="text-md text-gray-500 transition-all duration-[300ms] ease-in-out group-hover:text-primary group-hover:translate-x-2">
+        {formattedDate.toLocaleDateString("nl-NL")}
       </div>
       <div
         className="text-lg leading-relaxed mb-4"

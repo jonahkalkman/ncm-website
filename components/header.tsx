@@ -27,12 +27,12 @@ export default function Header({ logo, menu }) {
       <div
         className={
           hasMobileMenu
-            ? "absolute w-[90%] overflow-hidden right-0 translate-x-0 top-[68px] transition-all duration-300 md:hidden"
-            : "absolute w-[90%] overflow-hidden right-0 translate-x-[1000px] top-[68px] transition-all duration-300 md:hidden"
+            ? "absolute w-[80%] overflow-hidden right-0 translate-x-0 top-[68px] transition-all duration-300 md:hidden"
+            : "absolute w-[80%] overflow-hidden right-0 translate-x-[1000px] top-[68px] transition-all duration-300 md:hidden"
         }
       >
         <nav className="bg-white p-10 border-solid border-2 border-black border-r-0">
-          <ul className="flex flex-col gap-8 list-none">
+          <ul className="flex flex-col gap-6 list-none">
             {menu &&
               menu.map((item: any) => (
                 <Link
