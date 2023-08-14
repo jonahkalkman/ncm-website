@@ -18,7 +18,7 @@ export default function Layout({ preview, children, logo }) {
         `}
       </style>
       <Meta />
-      <div className="font-primary">
+      <div className="font-primary z-50 relative bg-white">
         <main>{children}</main>
       </div>
       <Footer logo={logo} />

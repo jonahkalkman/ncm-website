@@ -12,8 +12,8 @@ export default function DetailBlock({ image, text, type }: Props) {
       <div
         className={
           type === "left"
-            ? "w-full text-left md:text-left md:w-[55%] order-2"
-            : "w-full text-left md:text-left md:w-[55%] order-1"
+            ? "w-full text-left md:text-left md:w-1/2 order-2"
+            : "w-full text-left md:text-left md:w-1/2 order-1"
         }
       >
         <div dangerouslySetInnerHTML={{ __html: text }} className="detail-block__text-wrapper"/>
@@ -21,8 +21,8 @@ export default function DetailBlock({ image, text, type }: Props) {
       <Image
         className={
           type === "left"
-            ? "w-full h-[200px] md:w-[45%] md:h-[500px] object-cover rounded-md"
-            : "w-full h-[200px] md:w-[45%] md:h-[500px] object-cover order-2 rounded-md"
+            ? "w-full h-[200px] md:w-1/2 md:h-[500px] object-cover rounded-md"
+            : "w-full h-[200px] md:w-1/2 md:h-[500px] object-cover order-2 rounded-md"
         }
         src={image}
         alt=""

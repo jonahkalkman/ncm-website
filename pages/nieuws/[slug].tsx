@@ -14,7 +14,7 @@ import {
   getPostAndMorePosts,
   getPrimaryMenu,
 } from "../../lib/api";
-import { CMS_NAME, WEBSITE_TITLE } from "../../lib/constants";
+import { WEBSITE_TITLE } from "../../lib/constants";
 import Header from "../../components/header";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,7 +23,7 @@ import { useState } from "react";
 export default function Post({ menu, logo, post, posts, preview }) {
   const router = useRouter();
   const morePosts = posts?.edges;
-  const formattedDate = new Date(post.date);
+  const formattedDate = post && post.date ? new Date(post.date) : null;
   const [copied, setCopied] = useState(false);
 
   const copyURL = () => {

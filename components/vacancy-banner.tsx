@@ -18,7 +18,7 @@ export default function VacancyBanner({
   buttonTitle,
 }: Props) {
   return (
-    <section className="vacancy-banner bg-primary py-[40px] md:py-20">
+    <section className="vacancy-banner bg-primary py-[40px] md:py-20 md:shadow-md">
       <Container>
         <div className="flex flex-col md:flex-row items-center gap-[20px] md:gap-20">
           <div className="w-full md:w-1/2">
