@@ -25,7 +25,7 @@ export default function Banner({
             <h2 className="font-bold text-2xl text-center md:text-left md:text-6xl text-black mb-0">
               {title}
             </h2>
-            <p className="w-2/3 mt-2 text-center text-sm mx-auto md:mt-5 md:text-left md:w-full">
+            <p className="w-2/3 mt-2 text-center text-sm mx-auto md:mt-5 md:text-left md:w-full md:text-lg">
               Een diverse collectie van oude voorwerpen van de Coöperatie.
             </p>
           </div>

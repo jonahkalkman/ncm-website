@@ -1,5 +1,13 @@
 import Image from "next/image";
 import Button from "./button";
+import {
+  motion,
+  motionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface Props {
   title: string;
@@ -26,6 +34,13 @@ export default function ContentHome({
   secondBlock,
   thirdBlock,
 }: Props) {
+  const { scrollYProgress } = useScroll();
+  const yRange = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
+  const pathLength = useSpring(yRange, { stiffness: 400, damping: 90 });
+
+  const yRange2 = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
+  const pathLength2 = useSpring(yRange2, { stiffness: 400, damping: 90 });
+
   return (
     <section className="content-home py-10 md:my-20">
       <span className="block text-center text-sm w-2/3 md:text-xl mb-2 md:w-[90%] mx-auto">
@@ -64,7 +79,8 @@ export default function ContentHome({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
+            <motion.path
+              style={{ pathLength }}
               d="M293 1.5C236 177.003 -179.134 93.3053 96.5 395.5"
               stroke="#EDB300"
               stroke-opacity="0.5"
@@ -101,7 +117,8 @@ export default function ContentHome({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
+            <motion.path
+              style={{ pathLength: pathLength2 }}
               d="M403.005 351.272C81.0046 310.272 244 57 1.00012 2.49992"
               stroke="#EDB300"
               stroke-opacity="0.5"

@@ -60,7 +60,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
                   content={post.featuredImage?.node.sourceUrl}
                 />
               </Head>
-              <h1 className="text-4xl md:text-7xl text-center mt-10 md:mt-20 font-bold">
+              <h1 className="text-4xl md:text-7xl text-center mt-10 md:mt-20 md:mb-5 font-bold">
                 {post.title}
               </h1>
               <div className="flex justify-center gap-10 mb-10">
