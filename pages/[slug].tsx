@@ -42,9 +42,10 @@ export default function Index({
       pageContent.detail.firstBlock.firstBlockImage ? (
         <div
           style={{
+            /* @ts-ignore */
             "--image-url": `url(${pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl})`,
           }}
-          className="bg-[image:var(--image-url)] bg-no-repeat bg-center bg-cover h-[250px] w-full flex items-center justify-start"
+          className="bg-[image:var(--image-url)] bg-gray bg-no-repeat bg-center bg-cover h-[250px] w-full flex items-center justify-start"
         >
           <Container>
             <h1 className="text-white drop-shadow-md m-0 p-0 leading-none">
