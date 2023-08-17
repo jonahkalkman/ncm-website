@@ -27,10 +27,6 @@ export default function PostPreview({
       <div className="text-md text-gray-500 transition-all duration-[300ms] ease-in-out group-hover:text-primary group-hover:translate-x-2">
         {formattedDate.toLocaleDateString("nl-NL")}
       </div>
-      <div
-        className="text-lg leading-relaxed mb-4"
-        dangerouslySetInnerHTML={{ __html: excerpt }}
-      />
     </div>
   );
 }

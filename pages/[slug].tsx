@@ -37,6 +37,22 @@ export default function Index({
           <Header logo={logo} menu={menu} />
         </Container>
       </div>
+      {pageContent &&
+      pageContent.detail &&
+      pageContent.detail.firstBlock.firstBlockImage ? (
+        <div
+          style={{
+            "--image-url": `url(${pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl})`,
+          }}
+          className="bg-[image:var(--image-url)] bg-no-repeat bg-center bg-cover h-[250px] w-full flex items-center justify-start"
+        >
+          <Container>
+            <h1 className="text-white drop-shadow-md m-0 p-0 leading-none">
+              {pageContent.title}
+            </h1>
+          </Container>
+        </div>
+      ) : null}
       <Container>
         {pageContent ? (
           <div className="my-20">
@@ -128,8 +144,6 @@ export const getStaticProps: GetStaticProps = async ({
     params?.slug === "collectie"
       ? await getCollectionContent("collectie")
       : null;
-
-  console.log(pageContent);
 
   return {
     props: { preview, logo, menu, pageContent, collectionContent, posts },

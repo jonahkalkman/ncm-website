@@ -10,10 +10,6 @@ interface Props {
 export default function PostsOverview({ posts }: Props) {
   const date = new Date(posts[0].node.date);
 
-  useEffect(() => {
-    console.log(posts);
-  }, []);
-
   return (
     <Container>
       <div className="">
