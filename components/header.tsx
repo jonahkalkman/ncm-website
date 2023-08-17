@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header({ logo, menu }) {
+  const pathname = usePathname();
   const [hasMobileMenu, setHasMobileMenu] = useState<boolean>(false);
 
   return (
-    <header className="bg-white overflow-x-hidden py-1 md:py-[10px] flex justify-center md:justify-center items-center md:gap-10">
+    <header className="bg-white overflow-x-hidden py-1 md:py-[10px] flex justify-center md:justify-between items-center md:gap-10">
       <Link href="/">
         <Image
           className="object-contain w-[60px] h-[60px] md:w-[70px] md:h-[57px]"
@@ -40,7 +42,7 @@ export default function Header({ logo, menu }) {
                   key={item.id + item.title}
                   className={"no-underline font-bold"}
                 >
-                  <li className="transition-all ease-in-out duration-300 text-xl">
+                  <li className="transition-all ease-in-out duration-300 text-xl m-0">
                     {item.title}
                   </li>
                 </Link>
@@ -57,7 +59,7 @@ export default function Header({ logo, menu }) {
                 key={item.id + item.title}
                 className="no-underline"
               >
-                <li className="transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer">
+                <li className="transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0">
                   {item.title}
                 </li>
               </Link>

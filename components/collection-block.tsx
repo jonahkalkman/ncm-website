@@ -8,7 +8,7 @@ interface Props {
 
 export default function CollectionBlock({ title, images }: Props) {
   return (
-    <section className="collection-block bg-[#EDB300] py-20">
+    <section className="collection-block bg-primary py-20">
       <Container>
         <h2 className="font-3xl mb-8 md:font-4xl text-center">{title}</h2>
         <div className="flex justify-between items-center gap-10">

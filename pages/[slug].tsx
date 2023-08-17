@@ -39,10 +39,7 @@ export default function Index({
       </div>
       <Container>
         {pageContent ? (
-          <div className="pb-[60px] mt-20">
-            {/* <h1 className="leading-tight font-primary font-bold text-left text-[30px] mb-8 md:text-6xl pt-[35px] md:mb-[60px]">
-              {pageContent.title}
-            </h1> */}
+          <div className="my-20">
             {pageContent.detail &&
             pageContent.detail.firstBlock.firstBlockImage &&
             pageContent.detail.firstBlock.firstBlockText ? (
@@ -60,31 +57,28 @@ export default function Index({
       {pageContent &&
       pageContent.slug !== "word-vriend" &&
       pageContent.slug !== "contact" ? (
-        <div className="bg-primary py-[60px]">
+        <div className="bg-primary py-20">
           <Container>
             {pageContent &&
             pageContent.detail &&
             pageContent.detail.secondBlock.secondBlockText &&
             pageContent.detail.secondBlock.secondBlockImage ? (
-              <>
-                {/* <h2 className="text-center text-3xl mb-8 md:text-6xl md:mb-10">
-                  {pageContent.detail.secondBlock.secondBlockTitle}
-                </h2> */}
-                <DetailBlock
-                  type="left"
-                  image={
-                    pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
-                  }
-                  text={pageContent.detail.secondBlock.secondBlockText}
-                />
-              </>
+              <DetailBlock
+                type="left"
+                image={
+                  pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
+                }
+                text={pageContent.detail.secondBlock.secondBlockText}
+              />
             ) : null}
           </Container>
         </div>
       ) : (
         <>
-          {collectionContent && collectionContent.collection ? (
-            // TODO add check if images exist
+          {collectionContent &&
+          collectionContent.collection &&
+          collectionContent.collection.collectionImages.collectionFirstImage
+            .mediaItemUrl ? (
             <CollectionBlock
               title={collectionContent.collection.collectionTitle}
               images={[

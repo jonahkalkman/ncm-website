@@ -270,9 +270,7 @@ export async function getHomeContent() {
           bannerButton {
             bannerButtonTitle
             bannerButtonLink {
-              ... on Page {
-                link
-              }
+              url
             }
           }
           bannerImages {

@@ -1,13 +1,6 @@
 import Image from "next/image";
 import Button from "./button";
-import {
-  motion,
-  motionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 interface Props {
   title: string;
@@ -83,9 +76,9 @@ export default function ContentHome({
               style={{ pathLength }}
               d="M293 1.5C236 177.003 -179.134 93.3053 96.5 395.5"
               stroke="#EDB300"
-              stroke-opacity="0.5"
-              stroke-width="5"
-              stroke-dasharray="10 10"
+              strokeOpacity="0.5"
+              strokeWidth="5"
+              strokeDasharray="10 10"
             />
           </svg>
         </div>
@@ -121,9 +114,9 @@ export default function ContentHome({
               style={{ pathLength: pathLength2 }}
               d="M403.005 351.272C81.0046 310.272 244 57 1.00012 2.49992"
               stroke="#EDB300"
-              stroke-opacity="0.5"
-              stroke-width="5"
-              stroke-dasharray="10 10"
+              strokeOpacity="0.5"
+              strokeWidth="5"
+              strokeDasharray="10 10"
             />
           </svg>
         </div>
