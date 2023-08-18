@@ -12,7 +12,7 @@ export default function Header({ logo, menu }) {
   };
 
   return (
-    <header className="bg-white overflow-x-hidden py-1 md:py-[10px] flex justify-center md:justify-between items-center md:gap-10">
+    <header className="bg-white overflow-x-hidden py-1 md:py-[10px] flex justify-center items-center lg:justify-between lg:gap-10">
       <Link href="/">
         <Image
           className="object-contain w-[60px] h-[60px] md:w-[70px] md:h-[57px]"
@@ -23,7 +23,7 @@ export default function Header({ logo, menu }) {
         />
       </Link>
       <div
-        className="hamburger flex flex-col gap-1 absolute right-5 md:hidden"
+        className="hamburger flex flex-col gap-1 absolute right-5 lg:hidden"
         onClick={() => setHasMobileMenu(!hasMobileMenu)}
       >
         <span className="block w-7 h-1 bg-black"></span>
@@ -60,7 +60,7 @@ export default function Header({ logo, menu }) {
           </ul>
         </nav>
       </div>
-      <nav className="hidden md:block">
+      <nav className="hidden lg:block">
         <ul className="flex gap-10 list-none">
           {menu &&
             menu.map((item: any) => (

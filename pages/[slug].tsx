@@ -45,18 +45,18 @@ export default function Index({
             /* @ts-ignore */
             "--image-url": `url(${pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl})`,
           }}
-          className="bg-[image:var(--image-url)] bg-gray bg-no-repeat bg-center bg-cover h-[250px] w-full flex items-center justify-start"
+          className="bg-[image:var(--image-url)] bg-no-repeat bg-center bg-cover bg-slate-300 h-[150px] md:h-[250px] w-full flex items-center justify-start"
         >
           <Container>
-            <h1 className="text-white drop-shadow-md m-0 p-0 leading-none">
+            <h1 className="text-3xl text-white drop-shadow-md m-0 p-0 leading-none md:text-7xl">
               {pageContent.title}
             </h1>
           </Container>
         </div>
       ) : null}
       <Container>
-        {pageContent ? (
-          <div className="my-20">
+        {pageContent && pageContent.slug !== "contact" ? (
+          <div className="my-10 md:my-20">
             {pageContent.detail &&
             pageContent.detail.firstBlock.firstBlockImage &&
             pageContent.detail.firstBlock.firstBlockText ? (

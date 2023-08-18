@@ -103,7 +103,8 @@
   @apply grid grid-cols-2 gap-4;
 }
 
-p, li {
+p,
+li {
   font-size: 1.1rem;
   line-height: 150%;
   margin-bottom: 1rem;
@@ -129,6 +130,15 @@ h2 {
   line-height: 2.8rem;
   margin-bottom: 2rem;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
 }
 
 h3,

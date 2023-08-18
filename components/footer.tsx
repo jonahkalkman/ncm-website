@@ -80,7 +80,7 @@ export default function Footer({ logo }: Props) {
             </div>
           </div>
           <div className="flex flex-col justify-between items-center md:flex-row">
-            <span>© 2023 Nationaal Coöperatie Museum</span>
+            <span>© 2023 Nationaal Coöperatie Museum - Website by Jonah</span>
             <div className="flex flex-col items-center md:flex-row md:gap-10">
               <a
                 href=""
