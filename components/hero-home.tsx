@@ -39,10 +39,10 @@ export default function HeroHome({
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-left w-full px-5">
         <Container>
           <div>
-            <h1 className="text-white text-xl mb-3 font-normal">
+            <h1 className="text-center text-white text-lg md:text-xl mb-3 font-normal md:text-left">
               Nationaal Cooperatie Museum
             </h1>
-            <h2 className="font-primary text-md text-2xl leading-[118%] md:text-7xl md:w-[80%] lg:w-[80%] md:font-bold text-white mb-5 font-normal">
+            <h2 className="font-primary text-md text-2xl leading-[118%] text-center md:text-left md:text-7xl md:w-[80%] lg:w-[80%] md:font-bold text-white mb-5 font-normal">
               <AnimatedText text={subTitle} />
             </h2>
             <div className="flex gap-2 flex-col justify-start items-center md:flex-row md:gap-10">

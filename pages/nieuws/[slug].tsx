@@ -47,7 +47,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
           <Header logo={logo} menu={menu} />
         </Container>
       </div>
-      <main className="md:shadow-sm pb-10">
+      <main className="shadow-sm pb-10 md:pb-10">
         <Container>
           {router.isFallback ? (
             <PostTitle>Loading…</PostTitle>
@@ -82,7 +82,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
                   </span>
                 </div>
                 <Image
-                  className="w-full h-[800px] object-cover"
+                  className="w-full h-[200px] md:h-[800px] object-cover"
                   src={post.featuredImage?.node.sourceUrl}
                   width={1200}
                   height={1200}
@@ -146,7 +146,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
                     </svg>
                   </Link>
                   <div className="flex gap-2 md:ml-10">
-                    <div className="px-5 py-5 h-10 w-[250px] md:w-[400px] bg-opacity-20 overflow-hidden flex justify-start items-center rounded-md bg-primary text-lg font-bold break-keep text-left whitespace-nowrap	text-gray-500">{`https://www.cooperatie-museum.nl/nieuws/${post.slug}`}</div>
+                    <div className="px-5 py-5 h-10 w-[215px] md:w-[400px] bg-opacity-20 overflow-hidden flex justify-start items-center rounded-md bg-primary text-lg font-bold break-keep text-left whitespace-nowrap	text-gray-500">{`https://www.cooperatie-museum.nl/nieuws/${post.slug}`}</div>
                     <div
                       onClick={() => copyURL()}
                       className={

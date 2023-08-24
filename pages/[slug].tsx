@@ -74,7 +74,7 @@ export default function Index({
       {pageContent &&
       pageContent.slug !== "word-vriend" &&
       pageContent.slug !== "contact" ? (
-        <div className="bg-primary py-20">
+        <div className="bg-primary py-10 md:py-20">
           <Container>
             {pageContent &&
             pageContent.detail &&

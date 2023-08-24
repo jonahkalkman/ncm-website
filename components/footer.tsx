@@ -10,7 +10,7 @@ export default function Footer({ logo }: Props) {
     <footer className="mt-10 pt-10 md:pt-20 pb-5 md:mt-0 md:h-[300px]">
       <div className="md:fixed bottom-5 w-full">
         <Container>
-          <div className="flex justify-between mb-20 flex-col md:flex-row">
+          <div className="flex justify-between mb-0 md:mb-20 flex-col md:flex-row">
             <div className="flex items-center gap-3 mb-10 justify-center md:mb-0 md:justify-start">
               <Image
                 className="object-contain w-[80px] h-[80px] md:w-[100px] md:h-[100px]"
@@ -80,20 +80,20 @@ export default function Footer({ logo }: Props) {
             </div>
           </div>
           <div className="flex flex-col justify-between items-center md:flex-row">
-            <span>© 2023 Nationaal Coöperatie Museum - Website by Jonah</span>
             <div className="flex flex-col items-center md:flex-row md:gap-10">
               <a
-                href=""
+                href="/algemene-voorwaarden"
                 className="no-underline transition-all duration-300 ease-in-out hover:text-primary"
               >
                 Algemene voorwaarden
               </a>
               <a
-                href=""
+                href="/privacybeleid"
                 className="no-underline transition-all duration-300 ease-in-out hover:text-primary"
               >
                 Privacybeleid
               </a>
+              <span className="mt-5 text-sm">⌘ Made by Jonah Kalkman</span>
             </div>
           </div>
         </Container>

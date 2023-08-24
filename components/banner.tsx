@@ -34,7 +34,7 @@ export default function Banner({
           </div>
         </div>
         <div className="flex flex-col mb-6 md:mb-0 md:flex-row md:w-full md:gap-10">
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <Image
               className="mb-4 w-full md-mb-0 md:h-[450px] block object-cover box-border"
               src={firstImage}
@@ -43,7 +43,7 @@ export default function Banner({
               height={1200}
             />
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <Image
               className="w-full md:h-[450px] block object-cover box-border"
               src={secondImage}

@@ -10,56 +10,14 @@ import IntroHome from "../components/intro-home";
 import Banner from "../components/banner";
 import ContentHome from "../components/content-home";
 import VacancyBanner from "../components/vacancy-banner";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
 
 export default function Index({ preview, logo, menu, homeContent }) {
-  const main = useRef(null);
-  const section = useRef(null);
-  gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    ScrollTrigger.batch(section.current, {
-      start: "start center", // Adjust the start point as needed
-      end: "bottom 50%", // Adjust the end point as needed
-      onEnter: () => {
-        gsap.to(main.current, {
-          backgroundColor: "#EDB300",
-          duration: 0.5, // Adjust the duration as needed
-          ease: "power2.inOut", // Use an easing function for smoother transitions
-        });
-      },
-      onLeave: () => {
-        gsap.to(main.current, {
-          backgroundColor: "white",
-          duration: 0.5, // Adjust the duration as needed
-          ease: "power2.inOut", // Use an easing function for smoother transitions
-        });
-      },
-      onEnterBack: () => {
-        gsap.to(main.current, {
-          backgroundColor: "#EDB300",
-          duration: 0.5, // Adjust the duration as needed
-          ease: "power2.inOut", // Use an easing function for smoother transitions
-        });
-      },
-      onLeaveBack: () => {
-        gsap.to(main.current, {
-          backgroundColor: "white",
-          duration: 0.5, // Adjust the duration as needed
-          ease: "power2.inOut", // Use an easing function for smoother transitions
-        });
-      },
-    });
-  });
-
   return (
     <Layout preview={preview} logo={logo}>
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
-      <main ref={main}>
+      <main>
         <div className="block sticky top-0 z-50 bg-white">
           <Container>
             <Header logo={logo} menu={menu} />
@@ -80,7 +38,7 @@ export default function Index({ preview, logo, menu, homeContent }) {
               image={homeContent.introImage.mediaItemUrl}
             />
           </Container>
-          <div ref={section}>
+          <div className="bg-primary">
             {homeContent.bannerTitle &&
             homeContent.bannerButton.bannerButtonTitle &&
             homeContent.bannerButton.bannerButtonLink.url &&

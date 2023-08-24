@@ -23,7 +23,7 @@ export default function FormContact({}: Props) {
     const JSONdata = JSON.stringify(data);
 
     // API endpoint where we send form data.
-    const endpoint = "/api/form";
+    const endpoint = "/api/form-contact";
 
     // Form the request for sending data to the server.
     const options = {
@@ -52,10 +52,10 @@ export default function FormContact({}: Props) {
   const labelStyling = "block mb-2 font-bold";
 
   return (
-    <section className="bg-[#EDB300] py-20">
+    <section className="bg-primary py-10 md:py-20">
       <Container>
-        <div className="flex justify-between gap-10">
-          <div className="w-1/2">
+        <div className="flex flex-col md:flex-row justify-between gap-10">
+          <div className="w-full order-2 md:order-1 md:w-1/2">
             <h2 className="text-3xl mb-5 mt-0">Adres</h2>
             <p>
               Langehaven 84 <br />
@@ -100,7 +100,7 @@ export default function FormContact({}: Props) {
               info@cooperatie-museum.nl
             </a>
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <div className="mb-10">
               <h2 className="mb-2">Contact</h2>
               <p className="">

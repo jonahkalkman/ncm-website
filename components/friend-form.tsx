@@ -52,17 +52,17 @@ export default function FriendForm({ image, secondImage }: Props) {
     }
   };
 
-  const inputStyling = "w-full py-3 px-5 rounded-sm mb-10";
+  const inputStyling = "w-full py-3 px-5 rounded-sm md:mb-10";
   const labelStyling = "block mb-2 font-bold";
 
   return (
-    <section className="bg-[#EDB300] py-20">
+    <section className="bg-[#EDB300] py-10 md:py-20">
       <Container>
-        <div className="flex justify-between items-center gap-20">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-20">
           <div>
             <div className="mb-10">
               <h2 className="mb-2">Word lid van de Vereniging van Vrienden</h2>
-              <p className="">
+              <p>
                 Als lid van de Vereniging van Vrienden ondersteun ik het
                 Nationaal Coöperatie Museum met een jaarlijkse bijdrage van €15.
                 Meld je aan via het onderstaande formulier:
@@ -72,8 +72,8 @@ export default function FriendForm({ image, secondImage }: Props) {
               onSubmit={handleSubmit}
               className="flex justify-center flex-col align-middle"
             >
-              <div className="flex w-full align-middle justify-start gap-10">
-                <div className="w-1/2">
+              <div className="flex flex-col md:flex-row w-full align-middle justify-start gap-6 mb-6 md:mb-0 md:gap-10">
+                <div className="w-full md:w-1/2">
                   <label htmlFor="name" className={labelStyling}>
                     Naam
                   </label>
@@ -86,7 +86,7 @@ export default function FriendForm({ image, secondImage }: Props) {
                     placeholder="Naam"
                   />
                 </div>
-                <div className="w-1/2">
+                <div className="w-full md:w-1/2">
                   <label htmlFor="email" className={labelStyling}>
                     E-mailadres
                   </label>
@@ -100,8 +100,8 @@ export default function FriendForm({ image, secondImage }: Props) {
                   />
                 </div>
               </div>
-              <div className="flex w-full align-middle justify-start gap-10">
-                <div className="w-1/2">
+              <div className="flex flex-col md:flex-row w-full align-middle justify-start mb-6 md:mb-0 gap-6 md:gap-10">
+                <div className="w-full md:w-1/2">
                   <label htmlFor="address" className={labelStyling}>
                     Adres
                   </label>
@@ -114,7 +114,7 @@ export default function FriendForm({ image, secondImage }: Props) {
                     placeholder="Adres"
                   />
                 </div>
-                <div className="w-1/2">
+                <div className="w-full md:w-1/2">
                   <label htmlFor="zipcode" className={labelStyling}>
                     Postcode
                   </label>
@@ -128,8 +128,8 @@ export default function FriendForm({ image, secondImage }: Props) {
                   />
                 </div>
               </div>
-              <div className="flex w-full align-middle justify-start gap-10">
-                <div className="w-1/2 pr-5">
+              <div className="flex w-full align-middle justify-start gap-5 md:gap-10">
+                <div className="w-full md:w-1/2 md:pr-5">
                   <label htmlFor="city" className={labelStyling}>
                     Stad
                   </label>
@@ -147,8 +147,8 @@ export default function FriendForm({ image, secondImage }: Props) {
                 disabled={submitted}
                 className={
                   !submitted
-                    ? "inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer"
-                    : "inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white opacity-50 cursor-not-allowed"
+                    ? "mt-10 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer"
+                    : "mt-10 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white opacity-50 cursor-not-allowed"
                 }
                 type="submit"
               >

@@ -5,11 +5,11 @@ interface Props {}
 
 export default function CollectionContent({}: Props) {
   return (
-    <section className=" md:shadow-sm">
+    <section className="shadow-sm">
       <Container>
-        <div className="py-20 pb-10">
-          <div className="flex gap-40">
-            <div className="w-1/2">
+        <div className="py-10 md:py-20 md:pb-10">
+          <div className="flex flex-col gap-10 md:gap-40 md:flex-row">
+            <div className="w-fullmd:w-1/2">
               <h2>Uitbreiding & aanvulling van de museumcollectie?</h2>
               <p className="pb-5">
                 Regelmatig wordt de collectie aangevuld met nieuwe objecten,
@@ -21,7 +21,7 @@ export default function CollectionContent({}: Props) {
               </p>
               <Button title="Neem contact op" link="/contact" />
             </div>
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
               <h2>Het Nationaal Coöperatie Museum als kenniscentrum</h2>
               <p className="pb-5">
                 Naast de geëtaleerde voorwerpen en objecten beschikt het museum
