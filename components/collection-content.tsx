@@ -9,7 +9,7 @@ export default function CollectionContent({}: Props) {
       <Container>
         <div className="py-10 md:py-20 md:pb-10">
           <div className="flex flex-col gap-10 md:gap-40 md:flex-row">
-            <div className="w-fullmd:w-1/2">
+            <div className="w-full md:w-1/2">
               <h2>Uitbreiding & aanvulling van de museumcollectie?</h2>
               <p className="pb-5">
                 Regelmatig wordt de collectie aangevuld met nieuwe objecten,

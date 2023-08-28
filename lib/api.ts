@@ -227,7 +227,7 @@ export async function getPrimaryMenu() {
   const data = await fetchAPI(
     `
     query PrimaryMenu {
-      menuItems(where: {location: PRIMARY}) {
+      menuItems(first: 20, where: {location: PRIMARY}) {
         nodes {
           key: id
           parentId

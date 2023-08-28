@@ -34,7 +34,7 @@ export default function Header({ logo, menu }) {
         className={
           hasMobileMenu
             ? "absolute w-[80%] overflow-hidden right-0 translate-x-0 top-[68px] transition-all duration-300 md:hidden"
-            : "absolute w-[80%] overflow-hidden right-0 translate-x-[1000px] top-[68px] transition-all duration-300 md:hidden"
+            : "absolute w-[80%] overflow-hidden right-0 translate-x-[600px] top-[68px] transition-all duration-300 md:hidden"
         }
       >
         <nav className="bg-white p-10 border-solid border-2 border-black border-r-0">
@@ -45,6 +45,7 @@ export default function Header({ logo, menu }) {
                   href={item.url}
                   key={item.id + item.title}
                   className="no-underline font-bold"
+                  onClick={() => setHasMobileMenu(false)}
                 >
                   <li
                     className={

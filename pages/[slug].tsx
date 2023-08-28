@@ -74,22 +74,24 @@ export default function Index({
       {pageContent &&
       pageContent.slug !== "word-vriend" &&
       pageContent.slug !== "contact" ? (
-        <div className="bg-primary py-10 md:py-20">
-          <Container>
-            {pageContent &&
-            pageContent.detail &&
-            pageContent.detail.secondBlock.secondBlockText &&
-            pageContent.detail.secondBlock.secondBlockImage ? (
-              <DetailBlock
-                type="left"
-                image={
-                  pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
-                }
-                text={pageContent.detail.secondBlock.secondBlockText}
-              />
-            ) : null}
-          </Container>
-        </div>
+        <>
+          {pageContent &&
+          pageContent.detail &&
+          pageContent.detail.secondBlock.secondBlockText &&
+          pageContent.detail.secondBlock.secondBlockImage ? (
+            <div className="bg-primary py-10 md:py-20">
+              <Container>
+                <DetailBlock
+                  type="left"
+                  image={
+                    pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
+                  }
+                  text={pageContent.detail.secondBlock.secondBlockText}
+                />
+              </Container>
+            </div>
+          ) : null}
+        </>
       ) : (
         <>
           {collectionContent &&
