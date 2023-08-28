@@ -22,10 +22,10 @@ export default function Banner({
       <Container>
         <div className="flex flex-col md:flex-row md:justify-between align-start mb-[25px]">
           <div>
-            <h2 className="font-bold text-2xl text-center md:text-left md:text-6xl text-black mb-0">
+            <h2 className="font-bold text-2xl text-left md:text-left md:text-6xl text-black mb-0">
               {title}
             </h2>
-            <p className="w-2/3 mt-2 text-center text-sm mx-auto md:mt-5 md:text-left md:w-full md:text-lg">
+            <p className="w-full mt-2 text-left text-md mx-auto md:mt-5 md:text-left md:w-full md:text-lg">
               Een diverse collectie van oude voorwerpen van de Coöperatie.
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function Banner({
             />
           </div>
         </div>
-        <div className="flex justify-center md:hidden">
+        <div className="flex md:justify-center md:hidden">
           <Button link={buttonLink} title={buttonTitle} isPrimary={false} />
         </div>
       </Container>

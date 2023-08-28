@@ -36,13 +36,15 @@ export default function ContentHome({
 
   return (
     <section className="content-home py-10 md:my-20">
-      <span className="block text-center text-sm w-2/3 md:text-xl mb-2 md:w-[90%] mx-auto">
-        In een nostalgisch pand aan de Lange Haven in Schiedam
-      </span>
-      <h2 className="font-bold text-center text-2xl mb-10 md:text-6xl md:mb-[100px] md:w-[90%] mx-auto leading-tight">
-        {title}
-      </h2>
-      <div className="relative flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
+      <div className="flex flex-col gap-0 mb-10">
+        <span className="order-2 md:order-1 block text-left text-md w-[80%] md:text-xl mb-2 md:w-full md:mx-auto">
+          In een nostalgisch pand aan de Lange Haven in Schiedam
+        </span>
+        <h2 className="md:order-1 font-bold text-left text-2xl mb-2 md:text-6xl md:mb-[80px] md:w-full mx-auto leading-tight">
+          {title}
+        </h2>
+      </div>
+      <div className="relative flex flex-col md:flex-row justify-between items-center gap-0 md:gap-20 md:mb-40 mb-20">
         <div className="w-full md:w-1/2 order-2 md:order-1">
           <h3 className="text-left text-2xl font-bold md:text-5xl mb-2 md:text-left md:mb-6">
             {firstBlock.title}
@@ -51,7 +53,7 @@ export default function ContentHome({
             className="text-left w-full md:w-[90%] md:text-left"
             dangerouslySetInnerHTML={{ __html: firstBlock.text }}
           />
-          <div className="mt-6 text-center md:text-left">
+          <div className="mt-6 text-left md:text-left">
             <Button title="Lees meer" link="/museumwinkel" />
           </div>
         </div>
@@ -83,7 +85,7 @@ export default function ContentHome({
           </svg>
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-40 mb-20">
+      <div className="relative flex flex-col md:flex-row justify-between items-center gap-0 md:gap-20 md:mb-40 mb-20">
         <div className="w-full md:w-1/2 z-10">
           <Image
             className="w-full md:h-[500px] object-cover"
@@ -121,7 +123,7 @@ export default function ContentHome({
           </svg>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20 md:mb-0">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-0 md:gap-20 md:mb-0">
         <div className="w-full md:w-1/2 order-2 md:order-1">
           <h3 className="text-left text-2xl md:text-left font-bold md:text-5xl mb-2 md:mb-6">
             {thirdBlock.title}
@@ -130,7 +132,7 @@ export default function ContentHome({
             className="text-left w-full md:w-[90%] md:text-left"
             dangerouslySetInnerHTML={{ __html: thirdBlock.text }}
           />
-          <div className="mt-6 text-center md:text-left">
+          <div className="mt-6 text-left md:text-left">
             <Button title="Lees meer" link="/museumwinkel" />
           </div>
         </div>

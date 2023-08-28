@@ -28,7 +28,7 @@ export default function HeroHome({
     <section className="hero-home relative overflow-hidden">
       <div>
         <Image
-          className="w-full h-[400px] md:min-h-[400px] md:h-[500px] object-cover blur-[3px] scale-105"
+          className="w-full h-[280px] md:min-h-[400px] md:h-[500px] object-cover blur-[3px] scale-105"
           src={imageUrl}
           alt="hero image"
           width={1200}
@@ -36,16 +36,16 @@ export default function HeroHome({
         />
       </div>
 
-      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-left w-full px-5">
+      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-left w-full">
         <Container>
           <div>
-            <h1 className="text-center text-white text-lg md:text-xl mb-3 font-normal md:text-left">
+            <h1 className="text-left text-white text-lg md:text-xl mb-1 font-normal md:text-left">
               Nationaal Cooperatie Museum
             </h1>
-            <h2 className="font-primary text-md text-2xl leading-[118%] text-center md:text-left md:text-7xl md:w-[80%] lg:w-[80%] md:font-bold text-white mb-5 font-normal">
-              <AnimatedText text={subTitle} />
+            <h2 className="font-primary font-bold text-md text-2xl leading-[150%] text-left md:leading-[125%] md:text-left md:text-7xl md:w-[80%] lg:w-[80%] md:font-bold text-white mb-5 mt-0">
+              {subTitle}
             </h2>
-            <div className="flex gap-2 flex-col justify-start items-center md:flex-row md:gap-10">
+            <div className="flex gap-2 flex-col justify-start items-left md:items-center md:flex-row md:gap-10">
               <div>
                 <Button
                   isPrimary
@@ -53,7 +53,7 @@ export default function HeroHome({
                   title={buttonPrimary.buttonPrimaryTitle}
                 />
               </div>
-              <p className="text-white text-xs md:text-lg">
+              <p className="text-white text-sm md:text-lg">
                 Gratis toegang & persoonlijke rondleiding!
               </p>
             </div>

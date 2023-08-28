@@ -58,8 +58,8 @@ export default function FriendForm({ image, secondImage }: Props) {
   return (
     <section className="bg-[#EDB300] py-10 md:py-20">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-20">
-          <div>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-20">
+          <div className="order-2 md:order-1">
             <div className="mb-10">
               <h2 className="mb-2">Word lid van de Vereniging van Vrienden</h2>
               <p>
@@ -147,8 +147,8 @@ export default function FriendForm({ image, secondImage }: Props) {
                 disabled={submitted}
                 className={
                   !submitted
-                    ? "mt-10 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer"
-                    : "mt-10 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white opacity-50 cursor-not-allowed"
+                    ? "rounded-lg mt-10 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer"
+                    : "rounded-lg mt-10 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white opacity-50 cursor-not-allowed"
                 }
                 type="submit"
               >

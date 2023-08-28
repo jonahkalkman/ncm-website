@@ -12,7 +12,7 @@ export default function Header({ logo, menu }) {
   };
 
   return (
-    <header className="bg-white overflow-x-hidden py-1 md:py-[10px] flex justify-center items-center lg:justify-between lg:gap-10">
+    <header className="bg-white overflow-x-hidden py-1 md:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10">
       <Link href="/">
         <Image
           className="object-contain w-[60px] h-[60px] md:w-[70px] md:h-[57px]"
@@ -23,12 +23,34 @@ export default function Header({ logo, menu }) {
         />
       </Link>
       <div
-        className="hamburger flex flex-col gap-1 absolute right-5 lg:hidden"
+        className={
+          hasMobileMenu
+            ? "hamburger flex flex-col gap-[5px] absolute right-5 lg:hidden"
+            : "hamburger flex flex-col gap-[5px] absolute right-5 lg:hidden"
+        }
         onClick={() => setHasMobileMenu(!hasMobileMenu)}
       >
-        <span className="block w-7 h-1 bg-black"></span>
-        <span className="block w-7 h-1 bg-black"></span>
-        <span className="block w-7 h-1 bg-black"></span>
+        <span
+          className={
+            hasMobileMenu
+              ? "block w-7 h-1 bg-black rotate-45 transition-all duration-300 ease-in-out relative top-[10px]"
+              : "block w-7 h-1 bg-black transition-all duration-300 ease-in-out"
+          }
+        ></span>
+        <span
+          className={
+            hasMobileMenu
+              ? "block h-1 bg-black transition-all duration-150 ease-in-out w-0"
+              : "block w-7 h-1 bg-black transition-all duration-150 ease-in-out"
+          }
+        ></span>
+        <span
+          className={
+            hasMobileMenu
+              ? "block w-7 h-1 bg-black rotate-[-45deg] relative transition-all duration-300 ease-in-out top-[-8px]"
+              : "block w-7 h-1 bg-black transition-all duration-300 ease-in-out"
+          }
+        ></span>
       </div>
       <div
         className={

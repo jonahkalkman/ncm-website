@@ -25,7 +25,7 @@ export default function DetailBlock({ image, text, type }: Props) {
         className={
           type === "left"
             ? "w-full h-[200px] md:w-1/2 md:h-[500px] object-cover md:sticky md:self-start md:top-40"
-            : "w-full h-[200px] md:w-1/2 md:h-[500px] object-cover order-2 md:sticky md:self-start md:top-40"
+            : "w-full h-[200px] md:w-1/2 md:h-[500px] object-cover order-2 md:sticky md:self-start md:top-40 hidden md:block"
         }
         src={image}
         alt=""

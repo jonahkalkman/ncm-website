@@ -10,7 +10,7 @@ const Wrapper = (props) => {
 // AnimatedCharacters
 // Handles the deconstruction of each word and character to setup for the
 // individual character animations
-const AnimatedCharacters = (props) => {
+const   AnimatedCharacters = (props) => {
   // Framer Motion variant object, for controlling animation
   const item = {
     hidden: {

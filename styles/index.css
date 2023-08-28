@@ -129,14 +129,14 @@ h6 {
 
 h1 {
   font-size: 2rem;
-  line-height: 2rem;
+  line-height: 125%;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
 h2 {
   font-size: 1.8rem;
-  line-height: 1.8rem;
+  line-height: 125%;
   margin-bottom: 1rem;
   margin-top: 1rem;
   font-weight: bold;
@@ -144,7 +144,7 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-  line-height: 1.8rem;
+  line-height: 125%;
   margin-bottom: 0.5rem;
   margin-top: 2rem;
   font-weight: bold;
