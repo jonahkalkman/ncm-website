@@ -1,5 +1,10 @@
 import Head from "next/head";
-import { GetStaticPaths, GetStaticProps } from "next";
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  Metadata,
+  ResolvingMetadata,
+} from "next";
 import Container from "../components/container";
 import Layout from "../components/layout";
 import {
@@ -7,6 +12,7 @@ import {
   getCollectionContent,
   getLogo,
   getPageContent,
+  getPageMetadata,
   getPosts,
   getPrimaryMenu,
 } from "../lib/api";
@@ -18,6 +24,7 @@ import FriendForm from "../components/friend-form";
 import FormContact from "../components/form-contact";
 import PostsOverview from "../components/posts-overview";
 import CollectionContent from "../components/collection-content";
+import { FadeInWhenVisible } from "../components/fade-in";
 
 export default function Index({
   preview,
@@ -30,7 +37,9 @@ export default function Index({
   return (
     <Layout preview={preview} logo={logo}>
       <Head>
-        <title>{WEBSITE_TITLE}</title>
+        <title>
+          {(pageContent && pageContent.title) ?? "Nieuws"} | {WEBSITE_TITLE}
+        </title>
       </Head>
       <div className="block sticky top-0 z-50 bg-white border-b-2">
         <Container>
@@ -48,9 +57,11 @@ export default function Index({
           className="bg-[image:var(--image-url)] bg-no-repeat bg-center bg-cover bg-slate-300 h-[150px] md:h-[250px] w-full flex items-center justify-start"
         >
           <Container>
-            <h1 className="text-3xl text-white drop-shadow-md m-0 p-0 leading-none md:text-7xl">
-              {pageContent.title}
-            </h1>
+            <FadeInWhenVisible>
+              <h1 className="text-3xl text-white drop-shadow-md m-0 p-0 leading-none md:text-7xl">
+                {pageContent.title}
+              </h1>
+            </FadeInWhenVisible>
           </Container>
         </div>
       ) : null}

@@ -19,6 +19,7 @@ import Header from "../../components/header";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FadeInWhenVisible } from "../../components/fade-in";
 
 export default function Post({ menu, logo, post, posts, preview }) {
   const router = useRouter();
@@ -61,9 +62,11 @@ export default function Post({ menu, logo, post, posts, preview }) {
                     content={post.featuredImage?.node.sourceUrl}
                   />
                 </Head>
-                <h1 className="text-4xl md:text-7xl text-center mt-10 md:mt-20 md:mb-10 font-bold">
-                  {post.title}
-                </h1>
+                <FadeInWhenVisible>
+                  <h1 className="text-4xl md:text-7xl text-center mt-10 md:mt-20 md:mb-10 font-bold">
+                    {post.title}
+                  </h1>
+                </FadeInWhenVisible>
                 <div className="flex justify-center gap-10 mb-10">
                   {post.categories.edges.map((category) => (
                     <>

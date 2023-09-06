@@ -353,6 +353,19 @@ export async function getPageContent(page: string) {
   return data.page;
 }
 
+export async function getPageMetadata(page: string) {
+  const data = await fetchAPI(
+    `
+      query PageContent {
+        page(id: "${page}", idType: URI) {
+          title
+        }
+      }
+    `
+  );
+  return data.page;
+}
+
 export async function getCollectionContent(page: string) {
   const data = await fetchAPI(
     `

@@ -13,7 +13,7 @@ module.exports = {
         serif: ["var(--dm-sans-font)", ...fontFamily.serif],
       },
       colors: {
-        "primary": "#EDB300",
+        primary: "#EDB300",
         "accent-1": "#FAFAFA",
         "accent-2": "#EAEAEA",
         "accent-7": "#333",
@@ -39,6 +39,18 @@ module.exports = {
         small: "0 5px 10px rgba(0, 0, 0, 0.12)",
         medium: "0 8px 30px rgba(0, 0, 0, 0.12)",
       },
+      // that is animation class
+      animation: {
+        fadein: "fadeIn 0.5s ease-in-out",
+      },
+
+      // that is actual animation
+      keyframes: () => ({
+        fadeIn: {
+          "0%": { opacity: 0, transform: "translateY(10px)" },
+          "100%": { opacity: 1, transform: "translateY(0px)" },
+        },
+      }),
     },
   },
   plugins: [],

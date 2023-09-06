@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FadeInWhenVisible } from "./fade-in";
 
 interface Props {
   image: string;
@@ -16,10 +17,12 @@ export default function DetailBlock({ image, text, type }: Props) {
             : "w-full text-left md:text-left md:w-1/2 order-1"
         }
       >
-        <div
-          dangerouslySetInnerHTML={{ __html: text }}
-          className="detail-block__text-wrapper"
-        />
+        <FadeInWhenVisible>
+          <div
+            dangerouslySetInnerHTML={{ __html: text }}
+            className="detail-block__text-wrapper"
+          />
+        </FadeInWhenVisible>
       </div>
       <Image
         className={

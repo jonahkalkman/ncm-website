@@ -15,7 +15,7 @@ export default function Header({ logo, menu }) {
     <header className="bg-white overflow-x-hidden py-1 md:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10">
       <Link href="/">
         <Image
-          className="object-contain w-[60px] h-[60px] md:w-[70px] md:h-[57px]"
+          className="animate-fadein first-letter:object-contain w-[60px] h-[60px] md:w-[70px] md:h-[57px]"
           src={logo}
           alt={"logo"}
           width={70}
@@ -83,7 +83,7 @@ export default function Header({ logo, menu }) {
           </ul>
         </nav>
       </div>
-      <nav className="hidden lg:block">
+      <nav className="hidden lg:block animate-fadein">
         <ul className="flex gap-10 list-none">
           {menu &&
             menu.map((item: any) => (

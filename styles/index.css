@@ -197,3 +197,9 @@ ol {
   padding: initial;
   list-style: initial;
 }
+
+.mask-diamond {
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='361' height='297' fill='none'%3E%3Cpath fill='%23000' d='M133.272 280.907 19.56 187.355c-26.08-21.457-26.08-56.253 0-77.71l113.712-93.552c26.08-21.457 68.376-21.457 94.456 0l113.712 93.552c26.08 21.457 26.08 56.253 0 77.71l-113.712 93.552c-26.08 21.457-68.376 21.457-94.456 0Z'/%3E%3C/svg%3E");
+}
