@@ -44,7 +44,7 @@ export default function Banner({
           <div className="w-full md:w-1/2">
             <FadeInWhenVisible>
               <Image
-                className="mb-4 w-full md-mb-0 md:h-[450px] block object-cover box-border"
+                className="mb-4 w-full md-mb-0 md:h-[450px] block object-cover box-border rounded-md"
                 src={firstImage}
                 alt="banner image"
                 width={1200}
@@ -55,7 +55,7 @@ export default function Banner({
           <div className="w-full md:w-1/2">
             <FadeInWhenVisible>
               <Image
-                className="w-full md:h-[450px] block object-cover box-border"
+                className="w-full md:h-[450px] block object-cover box-border rounded-md"
                 src={secondImage}
                 alt="second banner image"
                 width={1200}

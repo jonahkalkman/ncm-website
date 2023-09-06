@@ -18,14 +18,14 @@ export default function IntroHome({ title, text, image }: Props) {
               Sinds 1978, al meer dan 45 jaar
             </span>
           </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          <FadeInWhenVisible delay={0.2}>
             <h2 className="mt-2 w-full font-primary font-bold text-black text-2xl text-left md:text-6xl md:text-left my-5 md:mb-6 md:my-0 leading-tight">
               {title}
             </h2>
           </FadeInWhenVisible>
           <div className="relative w-full mb-4 md:hidden">
             <Image
-              className="w-full h-auto md:h-[600px] relative z-10 object-cover object-right"
+              className="w-full h-auto md:h-[600px] relative z-10 object-cover object-right rounded-md"
               src={image}
               alt={title}
               width={800}
@@ -46,7 +46,7 @@ export default function IntroHome({ title, text, image }: Props) {
         <div className="hidden relative w-full md:block md:w-1/2">
           <FadeInWhenVisible>
             <Image
-              className="w-full h-auto md:h-[600px] relative z-10 object-cover object-right"
+              className="w-full h-auto md:h-[600px] relative z-10 object-cover object-right rounded-md"
               src={image}
               alt={title}
               width={800}

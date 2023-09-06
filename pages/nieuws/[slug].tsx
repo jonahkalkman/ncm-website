@@ -85,7 +85,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
                   </span>
                 </div>
                 <Image
-                  className="w-full h-[200px] md:h-[800px] object-cover"
+                  className="w-full h-[200px] md:h-[800px] object-cover rounded-md"
                   src={post.featuredImage?.node.sourceUrl}
                   width={1200}
                   height={1200}

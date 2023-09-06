@@ -28,7 +28,7 @@ export default function PostsOverview({ posts }: Props) {
                       {post.node.featuredImage ? (
                         <div className="w-full h-[200px] md:h-[636px] overflow-hidden">
                           <Image
-                            className="object-cover w-full h-[200px] md:h-[636px] overflow-hidden transition-all duration-500 ease-in-out group-hover:scale-[120%] group-hover:rotate-[-2deg]"
+                            className="object-cover w-full h-[200px] md:h-[636px] overflow-hidden transition-all duration-500 ease-in-out group-hover:scale-[120%] rounded-md"
                             alt={post.node.title}
                             src={post.node.featuredImage.node.sourceUrl}
                             width={414}
@@ -73,7 +73,7 @@ export default function PostsOverview({ posts }: Props) {
                         {post.node.featuredImage ? (
                           <div className="w-full h-[200px] md:h-[260px] overflow-hidden">
                             <Image
-                              className="object-cover w-full h-[200px] md:h-[260px] overflow-hidden transition-all duration-500 ease-in-out group-hover:scale-[120%] group-hover:rotate-[-2deg]"
+                              className="object-cover w-full h-[200px] md:h-[260px] overflow-hidden transition-all duration-500 ease-in-out group-hover:scale-[120%] rounded-md"
                               alt={post.node.title}
                               src={post.node.featuredImage.node.sourceUrl}
                               width={414}
@@ -120,7 +120,7 @@ export default function PostsOverview({ posts }: Props) {
                       {post.node.featuredImage ? (
                         <div className="w-full h-[200px] md:h-[260px] overflow-hidden">
                           <Image
-                            className="object-cover w-full h-[200px] md:h-[260px] overflow-hidden transition-all duration-500 ease-in-out group-hover:scale-[120%] group-hover:rotate-[-2deg]"
+                            className="object-cover w-full h-[200px] md:h-[260px] overflow-hidden transition-all duration-500 ease-in-out group-hover:scale-[120%] rounded-md"
                             alt={post.node.title}
                             src={post.node.featuredImage.node.sourceUrl}
                             width={414}

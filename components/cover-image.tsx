@@ -20,7 +20,7 @@ export default function CoverImage({ title, coverImage, slug }: Props) {
       alt={`Cover Image for ${title}`}
       src={coverImage?.node.sourceUrl}
       className={
-        "w-full h-[200px] md:h-[350px] object-cover overflow-hidden transition-all duration-500 ease-in-out group-hover:scale-[120%] group-hover:rotate-[-2deg]"
+        "w-full h-[200px] md:h-[350px] object-cover overflow-hidden transition-all duration-500 ease-in-out group-hover:scale-[120%] rounded-md"
       }
     />
   );

@@ -25,7 +25,7 @@ export default function VacancyBanner({
           <div className="w-full md:w-1/2">
             <FadeInWhenVisible>
               <Image
-                className="w-full md:h-[500px] block object-cover"
+                className="w-full md:h-[500px] block object-cover rounded-md"
                 src={image}
                 alt="vacancy banner image"
                 width={1200}

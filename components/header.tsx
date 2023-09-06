@@ -84,7 +84,7 @@ export default function Header({ logo, menu }) {
         </nav>
       </div>
       <nav className="hidden lg:block animate-fadein">
-        <ul className="flex gap-10 list-none">
+        <ul className="flex gap-10 list-none lg:gap-5 xl-gap-10 2xl:gap-10">
           {menu &&
             menu.map((item: any) => (
               <Link
@@ -95,8 +95,8 @@ export default function Header({ logo, menu }) {
                 <li
                   className={
                     isCurrent(item.url)
-                      ? "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 text-primary"
-                      : "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0"
+                      ? "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 text-primary lg:text-sm xl:text-base 2xl:text-lg"
+                      : "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 lg:text-sm xl:text-base 2xl:text-lg"
                   }
                 >
                   {item.title}

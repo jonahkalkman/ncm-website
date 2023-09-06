@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-export function FadeInWhenVisible({ children }) {
+export function FadeInWhenVisible({ children, delay = 0 }) {
   return (
     <motion.div
       initial="hidden"
@@ -27,7 +27,7 @@ export function FadeInWhenVisible({ children }) {
             hidden: { opacity: 0, y: 10 },
             visible: { opacity: 1, y: 0 },
           }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: delay }}
         >
           {child}
         </motion.div>

@@ -71,7 +71,7 @@ export default function ContentHome({
         <div className="order-1 md:order-2 md:w-1/2 z-10">
           <FadeInWhenVisible>
             <Image
-              className="w-full md:h-[500px] object-cover"
+              className="w-full md:h-[500px] object-cover rounded-md"
               src={firstBlock.image}
               alt={firstBlock.title}
               width={1200}
@@ -102,7 +102,7 @@ export default function ContentHome({
         <div className="w-full md:w-1/2 z-10">
           <FadeInWhenVisible>
             <Image
-              className="w-full md:h-[500px] object-cover"
+              className="w-full md:h-[500px] object-cover rounded-md"
               src={secondBlock.image}
               alt={secondBlock.title}
               width={1200}
@@ -164,7 +164,7 @@ export default function ContentHome({
         <div className="w-full md:w-1/2 md:order-2">
           <FadeInWhenVisible>
             <Image
-              className="w-full md:h-[500px] object-cover z-10 relative"
+              className="w-full md:h-[500px] object-cover z-10 relative rounded-md"
               src={thirdBlock.image}
               alt={thirdBlock.title}
               width={1200}
