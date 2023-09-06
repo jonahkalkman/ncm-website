@@ -19,7 +19,7 @@ export default function PostPreview({
       </div>
       <h3 className="text-3xl mb-2 leading-snug transition-all duration-[300ms] ease-in-out group-hover:text-primary group-hover:translate-x-2">
         <Link
-          href={`/posts/${slug}`}
+          href={`/nieuws/${slug}`}
           className="no-underline"
           dangerouslySetInnerHTML={{ __html: title }}
         ></Link>
