@@ -62,11 +62,6 @@ export default function ContentHome({
               dangerouslySetInnerHTML={{ __html: firstBlock.text }}
             />
           </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <div className="mt-6 text-left md:text-left">
-              <Button title="Lees meer" link="/museumwinkel" />
-            </div>
-          </FadeInWhenVisible>
         </div>
         <div className="order-1 md:order-2 md:w-1/2 z-10">
           <FadeInWhenVisible>
@@ -154,11 +149,6 @@ export default function ContentHome({
               className="text-left w-full md:w-[90%] md:text-left"
               dangerouslySetInnerHTML={{ __html: thirdBlock.text }}
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
-            <div className="mt-6 text-left md:text-left">
-              <Button title="Lees meer" link="/museumwinkel" />
-            </div>
           </FadeInWhenVisible>
         </div>
         <div className="w-full md:w-1/2 md:order-2">

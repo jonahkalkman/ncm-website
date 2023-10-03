@@ -19,12 +19,15 @@ import {
 import Header from "../components/header";
 import { WEBSITE_TITLE } from "../lib/constants";
 import DetailBlock from "../components/detail-block";
-import CollectionBlock from "../components/collection-block";
+import CollectionBlock from "../components/collection/collection-block";
 import FriendForm from "../components/friend-form";
 import FormContact from "../components/form-contact";
 import PostsOverview from "../components/posts-overview";
-import CollectionContent from "../components/collection-content";
+import CollectionContent from "../components/collection/collection-content";
 import { FadeInWhenVisible } from "../components/fade-in";
+import FormGroups from "../components/form-groups";
+
+import { GroupType } from "../components/form-groups";
 
 export default function Index({
   preview,
@@ -41,18 +44,18 @@ export default function Index({
           {(pageContent && pageContent.title) ?? "Nieuws"} | {WEBSITE_TITLE}
         </title>
       </Head>
-      <div className="block sticky top-0 z-50 bg-white border-b-2">
+      <div className="block sticky top-0 z-50 bg-white">
         <Container>
           <Header logo={logo} menu={menu} />
         </Container>
       </div>
       {pageContent &&
-      pageContent.detail &&
-      pageContent.detail.firstBlock.firstBlockImage ? (
+      pageContent.featuredImage &&
+      pageContent.featuredImage.node.mediaItemUrl ? (
         <div
           style={{
             /* @ts-ignore */
-            "--image-url": `url(${pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl})`,
+            "--image-url": `url(${pageContent.featuredImage.node.mediaItemUrl})`,
           }}
           className="bg-[image:var(--image-url)] bg-no-repeat bg-center bg-cover bg-slate-300 h-[150px] md:h-[250px] w-full flex items-center justify-start"
         >
@@ -77,6 +80,9 @@ export default function Index({
                   pageContent.detail.firstBlock.firstBlockImage.mediaItemUrl
                 }
                 text={pageContent.detail.firstBlock.firstBlockText}
+                description={
+                  pageContent.detail.firstBlock.firstBlockImage.description
+                }
               />
             ) : null}
           </div>
@@ -98,6 +104,9 @@ export default function Index({
                     pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
                   }
                   text={pageContent.detail.secondBlock.secondBlockText}
+                  description={
+                    pageContent.detail.secondBlock.secondBlockImage.description
+                  }
                 />
               </Container>
             </div>
@@ -133,6 +142,26 @@ export default function Index({
             pageContent.detail.secondBlock.secondBlockImage.mediaItemUrl
           }
         />
+      ) : null}
+      {pageContent && pageContent.slug === "rondleidingen-groepen" ? (
+        <section className="bg-primary py-10 md:py-20">
+          <Container>
+            <div className="flex gap-20 md:gap-40 flex-col md:flex-row">
+              <div className="w-full md:w-1/2">
+                <h2 className="leading-normal">
+                  Meld je groepsbezoek als particulier aan
+                </h2>
+                <FormGroups groupType={GroupType.privateGroup} />
+              </div>
+              <div className="w-full md:w-1/2">
+                <h2 className="leading-normal">
+                  Met je groepsbezoek als bedrijf of organisatie
+                </h2>
+                <FormGroups groupType={GroupType.companyGroup} />
+              </div>
+            </div>
+          </Container>
+        </section>
       ) : null}
       {pageContent && pageContent.slug === "contact" ? <FormContact /> : null}
       {posts && posts.edges.length > 0 ? (

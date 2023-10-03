@@ -331,11 +331,17 @@ export async function getPageContent(page: string) {
         page(id: "${page}", idType: URI) {
           title
           slug
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
           detail {
             firstBlock {
               firstBlockText
               firstBlockImage {
                 mediaItemUrl
+                description
               }
             }
             secondBlock {
@@ -343,6 +349,7 @@ export async function getPageContent(page: string) {
               secondBlockText
               secondBlockImage {
                 mediaItemUrl
+                description
               }
             }
           }

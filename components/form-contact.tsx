@@ -112,14 +112,48 @@ export default function FormContact({}: Props) {
           <div className="w-full md:w-1/2">
             <div className="mb-10">
               <h2 className="mt-0 mb-2">Contact</h2>
-              <p className="">
-                Stel uw vraaag via het onderstaande formulier en wij nemen
-                contact met u op. Een mail sturen naar{" "}
-                <a href="mailto:nationaal-coop-museum@hetnet.nl">
-                  nationaal-coop-museum@hetnet.nl
-                </a>{" "}
-                of even langskomen in onze winkel kan natuurlijk ook.
-              </p>
+              <div className="">
+                <p>
+                  Op deze website zijn diverse contactformulieren opgenomen:
+                </p>
+                <ul className="pl-10">
+                  <li>
+                    Voor particulieren, die in het bezit zijn van materiaal als
+                    aanvulling op de collectie van het museum, zie {" "}
+                    <a href="/collectie">Onze collectie</a>
+                  </li>
+                  <li>
+                    Voor studenten en onderzoeksinstanties, het museum als
+                    kenniscentrum van verbruikscoöperaties, zie{" "}
+                    <a href="/collectie">Onze collectie</a>
+                  </li>
+                  <li>
+                    Voor rondleidingen voor scholen, zie{" "}
+                    <a href="/rondleidingen-scholen">
+                      Rondleidingen voor scholen
+                    </a>
+                    ;
+                  </li>
+                  <li>
+                    Voor rondleidingen voor groepen, zie{" "}
+                    <a href="/rondleidingen-groepen">
+                      Rondleidingen voor groepen
+                    </a>
+                  </li>
+                  <li>
+                    Voor vriend van het museum, zie{" "}
+                    <a href="/word-vriend">Word vriend</a>
+                  </li>
+                  <li>
+                    Voor vrijwilligers, zie{" "}
+                    <a href="/word-vrijwilliger">Word vrijwilliger</a>
+                  </li>
+                </ul>
+                <p>
+                  Voor alle overige vragen: vul onderstaand formulier in en wij
+                  nemen contact op.
+                </p>
+              </div>
             </div>
             <form
               onSubmit={handleSubmit}

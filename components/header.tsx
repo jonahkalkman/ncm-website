@@ -95,8 +95,8 @@ export default function Header({ logo, menu }) {
                 <li
                   className={
                     isCurrent(item.url)
-                      ? "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 text-primary lg:text-sm xl:text-base 2xl:text-lg"
-                      : "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 lg:text-sm xl:text-base 2xl:text-lg"
+                      ? "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 text-primary lg:text-sm xl:text-lg 2xl:text-lg"
+                      : "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 lg:text-sm xl:text-lg 2xl:text-lg"
                   }
                 >
                   {item.title}

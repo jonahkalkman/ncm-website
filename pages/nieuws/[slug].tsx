@@ -43,7 +43,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
-      <div className="block sticky top-0 z-50 bg-white border-b-2">
+      <div className="block sticky top-0 z-50 bg-white">
         <Container>
           <Header logo={logo} menu={menu} />
         </Container>
@@ -63,7 +63,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
                   />
                 </Head>
                 <FadeInWhenVisible>
-                  <h1 className="text-4xl md:text-7xl text-center mt-10 md:mt-20 md:mb-10 font-bold">
+                  <h1 className="text-4xl md:text-7xl text-center mt-10 md:mt-20 md:mb-10 font-bold leading-[110%]">
                     {post.title}
                   </h1>
                 </FadeInWhenVisible>
