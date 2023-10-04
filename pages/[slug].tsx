@@ -2,8 +2,6 @@ import Head from "next/head";
 import {
   GetStaticPaths,
   GetStaticProps,
-  Metadata,
-  ResolvingMetadata,
 } from "next";
 import Container from "../components/container";
 import Layout from "../components/layout";
@@ -12,7 +10,6 @@ import {
   getCollectionContent,
   getLogo,
   getPageContent,
-  getPageMetadata,
   getPosts,
   getPrimaryMenu,
 } from "../lib/api";
@@ -28,6 +25,7 @@ import { FadeInWhenVisible } from "../components/fade-in";
 import FormGroups from "../components/form-groups";
 
 import { GroupType } from "../components/form-groups";
+import VacanciesForm from "../components/vacancies/vacancies-form";
 
 export default function Index({
   preview,
@@ -107,7 +105,11 @@ export default function Index({
                   description={
                     pageContent.detail.secondBlock.secondBlockImage.description
                   }
-                />
+                >
+                  {pageContent.slug === "word-vrijwilliger" ? (
+                    <VacanciesForm />
+                  ) : null}
+                </DetailBlock>
               </Container>
             </div>
           ) : null}

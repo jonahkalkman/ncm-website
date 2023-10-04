@@ -2,20 +2,18 @@ import { useState } from "react";
 
 interface Props {}
 
-export default function CollectionForm({}: Props) {
+export default function VacanciesForm({}: Props) {
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   const handleSubmit = async (event) => {
-    // Stop the form from submitting and refreshing the page.
     event.preventDefault();
 
     const data = {
       name: event.target.fullname.value,
-      address: event.target.address.value,
       email: event.target.email.value,
       phone: event.target.phone.value,
-      description: event.target.description.value,
-      delivery: event.target.delivery.value,
+      motivation: event.target.motivation.value,
+      job: event.target.job.value,
     };
 
     const JSONdata = JSON.stringify(data);
@@ -39,18 +37,87 @@ export default function CollectionForm({}: Props) {
   const labelStyling = "block mb-2 font-bold";
 
   return (
-    <section className="bg-primary p-10 rounded-md">
+    <section className="mt-10">
       <div className="flex flex-col md:flex-row justify-between gap-10">
         <div className="w-full">
           <div className="mb-5">
-            <h3 className="mt-0">
-              Mijn mogelijke uitbreiding voor de museumcollectie
-            </h3>
+            <h3 className="mt-0">Contactformulier</h3>
           </div>
           <form
             onSubmit={handleSubmit}
             className="flex justify-center flex-col align-middle"
           >
+            <div className="w-full">
+              <fieldset className="mb-10">
+                <legend className={labelStyling}>
+                  Ik ben geïnteresseerd in de volgende vrijwilligersfunctie.
+                  Neem vrijblijvend contact met mij op.*
+                </legend>
+                <div>
+                  <div className="w-full mb-2">
+                    <input
+                      className="mr-2"
+                      type="radio"
+                      id="vacancyChoice1"
+                      name="job"
+                      value="Winkelmedewerker"
+                      required
+                    />
+                    <label htmlFor="vacancyChoice1">Winkelmedewerker</label>
+                  </div>
+                  <div className="w-full mb-2">
+                    <input
+                      className="mr-2"
+                      type="radio"
+                      id="vacancyChoice2"
+                      name="job"
+                      value="Museumrondleider"
+                      required
+                    />
+                    <label htmlFor="vacancyChoice2">Museumrondleider</label>
+                  </div>
+                  <div className="w-full mb-2">
+                    <input
+                      className="mr-2"
+                      type="radio"
+                      id="vacancyChoice3"
+                      name="job"
+                      value="Medewerker collectiebeheer"
+                      required
+                    />
+                    <label htmlFor="vacancyChoice3">
+                      Medewerker collectiebeheer
+                    </label>
+                  </div>
+                  <div className="w-full mb-2">
+                    <input
+                      className="mr-2"
+                      type="radio"
+                      id="vacancyChoice4"
+                      name="job"
+                      value="Bestuurslid Gebouwen & Onderhoud"
+                      required
+                    />
+                    <label htmlFor="vacancyChoice4">
+                      Bestuurslid Gebouwen & Onderhoud
+                    </label>
+                  </div>
+                  <div className="w-full">
+                    <input
+                      className="mr-2"
+                      type="radio"
+                      id="vacancyChoice5"
+                      name="job"
+                      value="Bestuurslid Collectiebeheer"
+                      required
+                    />
+                    <label htmlFor="vacancyChoice5">
+                      Bestuurslid Collectiebeheer
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
             <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
               <div className="w-full">
                 <label htmlFor="fullname" className={labelStyling}>
@@ -81,7 +148,7 @@ export default function CollectionForm({}: Props) {
               </div>
             </div>
             <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
-              <div className="w-full">
+              <div className="w-full md:w-1/2">
                 <label htmlFor="phone" className={labelStyling}>
                   Telefoonnummer*
                 </label>
@@ -94,66 +161,17 @@ export default function CollectionForm({}: Props) {
                   required
                 />
               </div>
-              <div className="w-full">
-                <label htmlFor="address" className={labelStyling}>
-                  Adres*
-                </label>
-                <input
-                  className={inputStyling}
-                  type="text"
-                  id="address"
-                  name="address"
-                  required
-                  placeholder="Adres"
-                />
-              </div>
             </div>
             <div className="w-full">
-              <label htmlFor="description" className={labelStyling}>
-                Omschrijving aan te bieden artikelen*
+              <label htmlFor="motivation" className={labelStyling}>
+                Motivatie
               </label>
               <textarea
                 className="w-full h-[150px] py-3 px-5 rounded-sm mb-5 md:mb-10 min-h-[150px]"
-                id="description"
-                name="description"
-                placeholder="Omschrijving aan te bieden artikelen..."
-                required
+                id="motivation"
+                name="motivation"
+                placeholder="Motivatie en achtergrond..."
               />
-            </div>
-            <div className="w-full">
-              <fieldset className="mb-10">
-                <legend className={labelStyling}>Selecteer een optie*</legend>
-                <div>
-                  <div className="w-full mb-2">
-                    <input
-                      className="mr-2"
-                      type="radio"
-                      id="collectionChoice1"
-                      name="delivery"
-                      value="langsbrengen"
-                      required
-                    />
-                    <label htmlFor="collectionChoice1">
-                      Ik maak graag een afspraak om deze artikelen even langs te
-                      brengen bij het museum.
-                    </label>
-                  </div>
-                  <div className="w-full">
-                    <input
-                      className="mr-2"
-                      type="radio"
-                      id="collectionChoice2"
-                      name="delivery"
-                      value="ophalen"
-                      required
-                    />
-                    <label htmlFor="collectionChoice2">
-                      Ik maak graag een afspraak om deze artikelen bij mij thuis
-                      op te halen.
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
             </div>
             <button
               disabled={submitted}
@@ -169,7 +187,7 @@ export default function CollectionForm({}: Props) {
             {submitted ? (
               <p className="block text-bold mt-5">
                 Bericht verzonden! U ontvangt binnen twee weken bericht van het
-                museum voor de afspraak.
+                museum.
               </p>
             ) : null}
           </form>

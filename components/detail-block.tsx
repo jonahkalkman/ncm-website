@@ -6,9 +6,16 @@ interface Props {
   text: string;
   description?: string;
   type: "left" | "right";
+  children?: React.ReactNode;
 }
 
-export default function DetailBlock({ image, text, description, type }: Props) {
+export default function DetailBlock({
+  image,
+  text,
+  description,
+  type,
+  children,
+}: Props) {
   return (
     <section className="detail-block relative flex gap-4 md:gap-10 justify-center items-start flex-col md:flex-row">
       <div
@@ -23,6 +30,7 @@ export default function DetailBlock({ image, text, description, type }: Props) {
             dangerouslySetInnerHTML={{ __html: text }}
             className="detail-block__text-wrapper"
           />
+          {children}
         </FadeInWhenVisible>
       </div>
       <div
@@ -44,10 +52,12 @@ export default function DetailBlock({ image, text, description, type }: Props) {
           height={500}
         />
         {description ? (
-          <div
-            className="[&>*]:text-sm"
-            dangerouslySetInnerHTML={{ __html: description }}
-          ></div>
+          <div>
+            <div
+              className="[&>*]:text-sm"
+              dangerouslySetInnerHTML={{ __html: description }}
+            ></div>
+          </div>
         ) : null}
       </div>
     </section>
