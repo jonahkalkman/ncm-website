@@ -7,13 +7,13 @@ interface Props {
 
 export default function Footer({ logo }: Props) {
   return (
-    <footer className="mt-5 pt-10 md:pt-20 pb-5 md:mt-0 md:h-[300px]">
-      <div className="md:fixed bottom-5 w-full">
+    <footer className="mt-5 pt-10 lg:pt-20 pb-5 lg:mt-0 lg:h-[300px]">
+      <div className="lg:fixed bottom-5 w-full">
         <Container>
-          <div className="flex justify-between mb-0 md:mb-20 flex-col md:flex-row">
-            <div className="flex items-center gap-3 mb-5 justify-start md:mb-0 md:justify-start">
+          <div className="flex justify-between mb-0 lg:mb-20 flex-col lg:flex-row">
+            <div className="flex items-center gap-3 mb-5 justify-start lg:mb-0 lg:justify-start">
               <Image
-                className="object-contain w-[80px] h-[80px] md:w-[100px] md:h-[100px]"
+                className="object-contain w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
                 src={logo}
                 alt={"logo"}
                 width={70}
@@ -24,13 +24,13 @@ export default function Footer({ logo }: Props) {
                 Coöperatie Museum
               </span>
             </div>
-            <div className="flex flex-col items-start mb-5 md:items-start md:mb-0">
+            <div className="flex flex-col items-start mb-5 lg:items-start lg:mb-0">
               <h3 className="text-2xl mb-4">Adres</h3>
               <span className="block mb-1">Langehaven 84</span>
               <span className="block mb-1">3111CH Schiedam</span>
               <span className="block">Nederland</span>
             </div>
-            <div className="flex flex-col items-start mb-5 md:items-start md:mb-0">
+            <div className="flex flex-col items-start mb-5 lg:items-start lg:mb-0">
               <h3 className="text-2xl mb-4">Contact</h3>
               <a
                 className="group mb-4 flex justify-start items-center no-underline transition-all duration-300 ease-in-out hover:text-primary hover:translate-x-3"
@@ -81,15 +81,15 @@ export default function Footer({ logo }: Props) {
                 info@cooperatie-museum.nl
               </a>
             </div>
-            <div className="flex flex-col items-start mb-10 md:items-start md:mb-0">
+            <div className="flex flex-col items-start mb-10 lg:items-start lg:mb-0">
               <h3 className="text-2xl mb-4">Steun de coöperatie</h3>
               <span className="block mb-1">IB: NL98 INGB 0002 1825 02</span>
               <span className="block mb-1">BIC: INGBNL2A</span>
               <span className="block">Fiscaalnummer: 814989433</span>
             </div>
           </div>
-          <div className="flex flex-col justify-between items-start md:items-center md:flex-row">
-            <div className="flex flex-col md:items-center md:flex-row md:gap-10">
+          <div className="flex flex-col justify-between items-start lg:items-center lg:flex-row">
+            <div className="flex flex-col lg:items-center lg:flex-row lg:gap-10">
               <a
                 href="/algemene-voorwaarden"
                 className="no-underline transition-all duration-300 ease-in-out hover:text-primary"

@@ -12,10 +12,10 @@ export default function Header({ logo, menu }) {
   };
 
   return (
-    <header className="bg-white overflow-x-hidden py-1 md:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10">
+    <header className="bg-white overflow-x-hidden py-1 lg:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10">
       <Link href="/">
         <Image
-          className="animate-fadein first-letter:object-contain w-[60px] h-[60px] md:w-[70px] md:h-[57px]"
+          className="animate-fadein object-contain w-[60px] h-[60px] lg:w-[70px] lg:h-[57px]"
           src={logo}
           alt={"logo"}
           width={70}
@@ -55,8 +55,8 @@ export default function Header({ logo, menu }) {
       <div
         className={
           hasMobileMenu
-            ? "absolute w-[80%] overflow-hidden right-0 translate-x-0 top-[68px] transition-all duration-300 md:hidden"
-            : "absolute w-[80%] overflow-hidden right-0 translate-x-[600px] top-[68px] transition-all duration-300 md:hidden"
+            ? "absolute w-[90%] overflow-hidden right-0 translate-x-0 top-[68px] transition-all duration-300 lg:hidden"
+            : "absolute w-[90%] overflow-hidden right-0 translate-x-[700px] top-[68px] transition-all duration-300 lg:hidden"
         }
       >
         <nav className="bg-white p-10 border-solid border-2 border-black border-r-0">
@@ -93,11 +93,9 @@ export default function Header({ logo, menu }) {
                 className="no-underline"
               >
                 <li
-                  className={
-                    isCurrent(item.url)
-                      ? "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 text-primary lg:text-sm xl:text-lg 2xl:text-lg"
-                      : "transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 lg:text-sm xl:text-lg 2xl:text-lg"
-                  }
+                  className={`transition-all ease-in-out duration-300 hover:text-primary hover:cursor-pointer m-0 lg:text-sm xl:text-lg 2xl:text-lg ${
+                    isCurrent(item.url) ? "text-primary" : ""
+                  }`}
                 >
                   {item.title}
                 </li>

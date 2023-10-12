@@ -10,7 +10,7 @@ export default function CollectionContent({}: Props) {
     <section className="shadow-sm">
       <Container>
         <div className="py-10 md:py-20 md:pb-10">
-          <div className="flex flex-col gap-10 md:gap-40 md:flex-row">
+          <div className="flex flex-col gap-10 md:gap-20 md:flex-row">
             <div className="w-full md:w-1/2">
               <h2 className="leading-tight">Uitbreiding & aanvulling van de museumcollectie?</h2>
               <p className="pb-5">

@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import { getHomeContent, getLogo, getPrimaryMenu } from "../lib/api";
 import Header from "../components/header";
 import { WEBSITE_TITLE } from "../lib/constants";
-import HeroHome from "../components/hero-home";
+import HeroHome from "../components/hero/HeroHome";
 import IntroHome from "../components/intro-home";
 import Banner from "../components/banner";
 import ContentHome from "../components/content-home";

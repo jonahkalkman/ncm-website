@@ -58,10 +58,10 @@ export default function FriendForm({ image, secondImage }: Props) {
   return (
     <section className="bg-[#EDB300] py-10 md:py-20">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-20">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-20">
           <div className="order-2 md:order-1">
             <div className="mb-10">
-              <h2 className="mb-2">Word lid van de Vereniging van Vrienden</h2>
+              <h2 className="mb-2 mt-0">Word lid van de Vereniging van Vrienden</h2>
               <p>
                 Als lid van de Vereniging van Vrienden ondersteun ik het
                 Nationaal Coöperatie Museum met een jaarlijkse bijdrage van €15.
@@ -160,7 +160,7 @@ export default function FriendForm({ image, secondImage }: Props) {
             </form>
           </div>
           <Image
-            className="w-full h-[200px] md:w-1/2 md:h-[600px] object-cover"
+            className="block w-full h-[200px] md:w-1/2 md:h-[600px] object-cover rounded-md"
             src={secondImage}
             alt="Word Vriend van het Nationaal Coöperatie Museum"
             width={1200}
