@@ -58,7 +58,7 @@ export default function FormContact({}: Props) {
           <div className="w-full order-2 md:order-1 md:w-1/2">
             <h2 className="text-2xl mb-1 md:text-3xl md:mb-5 mt-0">Adres</h2>
             <p>
-              Langehaven 84 <br />
+              Lange Haven 84 <br />
               3111CH Schiedam <br />
               Nederland
             </p>
@@ -88,7 +88,7 @@ export default function FormContact({}: Props) {
             </a>
             <h2 className="text-2xl mb-1 md:text-3xl mt-10 md:mb-5">Mail</h2>
             <a
-              href="mailto:info@cooperatie-museum.nl"
+              href="mailto:nationaal-coop-museum@hetnet.nl"
               className="group flex gap-3 items-center no-underline transition-all duration-300 ease-in-out hover:text-white"
             >
               <svg
@@ -106,7 +106,7 @@ export default function FormContact({}: Props) {
                   />
                 </g>
               </svg>
-              info@cooperatie-museum.nl
+              nationaal-coop-museum@hetnet.nl
             </a>
           </div>
           <div className="w-full md:w-1/2">
@@ -119,7 +119,7 @@ export default function FormContact({}: Props) {
                 <ul className="pl-10">
                   <li>
                     Voor particulieren, die in het bezit zijn van materiaal als
-                    aanvulling op de collectie van het museum, zie {" "}
+                    aanvulling op de collectie van het museum, zie{" "}
                     <a href="/collectie">Onze collectie</a>
                   </li>
                   <li>
@@ -162,7 +162,7 @@ export default function FormContact({}: Props) {
               <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
                 <div className="w-full">
                   <label htmlFor="first" className={labelStyling}>
-                    Voornaam
+                    Voornaam*
                   </label>
                   <input
                     className={inputStyling}
@@ -175,7 +175,7 @@ export default function FormContact({}: Props) {
                 </div>
                 <div className="w-full">
                   <label htmlFor="last" className={labelStyling}>
-                    Achternaam
+                    Achternaam*
                   </label>
                   <input
                     className={inputStyling}
@@ -190,7 +190,7 @@ export default function FormContact({}: Props) {
               <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
                 <div className="w-full md:w-1/2">
                   <label htmlFor="email" className={labelStyling}>
-                    E-mailadres
+                    E-mailadres*
                   </label>
                   <input
                     className={inputStyling}
@@ -203,7 +203,7 @@ export default function FormContact({}: Props) {
                 </div>
                 <div className="w-full md:w-1/2">
                   <label htmlFor="phone" className={labelStyling}>
-                    Telefoonnummer
+                    Telefoonnummer*
                   </label>
                   <input
                     className={inputStyling}
@@ -217,7 +217,7 @@ export default function FormContact({}: Props) {
               </div>
               <div className="w-full">
                 <label htmlFor="message" className={labelStyling}>
-                  Bericht
+                  Bericht*
                 </label>
                 <textarea
                   className="w-full h-[150px] py-3 px-5 rounded-sm mb-5 md:mb-10 min-h-[150px]"

@@ -54,7 +54,7 @@ export default function CollectionForm({}: Props) {
             <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
               <div className="w-full">
                 <label htmlFor="fullname" className={labelStyling}>
-                  Naam*
+                  Volledige naam*
                 </label>
                 <input
                   className={inputStyling}
@@ -62,7 +62,7 @@ export default function CollectionForm({}: Props) {
                   id="fullname"
                   name="fullname"
                   required
-                  placeholder="Naam"
+                  placeholder="Volledige naam"
                 />
               </div>
 

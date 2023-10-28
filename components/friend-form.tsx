@@ -75,7 +75,7 @@ export default function FriendForm({ image, secondImage }: Props) {
               <div className="flex flex-col md:flex-row w-full align-middle justify-start gap-6 mb-6 md:mb-0 md:gap-10">
                 <div className="w-full md:w-1/2">
                   <label htmlFor="name" className={labelStyling}>
-                    Naam
+                    Volledige naam*
                   </label>
                   <input
                     className={inputStyling}
@@ -83,12 +83,12 @@ export default function FriendForm({ image, secondImage }: Props) {
                     id="name"
                     name="name"
                     required
-                    placeholder="Naam"
+                    placeholder="Volledige naam"
                   />
                 </div>
                 <div className="w-full md:w-1/2">
                   <label htmlFor="email" className={labelStyling}>
-                    E-mailadres
+                    E-mailadres*
                   </label>
                   <input
                     className={inputStyling}
@@ -103,7 +103,7 @@ export default function FriendForm({ image, secondImage }: Props) {
               <div className="flex flex-col md:flex-row w-full align-middle justify-start mb-6 md:mb-0 gap-6 md:gap-10">
                 <div className="w-full md:w-1/2">
                   <label htmlFor="address" className={labelStyling}>
-                    Adres
+                    Adres*
                   </label>
                   <input
                     className={inputStyling}
@@ -116,7 +116,7 @@ export default function FriendForm({ image, secondImage }: Props) {
                 </div>
                 <div className="w-full md:w-1/2">
                   <label htmlFor="zipcode" className={labelStyling}>
-                    Postcode
+                    Postcode*
                   </label>
                   <input
                     className={inputStyling}
@@ -131,7 +131,7 @@ export default function FriendForm({ image, secondImage }: Props) {
               <div className="flex w-full align-middle justify-start gap-5 md:gap-10">
                 <div className="w-full md:w-1/2 md:pr-5">
                   <label htmlFor="city" className={labelStyling}>
-                    Stad
+                    Stad*
                   </label>
                   <input
                     className={inputStyling}

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "./button";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { FadeInWhenVisible } from "./fade-in";
 
@@ -36,37 +35,37 @@ export default function ContentHome({
   const pathLength2 = useSpring(yRange2, { stiffness: 400, damping: 90 });
 
   return (
-    <section className="content-home py-10 md:my-20">
+    <section className="content-home py-10 lg:my-20">
       <div className="flex flex-col gap-0 mb-10">
         <FadeInWhenVisible>
-          <span className="order-2 md:order-1 block text-left text-md w-[80%] md:text-xl mb-2 md:w-full md:mx-auto">
+          <span className="order-2 lg:order-1 block text-left text-md w-[80%] lg:text-xl mb-2 lg:w-full lg:mx-auto">
             In een nostalgisch pand aan de Lange Haven in Schiedam
           </span>
         </FadeInWhenVisible>
         <FadeInWhenVisible>
-          <h2 className="md:order-1 font-bold text-left text-2xl mb-2 md:text-6xl md:mb-[80px] md:w-full mx-auto leading-tight">
+          <h2 className="md:order-1 font-bold text-left text-2xl mb-2 lg:text-6xl lg:mb-[80px] lg:w-full mx-auto leading-tight">
             {title}
           </h2>
         </FadeInWhenVisible>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-between items-center gap-0 md:gap-20 md:mb-40 mb-20">
-        <div className="w-full md:w-1/2 order-2 md:order-1">
+      <div className="relative flex flex-col lg:flex-row justify-between items-center gap-0 lg:gap-20 lg:mb-40 mb-20">
+        <div className="w-full lg:w-1/2 order-2 lg:order-1">
           <FadeInWhenVisible>
-            <h3 className="text-left text-2xl font-bold md:text-5xl mb-2 md:text-left md:mb-6">
+            <h3 className="text-left text-2xl font-bold lg:text-5xl mb-2 lg:text-left lg:mb-6">
               {firstBlock.title}
             </h3>
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <div
-              className="text-left w-full md:w-[90%] md:text-left"
+              className="text-left w-full lg:w-[90%] lg:text-left"
               dangerouslySetInnerHTML={{ __html: firstBlock.text }}
             />
           </FadeInWhenVisible>
         </div>
-        <div className="order-1 md:order-2 md:w-1/2 z-10">
+        <div className="order-1 lg:order-2 lg:w-1/2 z-10">
           <FadeInWhenVisible>
             <Image
-              className="w-full md:h-[500px] object-cover rounded-md"
+              className="w-full lg:h-[500px] object-cover rounded-md"
               src={firstBlock.image}
               alt={firstBlock.title}
               width={1200}
@@ -74,7 +73,7 @@ export default function ContentHome({
             />
           </FadeInWhenVisible>
         </div>
-        <div className="absolute bottom-[-200px] right-[45%] hidden md:block">
+        <div className="absolute bottom-[-200px] right-[45%] hidden lg:block">
           <svg
             width="296"
             height="398"
@@ -93,11 +92,11 @@ export default function ContentHome({
           </svg>
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-between items-center gap-0 md:gap-20 md:mb-40 mb-20">
-        <div className="w-full md:w-1/2 z-10">
+      <div className="relative flex flex-col lg:flex-row justify-between items-center gap-0 lg:gap-20 lg:mb-40 mb-20">
+        <div className="w-full lg:w-1/2 z-10">
           <FadeInWhenVisible>
             <Image
-              className="w-full md:h-[500px] object-cover rounded-md"
+              className="w-full lg:h-[500px] object-cover rounded-md"
               src={secondBlock.image}
               alt={secondBlock.title}
               width={1200}
@@ -105,20 +104,20 @@ export default function ContentHome({
             />
           </FadeInWhenVisible>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="w-full lg:w-1/2">
           <FadeInWhenVisible>
-            <h3 className="text-left text-2xl md:text-left font-bold md:text-5xl mb-2 md:mb-6">
+            <h3 className="text-left text-2xl lg:text-left font-bold lg:text-5xl mb-2 lg:mb-6">
               {secondBlock.title}
             </h3>
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <div
-              className="text-left w-full md:w-[90%] md:text-left"
+              className="text-left w-full lg:w-[90%] lg:text-left"
               dangerouslySetInnerHTML={{ __html: secondBlock.text }}
             />
           </FadeInWhenVisible>
         </div>
-        <div className="absolute bottom-[-200px] left-[40%] hidden md:block">
+        <div className="absolute bottom-[-200px] left-[40%] hidden lg:block">
           <svg
             width="404"
             height="354"
@@ -137,24 +136,24 @@ export default function ContentHome({
           </svg>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center gap-0 md:gap-20 md:mb-0">
-        <div className="w-full md:w-1/2 order-2 md:order-1">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-0 lg:gap-20 lg:mb-0">
+        <div className="w-full lg:w-1/2 order-2 lg:order-1">
           <FadeInWhenVisible>
-            <h3 className="text-left text-2xl md:text-left font-bold md:text-5xl mb-2 md:mb-6">
+            <h3 className="text-left text-2xl lg:text-left font-bold lg:text-5xl mb-2 lg:mb-6">
               {thirdBlock.title}
             </h3>
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <div
-              className="text-left w-full md:w-[90%] md:text-left"
+              className="text-left w-full lg:w-[90%] lg:text-left"
               dangerouslySetInnerHTML={{ __html: thirdBlock.text }}
             />
           </FadeInWhenVisible>
         </div>
-        <div className="w-full md:w-1/2 md:order-2">
+        <div className="w-full lg:w-1/2 lg:order-2">
           <FadeInWhenVisible>
             <Image
-              className="w-full md:h-[500px] object-cover z-10 relative rounded-md"
+              className="w-full lg:h-[500px] object-cover z-10 relative rounded-md"
               src={thirdBlock.image}
               alt={thirdBlock.title}
               width={1200}

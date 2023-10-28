@@ -52,7 +52,7 @@ export default function CollectionFormEducation({}: Props) {
             <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
               <div className="w-full">
                 <label htmlFor="fullname" className={labelStyling}>
-                  Naam*
+                  Volledige naam*
                 </label>
                 <input
                   className={inputStyling}
@@ -60,7 +60,7 @@ export default function CollectionFormEducation({}: Props) {
                   id="fullname"
                   name="fullname"
                   required
-                  placeholder="Naam"
+                  placeholder="Volledige naam"
                 />
               </div>
               <div className="w-full">
@@ -107,7 +107,7 @@ export default function CollectionFormEducation({}: Props) {
             </div>
             <div className="w-full md:w-1/2 md:pr-5">
               <label htmlFor="organisation" className={labelStyling}>
-                Organisatie*
+                School of organisatie*
               </label>
               <input
                 className={inputStyling}
@@ -115,7 +115,7 @@ export default function CollectionFormEducation({}: Props) {
                 id="organisation"
                 name="organisation"
                 required
-                placeholder="Organisatie"
+                placeholder="School of organisatie"
               />
             </div>
             <div className="w-full">

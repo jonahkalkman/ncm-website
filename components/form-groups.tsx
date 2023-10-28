@@ -1,4 +1,3 @@
-import { type } from "os";
 import { useState } from "react";
 
 export enum GroupType {
@@ -63,7 +62,7 @@ export default function FormGroups({ groupType }: Props) {
       <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
         <div className="w-full md:w-1/2">
           <label htmlFor="fullname" className={labelStyling}>
-            Naam
+            Volledige naam*
           </label>
           <input
             className={inputStyling}
@@ -76,7 +75,7 @@ export default function FormGroups({ groupType }: Props) {
         </div>
         <div className="w-full md:w-1/2">
           <label htmlFor="phone" className={labelStyling}>
-            Telefoonnummer
+            Telefoonnummer*
           </label>
           <input
             className={inputStyling}
@@ -91,7 +90,7 @@ export default function FormGroups({ groupType }: Props) {
       <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
         <div className="w-full md:w-1/2">
           <label htmlFor="email" className={labelStyling}>
-            E-mailadres
+            E-mailadres*
           </label>
           <input
             className={inputStyling}
@@ -104,13 +103,14 @@ export default function FormGroups({ groupType }: Props) {
         </div>
         <div className="w-1/2">
           <label htmlFor="visitDate" className={labelStyling}>
-            Gewenste bezoekdatum
+            Gewenste bezoekdatum*
           </label>
           <input
             className={inputStyling}
             type="date"
             id="visitDate"
             name="visitDate"
+            required
           />
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function FormGroups({ groupType }: Props) {
         {groupType === GroupType.companyGroup ? (
           <div className="w-1/2">
             <label htmlFor="company" className={labelStyling}>
-              Bedrijf
+              Bedrijf*
             </label>
             <input
               className={inputStyling}
@@ -132,7 +132,7 @@ export default function FormGroups({ groupType }: Props) {
         ) : null}
         <div className="w-1/2">
           <label htmlFor="groupAmount" className={labelStyling}>
-            Aantal personen
+            Aantal personen*
           </label>
           <input
             className="w-fit py-3 px-5 rounded-sm mb-5 md:mb-10"
@@ -142,6 +142,7 @@ export default function FormGroups({ groupType }: Props) {
             min="10"
             max="100"
             placeholder="10"
+            required
           />
         </div>
       </div>
@@ -153,7 +154,6 @@ export default function FormGroups({ groupType }: Props) {
           className="w-full h-[200px] py-3 px-5 rounded-sm mb-5 md:mb-10 min-h-[150px]"
           id="message"
           name="message"
-          required
           placeholder="Aanleiding voor het bezoek & bijzonderheden of wensen..."
         />
       </div>

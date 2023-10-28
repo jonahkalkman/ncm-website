@@ -26,7 +26,7 @@ export default function Footer({ logo }: Props) {
             </div>
             <div className="flex flex-col items-start mb-5 lg:items-start lg:mb-0">
               <h3 className="text-2xl mb-4">Adres</h3>
-              <span className="block mb-1">Langehaven 84</span>
+              <span className="block mb-1">Lange Haven 84</span>
               <span className="block mb-1">3111CH Schiedam</span>
               <span className="block">Nederland</span>
             </div>
@@ -58,7 +58,7 @@ export default function Footer({ logo }: Props) {
               </a>
               <a
                 className="group flex justify-start items-center no-underline transition-all duration-300 ease-in-out hover:text-primary hover:translate-x-3"
-                href="mailto:info@cooperatie-museum.nl"
+                href="mailto:nationaal-coop-museum@hetnet.nl"
               >
                 <span className="inline-flex mr-3 bg-primary justify-center items-center p-[8px] rounded-full">
                   <svg
@@ -78,7 +78,7 @@ export default function Footer({ logo }: Props) {
                     </g>
                   </svg>
                 </span>
-                info@cooperatie-museum.nl
+                nationaal-coop-museum@hetnet.nl
               </a>
             </div>
             <div className="flex flex-col items-start mb-10 lg:items-start lg:mb-0">

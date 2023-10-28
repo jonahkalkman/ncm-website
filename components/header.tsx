@@ -41,7 +41,7 @@ export default function Header({ logo, menu }) {
           className={
             hasMobileMenu
               ? "block h-1 bg-black transition-all duration-150 ease-in-out w-0"
-              : "block w-7 h-1 bg-black transition-all duration-150 ease-in-out"
+              : "block w-7 h-1 bg-black transition-all duration-300 ease-in-out"
           }
         ></span>
         <span
@@ -55,11 +55,11 @@ export default function Header({ logo, menu }) {
       <div
         className={
           hasMobileMenu
-            ? "absolute w-[90%] overflow-hidden right-0 translate-x-0 top-[68px] transition-all duration-300 lg:hidden"
-            : "absolute w-[90%] overflow-hidden right-0 translate-x-[700px] top-[68px] transition-all duration-300 lg:hidden"
+            ? "h-screen absolute w-[100%] overflow-hidden right-0 translate-x-0 top-[68px] transition-all duration-300 lg:hidden shadow-md bg-slate-50	bg-opacity-25	"
+            : "h-screen absolute w-[100%] overflow-hidden right-0 translate-x-[100%] top-[68px] transition-all duration-300 lg:hidden shadow-md bg-slate-50	bg-opacity-25	"
         }
       >
-        <nav className="bg-white p-10 border-solid border-2 border-black border-r-0">
+        <nav className="bg-white p-10 h-full w-[70%] float-right">
           <ul className="flex flex-col gap-6 list-none">
             {menu &&
               menu.map((item: any) => (

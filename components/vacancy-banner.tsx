@@ -19,13 +19,13 @@ export default function VacancyBanner({
   buttonTitle,
 }: Props) {
   return (
-    <section className="vacancy-banner bg-primary py-[40px] md:py-20 md:shadow-sm">
+    <section className="vacancy-banner bg-primary py-[40px] lg:py-20 lg:shadow-sm">
       <Container>
-        <div className="flex flex-col md:flex-row items-center gap-[20px] md:gap-20">
-          <div className="w-full md:w-1/2">
+        <div className="flex flex-col lg:flex-row items-center gap-[20px] lg:gap-20">
+          <div className="w-full lg:w-1/2">
             <FadeInWhenVisible>
               <Image
-                className="w-full md:h-[500px] block object-cover rounded-md"
+                className="w-full lg:h-[500px] block object-cover rounded-md"
                 src={image}
                 alt="vacancy banner image"
                 width={1200}
@@ -33,15 +33,15 @@ export default function VacancyBanner({
               />
             </FadeInWhenVisible>
           </div>
-          <div className="w-full text-center md:w-1/2 md:text-left">
+          <div className="w-full text-center lg:w-1/2 lg:text-left">
             <FadeInWhenVisible>
-              <h2 className="text-2xl font-bold text-left md:text-left md:mb-6 md:text-6xl text-black leading-tight">
+              <h2 className="text-2xl font-bold text-left lg:text-left lg:mb-6 lg:text-6xl text-black leading-tight">
                 {title}
               </h2>
             </FadeInWhenVisible>
             <FadeInWhenVisible>
               <div
-                className="block m-auto text-left md:w-[80%] md:m-0 md:text-left mb-0"
+                className="block m-auto text-left lg:w-[80%] lg:m-0 lg:text-left mb-0"
                 dangerouslySetInnerHTML={{ __html: text }}
               />
             </FadeInWhenVisible>
