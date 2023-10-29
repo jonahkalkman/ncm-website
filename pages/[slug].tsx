@@ -55,11 +55,11 @@ export default function Index({
             /* @ts-ignore */
             "--image-url": `url(${pageContent.featuredImage.node.mediaItemUrl})`,
           }}
-          className="bg-[image:var(--image-url)] bg-no-repeat bg-center bg-cover bg-slate-300 h-[150px] md:h-[250px] w-full flex items-center justify-start"
+          className="bg-[image:var(--image-url)] bg-no-repeat bg-center bg-cover bg-slate-300 h-[150px] lg:h-[250px] w-full flex items-center justify-start"
         >
           <Container>
             <FadeInWhenVisible>
-              <h1 className="text-3xl text-white drop-shadow-md m-0 p-0 leading-none md:text-7xl">
+              <h1 className="text-3xl text-white drop-shadow-md m-0 p-0 leading-none lg:text-7xl">
                 {pageContent.title}
               </h1>
             </FadeInWhenVisible>
@@ -68,7 +68,7 @@ export default function Index({
       ) : null}
       <Container>
         {pageContent && pageContent.slug !== "contact" ? (
-          <div className="my-10 md:my-20">
+          <div className="my-10 lg:my-20">
             {pageContent.detail &&
             pageContent.detail.firstBlock.firstBlockImage &&
             pageContent.detail.firstBlock.firstBlockText ? (
@@ -94,7 +94,7 @@ export default function Index({
           pageContent.detail &&
           pageContent.detail.secondBlock.secondBlockText &&
           pageContent.detail.secondBlock.secondBlockImage ? (
-            <div className="bg-primary py-10 md:py-20">
+            <div className="bg-primary py-10 lg:py-20">
               <Container>
                 <DetailBlock
                   type="left"
@@ -146,16 +146,16 @@ export default function Index({
         />
       ) : null}
       {pageContent && pageContent.slug === "rondleidingen-groepen" ? (
-        <section className="bg-primary py-10 md:py-20">
+        <section className="bg-primary py-10 lg:py-20">
           <Container>
-            <div className="flex gap-20 md:gap-40 flex-col md:flex-row">
-              <div className="w-full md:w-1/2">
+            <div className="flex gap-20 lg:gap-40 flex-col lg:flex-row">
+              <div className="w-full lg:w-1/2">
                 <h2 className="leading-normal">
                   Meld je groepsbezoek als particulier aan
                 </h2>
                 <FormGroups groupType={GroupType.privateGroup} />
               </div>
-              <div className="w-full md:w-1/2">
+              <div className="w-full lg:w-1/2">
                 <h2 className="leading-normal">
                   Met je groepsbezoek als bedrijf of organisatie
                 </h2>

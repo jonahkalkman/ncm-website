@@ -17,12 +17,12 @@ export default function DetailBlock({
   children,
 }: Props) {
   return (
-    <section className="detail-block relative flex gap-4 md:gap-10 justify-center items-start flex-col md:flex-row">
+    <section className="detail-block relative flex gap-4 lg:gap-10 justify-center items-start flex-col lg:flex-row">
       <div
         className={
           type === "left"
-            ? "w-full text-left md:text-left md:w-1/2 order-2"
-            : "w-full text-left md:text-left md:w-1/2 order-1"
+            ? "w-full text-left lg:text-left lg:w-1/2 order-2"
+            : "w-full text-left lg:text-left lg:w-1/2 order-1"
         }
       >
         <FadeInWhenVisible>
@@ -36,15 +36,15 @@ export default function DetailBlock({
       <div
         className={
           type === "left"
-            ? "w-full md:w-1/2 md:sticky md:self-start md:top-40"
-            : "w-full md:w-1/2 order-2 hidden md:block md:sticky md:self-start md:top-40"
+            ? "w-full lg:w-1/2 lg:sticky lg:self-start lg:top-40"
+            : "w-full lg:w-1/2 order-2 hidden lg:block lg:sticky lg:self-start lg:top-40"
         }
       >
         <Image
           className={
             type === "left"
-              ? "w-full h-[200px] md:h-[500px] object-cover rounded-md mb-5"
-              : "w-full h-[200px] md:h-[500px] object-cover rounded-md mb-5"
+              ? "w-full h-[200px] lg:h-[500px] object-cover rounded-md mb-5"
+              : "w-full h-[200px] lg:h-[500px] object-cover rounded-md mb-5"
           }
           src={image}
           alt=""

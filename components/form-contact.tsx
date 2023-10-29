@@ -48,21 +48,28 @@ export default function FormContact({}: Props) {
     }
   };
 
-  const inputStyling = "w-full py-3 px-5 rounded-sm mb-5 md:mb-10";
+  const inputStyling = "w-full py-3 px-5 rounded-sm mb-5 lg:mb-10";
   const labelStyling = "block mb-2 font-bold";
 
   return (
-    <section className="bg-primary py-10 md:py-20">
+    <section className="bg-primary py-10 lg:py-20">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between gap-10">
-          <div className="w-full order-2 md:order-1 md:w-1/2">
-            <h2 className="text-2xl mb-1 md:text-3xl md:mb-5 mt-0">Adres</h2>
+        <div className="flex flex-col lg:flex-row justify-between gap-10">
+          <div className="w-full order-2 lg:order-1 lg:w-1/2">
+            <iframe
+              className="w-full h-[450px] mb-10"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDRcmk-oPRNKTGTrfJy0CS1z_PjhZYrxxs
+    &q=Nationaal+Cooperatie+Museum+Schiedam"
+            ></iframe>
+            <h2 className="text-2xl mb-1 lg:text-3xl lg:mb-5 mt-0">Adres</h2>
             <p>
               Lange Haven 84 <br />
               3111CH Schiedam <br />
               Nederland
             </p>
-            <h2 className="text-2xl mb-1 md:mb-5 md:text-3xl mt-10">
+            <h2 className="text-2xl mb-1 lg:mb-5 lg:text-3xl mt-10">
               Telefoon
             </h2>
             <a
@@ -86,7 +93,7 @@ export default function FormContact({}: Props) {
               </svg>
               010-4270920
             </a>
-            <h2 className="text-2xl mb-1 md:text-3xl mt-10 md:mb-5">Mail</h2>
+            <h2 className="text-2xl mb-1 lg:text-3xl mt-10 lg:mb-5">Mail</h2>
             <a
               href="mailto:nationaal-coop-museum@hetnet.nl"
               className="group flex gap-3 items-center no-underline transition-all duration-300 ease-in-out hover:text-white"
@@ -109,7 +116,7 @@ export default function FormContact({}: Props) {
               nationaal-coop-museum@hetnet.nl
             </a>
           </div>
-          <div className="w-full md:w-1/2">
+          <div className="w-full lg:w-1/2">
             <div className="mb-10">
               <h2 className="mt-0 mb-2">Contact</h2>
               <div className="">
@@ -159,7 +166,7 @@ export default function FormContact({}: Props) {
               onSubmit={handleSubmit}
               className="flex justify-center flex-col align-middle"
             >
-              <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
+              <div className="flex flex-col lg:flex-row w-full align-middle justify-start lg:gap-10">
                 <div className="w-full">
                   <label htmlFor="first" className={labelStyling}>
                     Voornaam*
@@ -187,8 +194,8 @@ export default function FormContact({}: Props) {
                   />
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row w-full align-middle justify-start md:gap-10">
-                <div className="w-full md:w-1/2">
+              <div className="flex flex-col lg:flex-row w-full align-middle justify-start lg:gap-10">
+                <div className="w-full lg:w-1/2">
                   <label htmlFor="email" className={labelStyling}>
                     E-mailadres*
                   </label>
@@ -201,7 +208,7 @@ export default function FormContact({}: Props) {
                     placeholder="E-mailadres"
                   />
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="w-full lg:w-1/2">
                   <label htmlFor="phone" className={labelStyling}>
                     Telefoonnummer*
                   </label>
@@ -220,7 +227,7 @@ export default function FormContact({}: Props) {
                   Bericht*
                 </label>
                 <textarea
-                  className="w-full h-[150px] py-3 px-5 rounded-sm mb-5 md:mb-10 min-h-[150px]"
+                  className="w-full h-[150px] py-3 px-5 rounded-sm mb-5 lg:mb-10 min-h-[150px]"
                   id="message"
                   name="message"
                   required
@@ -231,8 +238,8 @@ export default function FormContact({}: Props) {
                 disabled={submitted}
                 className={
                   !submitted
-                    ? "rounded-lg inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer"
-                    : "rounded-lg inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white opacity-50 cursor-not-allowed"
+                    ? "rounded-lg inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md lg:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer"
+                    : "rounded-lg inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md lg:text-[20px] transition-all duration-500 ease-in-out text-white opacity-50 cursor-not-allowed"
                 }
                 type="submit"
               >
