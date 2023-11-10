@@ -59,7 +59,7 @@ export default function FormContact({}: Props) {
             <iframe
               className="w-full h-[450px] mb-10"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDRcmk-oPRNKTGTrfJy0CS1z_PjhZYrxxs
     &q=Nationaal+Cooperatie+Museum+Schiedam"
             ></iframe>

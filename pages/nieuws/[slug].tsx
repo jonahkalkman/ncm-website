@@ -10,7 +10,6 @@ import Layout from "../../components/layout";
 import PostTitle from "../../components/post-title";
 import {
   getAllPostsWithSlug,
-  getLogo,
   getPostAndMorePosts,
   getPrimaryMenu,
 } from "../../lib/api";
@@ -39,13 +38,13 @@ export default function Post({ menu, logo, post, posts, preview }) {
   }
 
   return (
-    <Layout preview={preview} logo={logo}>
+    <Layout preview={preview} logo={"/ncm_logo.png"}>
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
       <div className="block sticky top-0 z-50 bg-white">
         <Container>
-          <Header logo={logo} menu={menu} />
+          <Header logo={"/ncm_logo.png"} menu={menu} />
         </Container>
       </div>
       <main className="shadow-sm pb-10 md:pb-10">
@@ -195,7 +194,6 @@ export const getStaticProps: GetStaticProps = async ({
   preview = false,
   previewData,
 }) => {
-  const logo = await getLogo();
   const menu = await getPrimaryMenu();
   const data = await getPostAndMorePosts(params?.slug, preview, previewData);
 
@@ -203,7 +201,6 @@ export const getStaticProps: GetStaticProps = async ({
     props: {
       menu,
       preview,
-      logo: logo,
       post: data.post,
       posts: data.posts,
     },

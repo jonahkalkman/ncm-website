@@ -85,7 +85,13 @@ export default function Footer({ logo }: Props) {
               <h3 className="text-2xl mb-4">Steun de coöperatie</h3>
               <span className="block mb-1">IB: NL98 INGB 0002 1825 02</span>
               <span className="block mb-1">BIC: INGBNL2A</span>
-              <span className="block">Fiscaalnummer: 814989433</span>
+              <span className="block mb-1">Fiscaalnummer: 814989433</span>
+              <a
+                className="block"
+                href="https://useplink.com/payment/u1pfz9DiuWVhISOi9bcaa/"
+              >
+                Doe een eenmalige gift
+              </a>
             </div>
           </div>
           <div className="flex flex-col justify-between items-start lg:items-center lg:flex-row">

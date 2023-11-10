@@ -1,14 +1,10 @@
 import Head from "next/head";
-import {
-  GetStaticPaths,
-  GetStaticProps,
-} from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Container from "../components/container";
 import Layout from "../components/layout";
 import {
   getAllPagesWithSlug,
   getCollectionContent,
-  getLogo,
   getPageContent,
   getPosts,
   getPrimaryMenu,
@@ -29,14 +25,13 @@ import VacanciesForm from "../components/vacancies/vacancies-form";
 
 export default function Index({
   preview,
-  logo,
   menu,
   pageContent,
   collectionContent,
   posts,
 }) {
   return (
-    <Layout preview={preview} logo={logo}>
+    <Layout preview={preview} logo={"/ncm_logo.png"}>
       <Head>
         <title>
           {(pageContent && pageContent.title) ?? "Nieuws"} | {WEBSITE_TITLE}
@@ -44,7 +39,7 @@ export default function Index({
       </Head>
       <div className="block sticky top-0 z-50 bg-white">
         <Container>
-          <Header logo={logo} menu={menu} />
+          <Header logo={"/ncm_logo.png"} menu={menu} />
         </Container>
       </div>
       {pageContent &&
@@ -177,7 +172,6 @@ export const getStaticProps: GetStaticProps = async ({
   params,
   preview = false,
 }) => {
-  const logo = await getLogo();
   const menu = await getPrimaryMenu();
   const pageContent =
     params?.slug !== "nieuws"
@@ -191,7 +185,7 @@ export const getStaticProps: GetStaticProps = async ({
       : null;
 
   return {
-    props: { preview, logo, menu, pageContent, collectionContent, posts },
+    props: { preview, menu, pageContent, collectionContent, posts },
     revalidate: 10,
   };
 };

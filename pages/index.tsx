@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 import Container from "../components/container";
 import Layout from "../components/layout";
-import { getHomeContent, getLogo, getPrimaryMenu } from "../lib/api";
+import { getHomeContent, getPrimaryMenu } from "../lib/api";
 import Header from "../components/header";
 import { WEBSITE_TITLE } from "../lib/constants";
 import HeroHome from "../components/hero/HeroHome";
@@ -11,16 +11,16 @@ import Banner from "../components/banner";
 import ContentHome from "../components/content-home";
 import VacancyBanner from "../components/vacancy-banner";
 
-export default function Index({ preview, logo, menu, homeContent }) {
+export default function Index({ preview, menu, homeContent }) {
   return (
-    <Layout preview={preview} logo={logo}>
+    <Layout preview={preview} logo={"/ncm_logo.png"}>
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
       <main>
         <div className="block sticky top-0 z-50 bg-white">
           <Container>
-            <Header logo={logo} menu={menu} />
+            <Header logo={"/ncm_logo.png"} menu={menu} />
           </Container>
         </div>
         <HeroHome
@@ -98,12 +98,11 @@ export default function Index({ preview, logo, menu, homeContent }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const logo = await getLogo();
   const menu = await getPrimaryMenu();
   const homeContent = await getHomeContent();
 
   return {
-    props: { preview, logo, menu, homeContent },
+    props: { preview, menu, homeContent },
     revalidate: 10,
   };
 };

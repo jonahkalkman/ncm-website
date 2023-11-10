@@ -9,7 +9,6 @@ async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
     ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`;
   }
 
-  // WPGraphQL Plugin must be enabled
   const res = await fetch(API_URL, {
     headers,
     method: "POST",
@@ -21,7 +20,6 @@ async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
 
   const json = await res.json();
   if (json.errors) {
-    console.error(json.errors);
     throw new Error("Failed to fetch API");
   }
   return json.data;
@@ -209,18 +207,6 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   if (data.posts.edges.length > 2) data.posts.edges.pop();
 
   return data;
-}
-
-export async function getLogo() {
-  const data = await fetchAPI(
-    `
-    query Logo {
-      siteLogo {
-        sourceUrl
-      }
-    }`
-  );
-  return data.siteLogo.sourceUrl;
 }
 
 export async function getPrimaryMenu() {
