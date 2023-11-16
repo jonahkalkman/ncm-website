@@ -10,7 +10,6 @@ export default function FormContact({}: Props) {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
 
-    // Get data from the form.
     const data = {
       first: event.target.first.value,
       last: event.target.last.value,
@@ -19,30 +18,20 @@ export default function FormContact({}: Props) {
       message: event.target.message.value,
     };
 
-    // Send the data to the server in JSON format.
     const JSONdata = JSON.stringify(data);
 
-    // API endpoint where we send form data.
     const endpoint = "/api/form-contact";
 
-    // Form the request for sending data to the server.
     const options = {
-      // The method is POST because we are sending data.
       method: "POST",
-      // Tell the server we're sending JSON.
       headers: {
         "Content-Type": "application/json",
       },
-      // Body of the request is the JSON data we created above.
       body: JSONdata,
     };
 
-    // Send the form data to our forms API on Vercel and get a response.
     const response = await fetch(endpoint, options);
 
-    // Get the response data from server as JSON.
-    // If server returns the name submitted, that means the form works.
-    // console.log("res", response);
     if (response.ok) {
       setSubmitted(true);
     }
@@ -115,6 +104,29 @@ export default function FormContact({}: Props) {
               </svg>
               nationaal-coop-museum@hetnet.nl
             </a>
+            <h2 className="text-2xl mb-1 lg:text-3xl mt-10 lg:mb-5">
+              Openingstijden
+            </h2>
+            <ol className="list-none">
+              <li>
+                <strong>Maandag:</strong> Gesloten
+              </li>
+              <li>
+                <strong>Woensdag:</strong> 13:00–17:00
+              </li>
+              <li>
+                <strong>Donderdag:</strong> 13:00–17:00
+              </li>
+              <li>
+                <strong>Vrijdag:</strong> 13:00–17:00
+              </li>
+              <li>
+                <strong>Zaterdag:</strong> 11:00–17:00
+              </li>
+              <li>
+                <strong>Zondag:</strong> Gesloten
+              </li>
+            </ol>
           </div>
           <div className="w-full lg:w-1/2">
             <div className="mb-10">
