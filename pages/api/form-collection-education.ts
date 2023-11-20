@@ -18,9 +18,9 @@ export default function handler(req, res) {
   const resend = new Resend("re_NW2nt9tj_9ArEv9Dwh4wPuVQBPVexwfHC");
 
   resend.emails.send({
-    from: "onboarding@resend.dev",
-    to: "jonahkalkman@gmail.com",
-    subject: "Mogelijke uitbreiding museumcollectie Coöperatie Museum",
+    from: "info@cooperatie-museum.nl",
+    to: "nationaal-coop-museum@hetnet.nl",
+    subject: "Educatie Coöperatie Museum",
     html: `<p>Naam: ${body.name}</p>
            <p>Emailadres: ${body.email}</p> 
            <p>Telefoonnummer: ${body.phone}</p> 

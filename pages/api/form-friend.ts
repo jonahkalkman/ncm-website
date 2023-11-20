@@ -18,8 +18,8 @@ export default function handler(req, res) {
   const resend = new Resend("re_NW2nt9tj_9ArEv9Dwh4wPuVQBPVexwfHC");
 
   resend.emails.send({
-    from: "onboarding@resend.dev",
-    to: "jonahkalkman@gmail.com",
+    from: "info@cooperatie-museum.nl",
+    to: "nationaal-coop-museum@hetnet.nl",
     subject: "Aanmelding Vriend Coöperatie Museum",
     html: `<p>Naam: ${body.name}</p>
            <p>Email: ${body.email}</p> 
