@@ -170,7 +170,11 @@ export default function FormContact({}: Props) {
                 </ul>
                 <p>
                   Voor alle overige vragen: vul onderstaand formulier in en wij
-                  nemen contact op.
+                  nemen contact op. Een mail sturen naar
+                  <a href="mailto:nationaal-coop-museum@hetnet.nl">
+                    nationaal-coop-museum@hetnet.nl
+                  </a>
+                  of even langskomen in onze winkel kan natuurlijk ook.
                 </p>
               </div>
             </div>
