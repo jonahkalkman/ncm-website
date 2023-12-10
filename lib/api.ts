@@ -311,39 +311,41 @@ export async function getHomeContent() {
 }
 
 export async function getPageContent(page: string) {
-  const data = await fetchAPI(
-    `
-      query PageContent {
-        page(id: "${page}", idType: URI) {
-          title
-          slug
-          featuredImage {
-            node {
-              mediaItemUrl
-            }
-          }
-          detail {
-            firstBlock {
-              firstBlockText
-              firstBlockImage {
+  if (page !== "robots.txt" && page !== "sitemap.xml") {
+    const data = await fetchAPI(
+      `
+        query PageContent {
+          page(id: "${page}", idType: URI) {
+            title
+            slug
+            featuredImage {
+              node {
                 mediaItemUrl
-                description
               }
             }
-            secondBlock {
-              secondBlockTitle
-              secondBlockText
-              secondBlockImage {
-                mediaItemUrl
-                description
+            detail {
+              firstBlock {
+                firstBlockText
+                firstBlockImage {
+                  mediaItemUrl
+                  description
+                }
+              }
+              secondBlock {
+                secondBlockTitle
+                secondBlockText
+                secondBlockImage {
+                  mediaItemUrl
+                  description
+                }
               }
             }
           }
         }
-      }
-    `
-  );
-  return data.page;
+      `
+    );
+    return data.page;
+  }
 }
 
 export async function getPageMetadata(page: string) {
