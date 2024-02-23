@@ -13,7 +13,7 @@ export default function Header({ logo, menu }) {
   };
 
   return (
-    <header className="bg-white overflow-x-hidden py-1 lg:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10">
+    <header className="bg-white overflow-x-hidden py-2 lg:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10">
       <div className="relative z-10 w-full flex justify-between items-center lg:w-fit">
         <Link href="/">
           <Image
