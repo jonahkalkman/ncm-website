@@ -19,7 +19,7 @@ export default function handler(req, res) {
 
   resend.emails.send({
     from: "info@cooperatie-museum.nl",
-    to: "jonahkalkman@gmail.com",
+    to: "nationaal-coop-museum@hetnet.nl",
     subject: "Contact Coöperatie Museum",
     html: `<p>Naam: ${body.first}</p>
            <p>Achternaam: ${body.last}</p> 
