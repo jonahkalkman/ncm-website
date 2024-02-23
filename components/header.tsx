@@ -37,8 +37,8 @@ export default function Header({ logo, menu }) {
         className={clsx({
           "h-fit absolute w-[100%] overflow-hidden right-0 top-[55px] z-[-1] transition-all duration-500 lg:hidden":
             true,
-          "translate-y-0": !hasMobileMenu,
-          "translate-y-[-100%]": hasMobileMenu,
+          "translate-y-[-100%]": !hasMobileMenu,
+          "translate-y-0": hasMobileMenu,
         })}
       >
         <nav className="bg-white px-5 py-4 h-fit w-[100%] float-right">
