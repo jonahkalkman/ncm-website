@@ -10,14 +10,13 @@ export default function handler(req, res) {
     !body.email ||
     !body.visitDate ||
     !body.company ||
-    !body.groupAmount ||
-    !body.message
+    !body.groupAmount
   ) {
     // Sends a HTTP bad request error code
     return res.status(400).json({ data: "Missing data!" });
   }
 
-  const resend = new Resend("re_NW2nt9tj_9ArEv9Dwh4wPuVQBPVexwfHC");
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   resend.emails.send({
     from: "info@cooperatie-museum.nl",
@@ -31,7 +30,7 @@ export default function handler(req, res) {
            }</p> 
            <p>Gewenste bezoekdatum: ${body.visitDate}</p> 
            <p>Aantal personen: ${body.groupAmount}</p> 
-           <p>Bericht: ${body.message}</p>
+           ${body.message ? `<p>Bericht: ${body.message}</p>` : ""}
           `,
   });
 
