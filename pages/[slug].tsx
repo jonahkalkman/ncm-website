@@ -27,7 +27,11 @@ export default function Index({ menu, pageContent, collectionContent, posts }) {
   return (
     <Layout logo={"/ncm_logo.png"}>
       <Head>
-        <title>{pageContent.title + " - " + WEBSITE_TITLE}</title>
+        <title>
+          {pageContent?.title
+            ? pageContent?.title
+            : "Nieuws" + " - " + WEBSITE_TITLE}
+        </title>
       </Head>
       <div className="block sticky top-0 z-50 bg-white">
         <Container>
