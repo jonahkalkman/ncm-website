@@ -19,7 +19,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "resend": "^0.16.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "ukiyojs": "^4.2.0"
   },
   "devDependencies": {
     "autoprefixer": "10.4.7",

@@ -9,21 +9,12 @@ interface Props {
 
 export default function Footer({ logo }: Props) {
   return (
-    <footer className="mt-5 pt-10 lg:pt-20 pb-5 lg:mt-0 lg:h-[500px]">
+    <footer className=" pt-10 lg:pt-20 pb-5 lg:mt-0 lg:h-[500px]">
       <div className="lg:fixed bottom-5 w-full">
         <Container>
           <div className="flex justify-between mb-0 lg:mb-20 flex-col lg:flex-row">
-            <div className="flex items-start gap-3 mb-5 justify-start lg:mb-0 lg:justify-start">
-              <Image
-                className="object-contain w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
-                src={"/logo.png"}
-                alt={"logo"}
-                width={70}
-                height={57}
-              />
-            </div>
             <div className="flex flex-col items-start mb-5 lg:items-start lg:mb-0">
-              <h3 className="text-2xl mb-4 lg:mt-0">Openingstijden</h3>
+              <h3 className="text-2xl mb-4 mt-0">Openingstijden</h3>
               <ol className="list-none">
                 <li>Maandag: Gesloten</li>
                 <li>Woensdag: 13:00–17:00</li>
@@ -34,7 +25,7 @@ export default function Footer({ logo }: Props) {
               </ol>
             </div>
             <div className="flex flex-col items-start mb-5 lg:items-start lg:mb-0">
-              <h3 className="text-2xl mb-4 lg:mt-0">Adres</h3>
+              <h3 className="text-2xl mb-4 mt-0">Adres</h3>
               <span className="block mb-1">Lange Haven 84</span>
               <span className="block mb-1">3111CH Schiedam</span>
               <span className="block">Nederland</span>
@@ -87,6 +78,9 @@ export default function Footer({ logo }: Props) {
               >
                 Privacybeleid
               </a>
+            </div>
+            <div>
+              <span>Gemaakt in Rotterdam door Jonah Kalkman ⌘</span>
             </div>
           </div>
         </Container>

@@ -13,7 +13,12 @@ export default function Header({ logo, menu }) {
   };
 
   return (
-    <header className="bg-white overflow-x-hidden py-2 lg:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10">
+    <header
+      className={clsx({
+        "bg-white overflow-x-hidden py-2 lg:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10":
+          true,
+      })}
+    >
       <div className="relative z-10 w-full flex justify-between items-center lg:w-fit">
         <Link href="/">
           <Image
@@ -28,34 +33,35 @@ export default function Header({ logo, menu }) {
           className="hamburger flex flex-col gap-[6px] border-solid border-2 h-fit border-black rounded-md px-3 py-1 lg:hidden"
           onClick={() => setHasMobileMenu(!hasMobileMenu)}
         >
-          <span className="text-black text-sm leading-none align-middle">
+          <span className="text-black text-base leading-none align-middle">
             Menu
           </span>
         </div>
       </div>
       <div
         className={clsx({
-          "h-fit absolute w-[100%] overflow-hidden right-0 top-[55px] z-[-1] transition-all duration-500 lg:hidden":
+          "h-fit absolute w-[100%] overflow-hidden right-0 top-[64px] z-[-1] transition-all duration-500 shadow-sm lg:hidden":
             true,
           "translate-y-[-100%]": !hasMobileMenu,
           "translate-y-0": hasMobileMenu,
         })}
       >
-        <nav className="bg-white px-5 py-4 h-fit w-[100%] float-right">
+        <nav className="bg-white px-5 py-4 pt-2 h-fit w-[100%] float-right">
+          <hr className="w-full border-none h-[2px] bg-gray-200 mb-4" />
           <ul className="flex flex-col gap-2 list-none">
             {menu &&
               menu.map((item: any) => (
                 <Link
                   href={item.url}
                   key={item.id + item.title}
-                  className="no-underline font-bold"
+                  className="no-underline"
                   onClick={() => setHasMobileMenu(false)}
                 >
                   <li
                     className={
                       isCurrent(item.url)
-                        ? "transition-all ease-in-out duration-300 text-base m-0 text-primary font-serif"
-                        : "transition-all ease-in-out duration-300 text-base m-0 font-serif"
+                        ? "transition-all ease-in-out duration-300 text-lg m-0 text-primary font-serif"
+                        : "transition-all ease-in-out duration-300 text-lg m-0 font-serif"
                     }
                   >
                     {item.title}

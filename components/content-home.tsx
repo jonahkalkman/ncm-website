@@ -38,12 +38,12 @@ export default function ContentHome({
     <section className="content-home py-10 lg:my-20">
       <div className="flex flex-col gap-0 mb-10">
         <FadeInWhenVisible>
-          <span className="order-2 lg:order-1 block text-left text-md w-[80%] lg:text-xl mb-2 lg:w-full lg:mx-auto">
+          <span className="order-2 lg:order-1 block text-left text-md w-[80%] lg:text-xl mb-0 lg:w-full lg:mx-auto">
             In een nostalgisch pand aan de Lange Haven in Schiedam
           </span>
         </FadeInWhenVisible>
         <FadeInWhenVisible>
-          <h2 className="md:order-1 font-bold text-left text-2xl mb-2 lg:text-6xl lg:mb-[80px] lg:w-full mx-auto leading-tight">
+          <h2 className="md:order-1 font-bold text-left text-2xl mb-2 mt-2 lg:text-6xl lg:mb-[80px] lg:w-full mx-auto leading-tight">
             {title}
           </h2>
         </FadeInWhenVisible>

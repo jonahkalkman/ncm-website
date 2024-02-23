@@ -28,9 +28,9 @@ export default function Index({ menu, pageContent, collectionContent, posts }) {
     <Layout logo={"/logo.png"}>
       <Head>
         <title>
-          {pageContent?.title
-            ? pageContent?.title
-            : "Nieuws" + " - " + WEBSITE_TITLE}
+          {(pageContent?.title ? pageContent?.title : "Nieuws") +
+            " - " +
+            WEBSITE_TITLE}
         </title>
       </Head>
       <div className="block sticky top-0 z-50 bg-white">
@@ -59,7 +59,7 @@ export default function Index({ menu, pageContent, collectionContent, posts }) {
       ) : null}
       <Container>
         {pageContent && pageContent.slug !== "contact" ? (
-          <div className="my-10 lg:my-20">
+          <div className="my-10 mt-4 lg:my-20">
             {pageContent.detail &&
             pageContent.detail.firstBlock.firstBlockImage &&
             pageContent.detail.firstBlock.firstBlockText ? (

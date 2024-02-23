@@ -25,7 +25,7 @@ export default function IntroHome({ title, text, image }: Props) {
           </FadeInWhenVisible>
           <div className="relative w-full mb-4 lg:hidden">
             <Image
-              className="w-full h-auto lg:h-[600px] relative z-10 object-cover object-right rounded-md"
+              className="first-line:w-full h-auto lg:h-[600px] relative z-10 object-cover object-right rounded-md"
               src={image}
               alt={title}
               width={800}
@@ -45,8 +45,8 @@ export default function IntroHome({ title, text, image }: Props) {
         </div>
         <div className="hidden relative w-full lg:block lg:w-1/2">
           <FadeInWhenVisible>
-            <Image
-              className="w-full h-auto lg:h-[600px] relative z-10 object-cover object-right rounded-md"
+            <img
+              className="ukiyo w-full h-auto lg:h-[600px] relative z-10 object-cover object-right rounded-md"
               src={image}
               alt={title}
               width={800}
