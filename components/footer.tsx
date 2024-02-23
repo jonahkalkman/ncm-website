@@ -16,7 +16,7 @@ export default function Footer({ logo }: Props) {
             <div className="flex items-start gap-3 mb-5 justify-start lg:mb-0 lg:justify-start">
               <Image
                 className="object-contain w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
-                src={logo}
+                src={"/logo.png"}
                 alt={"logo"}
                 width={70}
                 height={57}

@@ -25,7 +25,7 @@ import VacanciesForm from "../components/vacancies/vacancies-form";
 
 export default function Index({ menu, pageContent, collectionContent, posts }) {
   return (
-    <Layout logo={"/ncm_logo.png"}>
+    <Layout logo={"/logo.png"}>
       <Head>
         <title>
           {pageContent?.title
@@ -35,7 +35,7 @@ export default function Index({ menu, pageContent, collectionContent, posts }) {
       </Head>
       <div className="block sticky top-0 z-50 bg-white">
         <Container>
-          <Header logo={"/ncm_logo.png"} menu={menu} />
+          <Header logo={"/logo.png"} menu={menu} />
         </Container>
       </div>
       {pageContent &&

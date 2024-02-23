@@ -13,14 +13,14 @@ import VacancyBanner from "../components/vacancy-banner";
 
 export default function Index({ menu, homeContent }) {
   return (
-    <Layout logo={"/ncm_logo.png"}>
+    <Layout logo={"/logo.png"}>
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
       <main>
         <div className="block sticky top-0 z-50 bg-white">
           <Container>
-            <Header logo={"/ncm_logo.png"} menu={menu} />
+            <Header logo={"/logo.png"} menu={menu} />
           </Container>
         </div>
         <HeroHome

@@ -38,13 +38,13 @@ export default function Post({ menu, logo, post, posts, preview }) {
   }
 
   return (
-    <Layout logo={"/ncm_logo.png"}>
+    <Layout logo={"/logo.png"}>
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
       <div className="block sticky top-0 z-50 bg-white">
         <Container>
-          <Header logo={"/ncm_logo.png"} menu={menu} />
+          <Header logo={"/logo.png"} menu={menu} />
         </Container>
       </div>
       <main className="shadow-sm pb-10 md:pb-10">
