@@ -1,11 +1,14 @@
 import { useState } from "react";
+import clsx from "clsx";
 
-interface Props {}
-
-export default function VacanciesForm({}: Props) {
+export default function VacanciesForm() {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [hasError, setHasError] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   const handleSubmit = async (event) => {
+    setLoading(true);
+    setHasError(false);
     event.preventDefault();
 
     const data = {
@@ -26,10 +29,18 @@ export default function VacanciesForm({}: Props) {
       body: JSONdata,
     };
 
-    const response = await fetch(endpoint, options);
+    try {
+      const response = await fetch(endpoint, options);
 
-    if (response.ok) {
-      setSubmitted(true);
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setHasError(true);
+      }
+    } catch (error) {
+      setHasError(true);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -175,19 +186,27 @@ export default function VacanciesForm({}: Props) {
             </div>
             <button
               disabled={submitted}
-              className={
-                !submitted
-                  ? "rounded-lg inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer"
-                  : "rounded-lg inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md md:text-[20px] transition-all duration-500 ease-in-out text-white opacity-50 cursor-not-allowed"
-              }
+              className={clsx({
+                "rounded-lg mt-2 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md lg:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer":
+                  true,
+                "opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white":
+                  submitted,
+                "animate-pulse": loading,
+              })}
               type="submit"
             >
               Verstuur
             </button>
-            {submitted ? (
+            {submitted && !loading ? (
               <p className="block text-bold mt-5">
                 Bericht verzonden! U ontvangt binnen twee weken bericht van het
                 museum.
+              </p>
+            ) : null}
+            {hasError && !loading ? (
+              <p className="block text-bold mt-5 text-red-600">
+                Er is iets misgegaan! Probeer het opnieuw of neem contact op met
+                het museum.
               </p>
             ) : null}
           </form>
