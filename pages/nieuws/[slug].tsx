@@ -38,7 +38,7 @@ export default function Post({ menu, logo, post, posts, preview }) {
   }
 
   return (
-    <Layout preview={preview} logo={"/ncm_logo.png"}>
+    <Layout logo={"/ncm_logo.png"}>
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
@@ -191,16 +191,14 @@ export default function Post({ menu, logo, post, posts, preview }) {
 
 export const getStaticProps: GetStaticProps = async ({
   params,
-  preview = false,
   previewData,
 }) => {
   const menu = await getPrimaryMenu();
-  const data = await getPostAndMorePosts(params?.slug, preview, previewData);
+  const data = await getPostAndMorePosts(params?.slug, false, previewData);
 
   return {
     props: {
       menu,
-      preview,
       post: data.post,
       posts: data.posts,
     },
