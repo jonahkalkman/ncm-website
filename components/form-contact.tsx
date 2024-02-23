@@ -60,7 +60,7 @@ export default function FormContact() {
               className="w-full h-[450px] mb-10"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=Nationaal+Cooperatie+Museum+Schiedam`}
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=Nationaal+Cooperatie+Museum+Schiedam`}
             ></iframe>
             <h2 className="text-2xl mb-1 lg:text-3xl lg:mb-5 mt-0">Adres</h2>
             <p>
