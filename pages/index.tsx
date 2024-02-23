@@ -11,9 +11,9 @@ import Banner from "../components/banner";
 import ContentHome from "../components/content-home";
 import VacancyBanner from "../components/vacancy-banner";
 
-export default function Index({ preview, menu, homeContent }) {
+export default function Index({ menu, homeContent }) {
   return (
-    <Layout preview={preview} logo={"/ncm_logo.png"}>
+    <Layout logo={"/ncm_logo.png"}>
       <Head>
         <title>{WEBSITE_TITLE}</title>
       </Head>
@@ -102,7 +102,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const homeContent = await getHomeContent();
 
   return {
-    props: { preview, menu, homeContent },
+    props: { menu, homeContent },
     revalidate: 10,
   };
 };
