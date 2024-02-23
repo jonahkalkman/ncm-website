@@ -7,7 +7,7 @@ const dmSans = PT_Sans({
   subsets: ["latin", "latin-ext"],
 });
 
-export default function Layout({ preview, children, logo }) {
+export default function Layout({ children, logo }) {
   return (
     <>
       <style jsx global>

@@ -23,19 +23,11 @@ import FormGroups from "../components/form-groups";
 import { GroupType } from "../components/form-groups";
 import VacanciesForm from "../components/vacancies/vacancies-form";
 
-export default function Index({
-  preview,
-  menu,
-  pageContent,
-  collectionContent,
-  posts,
-}) {
+export default function Index({ menu, pageContent, collectionContent, posts }) {
   return (
-    <Layout preview={preview} logo={"/ncm_logo.png"}>
+    <Layout logo={"/ncm_logo.png"}>
       <Head>
-        <title>
-          {(pageContent && pageContent.title) ?? "Nieuws"} | {WEBSITE_TITLE}
-        </title>
+        <title>{pageContent.title + " - " + WEBSITE_TITLE}</title>
       </Head>
       <div className="block sticky top-0 z-50 bg-white">
         <Container>
@@ -168,10 +160,7 @@ export default function Index({
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({
-  params,
-  preview = false,
-}) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const menu = await getPrimaryMenu();
   const pageContent =
     params?.slug !== "nieuws"
@@ -185,7 +174,7 @@ export const getStaticProps: GetStaticProps = async ({
       : null;
 
   return {
-    props: { preview, menu, pageContent, collectionContent, posts },
+    props: { menu, pageContent, collectionContent, posts },
     revalidate: 10,
   };
 };

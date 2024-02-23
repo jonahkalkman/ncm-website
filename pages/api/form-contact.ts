@@ -15,7 +15,7 @@ export default function handler(req, res) {
     return res.status(400).json({ data: "Missing data!" });
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend();
 
   resend.emails.send({
     from: "info@cooperatie-museum.nl",

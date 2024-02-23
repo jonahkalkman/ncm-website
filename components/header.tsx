@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 export default function Header({ logo, menu }) {
   const pathname = usePathname();
@@ -13,54 +14,35 @@ export default function Header({ logo, menu }) {
 
   return (
     <header className="bg-white overflow-x-hidden py-1 lg:py-[10px] flex justify-start items-center lg:justify-between lg:gap-10">
-      <Link href="/">
-        <Image
-          className="animate-fadein object-contain w-[60px] h-[60px] lg:w-[70px] lg:h-[57px]"
-          src={logo}
-          alt={"logo"}
-          width={70}
-          height={57}
-        />
-      </Link>
-      <div
-        className={
-          hasMobileMenu
-            ? "hamburger flex flex-col gap-[5px] absolute right-5 lg:hidden"
-            : "hamburger flex flex-col gap-[5px] absolute right-5 lg:hidden"
-        }
-        onClick={() => setHasMobileMenu(!hasMobileMenu)}
-      >
-        <span
-          className={
-            hasMobileMenu
-              ? "block w-7 h-1 bg-black rotate-45 transition-all duration-300 ease-in-out relative top-[10px]"
-              : "block w-7 h-1 bg-black transition-all duration-300 ease-in-out"
-          }
-        ></span>
-        <span
-          className={
-            hasMobileMenu
-              ? "block h-1 bg-black transition-all duration-150 ease-in-out w-0"
-              : "block w-7 h-1 bg-black transition-all duration-300 ease-in-out"
-          }
-        ></span>
-        <span
-          className={
-            hasMobileMenu
-              ? "block w-7 h-1 bg-black rotate-[-45deg] relative transition-all duration-300 ease-in-out top-[-8px]"
-              : "block w-7 h-1 bg-black transition-all duration-300 ease-in-out"
-          }
-        ></span>
+      <div className="relative z-10 w-full flex justify-between items-center lg:w-fit">
+        <Link href="/">
+          <Image
+            className="object-contain w-[60px] lg:w-[70px] lg:h-[57px]"
+            src={"/logo.png"}
+            alt={"logo"}
+            width={70}
+            height={57}
+          />
+        </Link>
+        <div
+          className="hamburger flex flex-col gap-[6px] border-solid border-2 h-fit border-black rounded-md px-3 py-1 lg:hidden"
+          onClick={() => setHasMobileMenu(!hasMobileMenu)}
+        >
+          <span className="text-black text-sm leading-none align-middle">
+            Menu
+          </span>
+        </div>
       </div>
       <div
-        className={
-          hasMobileMenu
-            ? "h-screen absolute w-[100%] overflow-hidden right-0 translate-x-0 top-[68px] transition-all duration-300 lg:hidden shadow-md bg-slate-50	bg-opacity-25	"
-            : "h-screen absolute w-[100%] overflow-hidden right-0 translate-x-[100%] top-[68px] transition-all duration-300 lg:hidden shadow-md bg-slate-50	bg-opacity-25	"
-        }
+        className={clsx({
+          "h-fit absolute w-[100%] overflow-hidden right-0 top-[55px] z-[-1] transition-all duration-500 lg:hidden":
+            true,
+          "translate-y-0": !hasMobileMenu,
+          "translate-y-[-100%]": hasMobileMenu,
+        })}
       >
-        <nav className="bg-white p-10 h-full w-[70%] float-right">
-          <ul className="flex flex-col gap-6 list-none">
+        <nav className="bg-white px-5 py-4 h-fit w-[100%] float-right">
+          <ul className="flex flex-col gap-2 list-none">
             {menu &&
               menu.map((item: any) => (
                 <Link
@@ -72,8 +54,8 @@ export default function Header({ logo, menu }) {
                   <li
                     className={
                       isCurrent(item.url)
-                        ? "transition-all ease-in-out duration-300 text-xl m-0 text-primary"
-                        : "transition-all ease-in-out duration-300 text-xl m-0"
+                        ? "transition-all ease-in-out duration-300 text-base m-0 text-primary font-serif"
+                        : "transition-all ease-in-out duration-300 text-base m-0 font-serif"
                     }
                   >
                     {item.title}
@@ -83,7 +65,7 @@ export default function Header({ logo, menu }) {
           </ul>
         </nav>
       </div>
-      <nav className="hidden lg:block animate-fadein">
+      <nav className="hidden lg:block">
         <ul className="flex gap-10 list-none lg:gap-5 xl-gap-10 2xl:gap-10">
           {menu &&
             menu.map((item: any) => (
