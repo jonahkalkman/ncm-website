@@ -17,17 +17,27 @@ export default function handler(req, res) {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
 
-  resend.emails.send({
-    from: "info@cooperatie-museum.nl",
-    to: "jonahkalkman@gmail.com",
-    subject: "Contact Coöperatie Museum",
-    html: `<p>Naam: ${body.first}</p>
+  resend.emails
+    .send({
+      from: "info@cooperatie-museum.nl",
+      to: "nationaal-coop-museum@hetnet.nl",
+      subject: "Contact Coöperatie Museum",
+      html: `<p>Naam: ${body.first}</p>
            <p>Achternaam: ${body.last}</p> 
            <p>Email: ${body.email}</p> 
            <p>Telefoonnummer: ${body.phone}</p>
            <p>Bericht: ${body.message}</p>
     `,
-  });
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+    .finally(() => {
+      console.log("Email sent!");
+    });
 
   // Sends a HTTP success code
   return res.status(200).json({ data: "Message send!" });
