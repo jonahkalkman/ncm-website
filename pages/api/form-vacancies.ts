@@ -1,7 +1,10 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
 
-export default function handler(req, res) {
-  // Get data submitted in request's body.
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const body = req.body;
 
   if (!body.name || !body.phone || !body.email || !body.job) {
@@ -11,7 +14,7 @@ export default function handler(req, res) {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
 
-  resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from: "info@cooperatie-museum.nl",
     to: "nationaal-coop-museum@hetnet.nl",
     subject: "Sollicitatie Coöperatie Museum",
@@ -23,6 +26,9 @@ export default function handler(req, res) {
           `,
   });
 
-  // Sends a HTTP success code
-  return res.status(200).json({ data: "Message send!" });
+  if (error) {
+    return res.status(400).json(error);
+  }
+
+  res.status(200).json(data);
 }
