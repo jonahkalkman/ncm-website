@@ -11,11 +11,12 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: 'cms.cooperatie-museum.nl',
+        hostname: "cms.cooperatie-museum.nl",
         port: "",
         pathname: "/wp-content/uploads/**",
       },
     ],
+    unoptimized: true,
     domains: [process.env.WORDPRESS_URL, "secure.gravatar.com"],
   },
 };
