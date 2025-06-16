@@ -17,6 +17,7 @@ export default function Footer({ logo }: Props) {
               <h3 className="text-2xl mb-4 mt-0">Openingstijden</h3>
               <ol className="list-none">
                 <li>Maandag: Gesloten</li>
+                <li>Dinsdag: Gesloten</li>
                 <li>Woensdag: 13:00–17:00</li>
                 <li>Donderdag: 13:00–17:00</li>
                 <li>Vrijdag: 13:00–17:00</li>
