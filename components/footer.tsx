@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "./container";
 import IconMail from "./icons/IconMail";
 import IconPhone from "./icons/IconPhone";
+import Link from "next/link";
 
 interface Props {
   logo: string;
@@ -81,7 +82,13 @@ export default function Footer({ logo }: Props) {
               </a>
             </div>
             <div>
-              <span>Gemaakt in Rotterdam door Jonah Kalkman ⌘</span>
+              <Link
+                className="no-underline transition-all duration-300 ease-in-out md:hover:text-primary"
+                href="https://jonahkalkman.nl"
+                target="_blank"
+              >
+                <span>Website door Jonah Kalkman</span>
+              </Link>
             </div>
           </div>
         </Container>

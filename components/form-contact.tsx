@@ -122,6 +122,9 @@ export default function FormContact() {
                 <strong>Maandag:</strong> Gesloten
               </li>
               <li>
+                <strong>Dinsdag:</strong> Gesloten
+              </li>
+              <li>
                 <strong>Woensdag:</strong> 13:00–17:00
               </li>
               <li>

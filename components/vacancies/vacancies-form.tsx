@@ -100,32 +100,6 @@ export default function VacanciesForm() {
                       Medewerker collectiebeheer
                     </label>
                   </div>
-                  <div className="w-full mb-2">
-                    <input
-                      className="mr-2"
-                      type="radio"
-                      id="vacancyChoice4"
-                      name="job"
-                      value="Bestuurslid Gebouwen & Onderhoud"
-                      required
-                    />
-                    <label htmlFor="vacancyChoice4">
-                      Bestuurslid Gebouwen & Onderhoud
-                    </label>
-                  </div>
-                  <div className="w-full">
-                    <input
-                      className="mr-2"
-                      type="radio"
-                      id="vacancyChoice5"
-                      name="job"
-                      value="Bestuurslid Collectiebeheer"
-                      required
-                    />
-                    <label htmlFor="vacancyChoice5">
-                      Bestuurslid Collectiebeheer
-                    </label>
-                  </div>
                 </div>
               </fieldset>
             </div>
@@ -187,8 +161,7 @@ export default function VacanciesForm() {
             <button
               disabled={submitted}
               className={clsx({
-                "rounded-lg mt-2 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md lg:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer":
-                  true,
+                "rounded-lg mt-2 inline-block w-fit font-primary px-[40px] py-[10px] border-2 border-white text-md lg:text-[20px] transition-all duration-500 ease-in-out text-white hover:bg-white hover:text-black hover:cursor-pointer": true,
                 "opacity-50 cursor-not-allowed hover:bg-transparent hover:text-white":
                   submitted,
                 "animate-pulse": loading,
