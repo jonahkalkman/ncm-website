@@ -1,11 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
+import { esc, guardForm } from "../../lib/form-utils";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const body = req.body;
+  const body = guardForm(req, res);
+  if (!body) return;
 
   if (!body.name || !body.phone || !body.email || !body.job) {
     // Sends a HTTP bad request error code
@@ -18,11 +20,11 @@ export default async function handler(
     from: "info@cooperatie-museum.nl",
     to: "nationaal-coop-museum@hetnet.nl",
     subject: "Sollicitatie Coöperatie Museum",
-    html: `<p>Naam: ${body.name}</p>
-           <p>Telefoonnummer: ${body.phone}</p> 
-           <p>Email: ${body.email}</p> 
-           <p>Functie: ${body.job}</p> 
-           ${body.motivation ? `<p>Motivatie: ${body.motivation}</p>` : ""}
+    html: `<p>Naam: ${esc(body.name)}</p>
+           <p>Telefoonnummer: ${esc(body.phone)}</p> 
+           <p>Email: ${esc(body.email)}</p> 
+           <p>Functie: ${esc(body.job)}</p> 
+           ${body.motivation ? `<p>Motivatie: ${esc(body.motivation)}</p>` : ""}
           `,
   });
 

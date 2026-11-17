@@ -1,11 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
+import { esc, guardForm } from "../../lib/form-utils";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const body = req.body;
+  const body = guardForm(req, res);
+  if (!body) return;
 
   if (
     !body.fullname ||
@@ -25,15 +27,13 @@ export default async function handler(
     from: "info@cooperatie-museum.nl",
     to: "nationaal-coop-museum@hetnet.nl",
     subject: "Aanmelding Groepsbezoek Coöperatie Museum",
-    html: `<p>Naam: ${body.fullname}</p>
-           <p>Telefoonnummer: ${body.phone}</p> 
-           <p>Email: ${body.email}</p> 
-           <p>Bedrijf: ${
-             body.company !== "" ? body.company : "Particulier"
-           }</p> 
-           <p>Gewenste bezoekdatum: ${body.visitDate}</p> 
-           <p>Aantal personen: ${body.groupAmount}</p> 
-           ${body.message ? `<p>Bericht: ${body.message}</p>` : ""}
+    html: `<p>Naam: ${esc(body.fullname)}</p>
+           <p>Telefoonnummer: ${esc(body.phone)}</p> 
+           <p>Email: ${esc(body.email)}</p> 
+           <p>Bedrijf: ${esc(body.company !== "" ? body.company : "Particulier")}</p> 
+           <p>Gewenste bezoekdatum: ${esc(body.visitDate)}</p> 
+           <p>Aantal personen: ${esc(body.groupAmount)}</p> 
+           ${body.message ? `<p>Bericht: ${esc(body.message)}</p>` : ""}
           `,
   });
 

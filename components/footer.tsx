@@ -87,7 +87,7 @@ export default function Footer({ logo }: Props) {
                 href="https://jonahkalkman.nl"
                 target="_blank"
               >
-                <span>Website door Jonah Kalkman</span>
+                <span>Website gemaakt door Jonah Kalkman</span>
               </Link>
             </div>
           </div>

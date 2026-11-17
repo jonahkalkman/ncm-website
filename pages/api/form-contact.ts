@@ -1,11 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
+import { esc, guardForm } from "../../lib/form-utils";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const body = req.body;
+  const body = guardForm(req, res);
+  if (!body) return;
 
   if (
     !body.first ||
@@ -24,11 +26,11 @@ export default async function handler(
     from: "info@cooperatie-museum.nl",
     to: "nationaal-coop-museum@hetnet.nl",
     subject: "Contact Coöperatie Museum",
-    html: `<p>Naam: ${body.first}</p>
-           <p>Achternaam: ${body.last}</p> 
-           <p>Email: ${body.email}</p> 
-           <p>Telefoonnummer: ${body.phone}</p>
-           <p>Bericht: ${body.message}</p>
+    html: `<p>Naam: ${esc(body.first)}</p>
+           <p>Achternaam: ${esc(body.last)}</p> 
+           <p>Email: ${esc(body.email)}</p> 
+           <p>Telefoonnummer: ${esc(body.phone)}</p>
+           <p>Bericht: ${esc(body.message)}</p>
     `,
   });
 
